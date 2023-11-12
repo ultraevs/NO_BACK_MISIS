@@ -61,7 +61,11 @@ def download(place_id):
     print(status)
     return status
 
-def get_image(place_id):
+def get_image(place_id: int):
+    """
+    needs place_id: 0 or 1, creates img.jpg frame from camera, returns status
+    """
+
     if os.path.exists('camera_feed.mp4'):
         os.remove('camera_feed.mp4')
     
