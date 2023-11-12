@@ -19,6 +19,8 @@ def generate_time(place_id):
             time_H = 24 + time_H
         if time_M < 0:
             time_M = 59
+        if len(str(time_M)) == 1:
+            time_M = '0' + str(time_M)
         time = time_1 + str(time_H) + '/' + str(time_M) + '/'
     return time
 
@@ -55,10 +57,7 @@ def download(place_id):
             break
 
         except Exception as e:
-            print(e)
-            # if not downloaded, skip and use previous image
             None
-    print(status)
     return status
 
 def get_image(place_id: int):
@@ -71,9 +70,9 @@ def get_image(place_id: int):
     
     if download(place_id):
         if place_id == 0: # rotate image
-            os.system('ffmpeg -sseof -3 -i camera_feed.mp4 -update 1 -q:v 1 img.jpg')
+            os.system('ffmpeg -sseof -3 -i camera_feed.mp4 -update 1 -q:v 1 img.jpg -loglevel panic -hide_banner')
             image = Image.open('img.jpg')
-            image.rotate(50).save('img.jpg')
+            image.rotate(45).save('img.jpg')
         elif place_id == 1:
             frame()
             image = Image.open('img.jpg')
