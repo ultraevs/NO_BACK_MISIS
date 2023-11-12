@@ -4,4 +4,4 @@ from ultralytics import YOLO
 model = YOLO('modelv2.pt')
 
 
-parking_info(model, 1)
+parking_info(model, 0)
