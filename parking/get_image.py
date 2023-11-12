@@ -37,7 +37,9 @@ def download(place_id):
         #   https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/2023/11/12/14/05/59-12308.ts
     }
     status = False
-    for second in range(59, -1, -1):
+    for second in range(0, 60):
+        if len(str(second)) == 1:
+            second = '0' + str(second)
         try:
             if place_id == 0:
                 time = f'{generate_time(place_id)}{second}.ts'
@@ -72,7 +74,7 @@ def get_image(place_id: int):
         if place_id == 0: # rotate image
             os.system('ffmpeg -sseof -3 -i camera_feed.mp4 -update 1 -q:v 1 img.jpg -loglevel panic -hide_banner')
             image = Image.open('img.jpg')
-            image.rotate(45).save('img.jpg')
+            image.rotate(40).save('img.jpg')
         elif place_id == 1:
             frame()
             image = Image.open('img.jpg')

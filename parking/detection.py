@@ -12,7 +12,6 @@ def parking_info(model, place_id: int) -> dict:
     """
     # get camera_frame
     status = get_image(place_id)
-    print(status)
     slots_coords = parking_slots[place_id]
 
     results = model('img.jpg', save=True, verbose=False, conf=0.1)
@@ -20,5 +19,5 @@ def parking_info(model, place_id: int) -> dict:
     for result in results:
         print(results)
 
-
+    print(status)
     return [status]
