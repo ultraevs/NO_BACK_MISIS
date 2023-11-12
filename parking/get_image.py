@@ -73,10 +73,8 @@ def get_image(place_id):
         elif place_id == 1:
             frame()
             image = Image.open('img.jpg')
-            image.rotate(-10).save('img.jpg')
+            image.rotate(-7).save('img.jpg')
+
+        return 'exported'
     else:
-        print('Failed to update image, use previous image')
-
-place_id = 1
-
-get_image(place_id)
+        return 'failed'
