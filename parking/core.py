@@ -4,4 +4,6 @@ from ultralytics import YOLO
 model = YOLO('modelv2.pt')
 
 
-parking_info(model, 0)
+status = parking_info(model, 2)
+
+print(status)

@@ -33,33 +33,50 @@ def download(place_id):
     # downloading video from camera
     links = {
         0: 'https://s2.moidom-stream.ru/s/public/0000007683-',
-        1: 'https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/'
+        1: 'https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/',
+        2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=19cdb7fb8c034c1cb59a748ef2dc36fb'
         #   https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/2023/11/12/14/05/59-12308.ts
     }
     status = False
-    for second in range(0, 60):
-        if len(str(second)) == 1:
-            second = '0' + str(second)
+    print('[download] trying links...')
+    if place_id == 2:
         try:
-            if place_id == 0:
-                time = f'{generate_time(place_id)}{second}.ts'
-            elif place_id == 1:
-                time = f'{generate_time(place_id)}{second}-12308.ts'
-            
-            link = links[place_id] + time
-            print(f'trying: {link}')
-            urllib.request.urlretrieve(
-                link,
-                'camera_feed.mp4'
-            )
-            # if uccessfully downloaded, delete previous image
+            capture = cv2.VideoCapture(links[place_id])
+            ret, frame = capture.read()
+            status = True
+            print('[download] link success, downloaded video')
             if os.path.exists('img.jpg'):
                 os.remove('img.jpg')
-            status = True
-            break
-
+            cv2.imwrite("img.jpg", frame)
         except Exception as e:
-            None
+            print(e)
+            print('[download] link failed')
+            status = False
+    else:
+        for second in range(0, 60):
+            if len(str(second)) == 1:
+                second = '0' + str(second)
+            try:
+                if place_id == 0:
+                    time = f'{generate_time(place_id)}{second}.ts'
+                elif place_id == 1:
+                    time = f'{generate_time(place_id)}{second}-12308.ts'
+                
+                link = links[place_id] + time
+                print(f'trying: {link}')
+                urllib.request.urlretrieve(
+                    link,
+                    'camera_feed.mp4'
+                )
+                # if uccessfully downloaded, delete previous image
+                print('[download] link success, downloaded video')
+                if os.path.exists('img.jpg'):
+                    os.remove('img.jpg')
+                status = True
+                break
+
+            except Exception as e:
+                print('[download] link failed')
     return status
 
 def get_image(place_id: int):
@@ -70,7 +87,9 @@ def get_image(place_id: int):
     if os.path.exists('camera_feed.mp4'):
         os.remove('camera_feed.mp4')
     
+    print('[get_image] requesting download')
     if download(place_id):
+        print('[get_image] download success')
         if place_id == 0: # rotate image
             os.system('ffmpeg -sseof -3 -i camera_feed.mp4 -update 1 -q:v 1 img.jpg -loglevel panic -hide_banner')
             image = Image.open('img.jpg')
@@ -79,7 +98,8 @@ def get_image(place_id: int):
             frame()
             image = Image.open('img.jpg')
             image.rotate(-7).save('img.jpg')
-
+        print('[get_image] image saved')
         return 'exported'
     else:
+        print('[get_image] download failed')
         return 'failed'
