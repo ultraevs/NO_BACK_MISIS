@@ -4,6 +4,7 @@ import os
 from PIL import Image
 import cv2
 from parking_cfg import links
+import requests
 
 
 
@@ -25,10 +26,7 @@ def generate_time(place_id):
         time = time_1 + str(time_H) + '/' + str(time_M) + '/'
     return time
 
-def frame():
-    status, frame = cv2.VideoCapture('camera_feed.mp4').read()
-    cv2.imwrite('img.jpg', frame)
-    
+
 
 def download(place_id):
     # downloading video from camera
@@ -36,11 +34,20 @@ def download(place_id):
     print('[download] trying links...')
     if place_id in [1, 2]:
         try:
-            capture = cv2.VideoCapture(links[place_id])
-            ret, frame = capture.read()
-            status = True
-            cv2.imwrite(f"img_{place_id}.jpg", frame)
-            print('[download] link success, downloaded video')
+            print(f'loading from: {links[place_id]}')
+            r = requests.get(links[place_id])
+            if r.status_code == 200:
+                capture = cv2.VideoCapture(links[place_id])
+                ret, frame = capture.read()
+                cv2.imwrite(f"img_{place_id}.jpg", frame)
+                print('[download] link success, downloaded video')
+                status = True
+            elif r.status_code == 403:
+                print('[download] token expired for: camera ' + str(place_id))
+                status = False
+            else:
+                print(f'[download] unknown error (status code: {r.status_code})')
+                status = False
         except Exception as e:
             print('[download] link failed')
             print(e)
@@ -50,7 +57,7 @@ def download(place_id):
 
 def get_image(place_id: int):
     """
-    needs place_id: 0 or 1, creates img.jpg frame from camera, returns status
+    needs place_id: 1 or 2, creates img_{place_id}.jpg frame from camera, returns status
     """
 
     if os.path.exists('camera_feed.mp4'):
