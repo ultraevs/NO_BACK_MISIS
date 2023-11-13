@@ -3,6 +3,7 @@ import datetime
 import os
 from PIL import Image
 import cv2
+from parking_cfg import links
 
 
 
@@ -31,11 +32,6 @@ def frame():
 
 def download(place_id):
     # downloading video from camera
-    links = {
-        0: 'https://s2.moidom-stream.ru/s/public/0000007683-',
-        1: 'http://136.169.144.33/1549021886/tracks-v1/index.fmp4.m3u8?token=9d3a33efff5341b18f1c8bae5f478779',
-        2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=e3bc0fbf2d674cfc85a09be042ebb6c7'
-    }
     status = False
     print('[download] trying links...')
     if place_id in [1, 2]:
