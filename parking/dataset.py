@@ -3,7 +3,7 @@ import cv2
 
 urls = [
     'http://136.169.144.5/1531895611/tracks-v1/index.fmp4.m3u8?token=9a6e23ca4b574e57ba0d9ebd04aff670',
-    'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=e3bc0fbf2d674cfc85a09be042ebb6c7'
+    'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=52785b06a5d84da99a9ba332128a7866'
 ]
 
 print('starting')
