@@ -33,8 +33,8 @@ def download(place_id):
     # downloading video from camera
     links = {
         0: 'https://s2.moidom-stream.ru/s/public/0000007683-',
-        1: 'http://136.169.144.5/1531895611/tracks-v1/index.fmp4.m3u8?token=e86136b0a3444cb6b8d503565c16d347',
-        2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=19cdb7fb8c034c1cb59a748ef2dc36fb'
+        1: 'http://136.169.144.5/1531895611/tracks-v1/index.fmp4.m3u8?token=9a6e23ca4b574e57ba0d9ebd04aff670',
+        2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=e3bc0fbf2d674cfc85a09be042ebb6c7'
     }
     status = False
     print('[download] trying links...')
@@ -49,9 +49,10 @@ def download(place_id):
             cv2.imwrite("img.jpg", frame)
         except Exception as e:
             print('[download] link failed')
+            print(e)
             status = False
     else:
-        print('[!!!] PLACE_ID=0 IS OUTDATED, USE PLACE_ID=1/2')
+        print('PLACE_ID=0 IS OUTDATED, USE PLACE_ID=1/2')
         for second in range(0, 60):
             if len(str(second)) == 1:
                 second = '0' + str(second)
