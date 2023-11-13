@@ -1,10 +1,8 @@
 place_id
 
-0: doesnt work
-
 1:
-г. Янаул, Некрасова, 19, двор
-http://maps.ufanet.ru/yanaul#1531895611
+г. Янаул, Некрасова, 7, Двор
+http://maps.ufanet.ru/yanaul#1537240875
 
 2:
 г. Янаул, Станционная, 10А cam1
