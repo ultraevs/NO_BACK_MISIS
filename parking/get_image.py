@@ -33,13 +33,12 @@ def download(place_id):
     # downloading video from camera
     links = {
         0: 'https://s2.moidom-stream.ru/s/public/0000007683-',
-        1: 'https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/',
+        1: 'http://136.169.144.5/1531895611/tracks-v1/index.fmp4.m3u8?token=e86136b0a3444cb6b8d503565c16d347',
         2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=19cdb7fb8c034c1cb59a748ef2dc36fb'
-        #   https://flussonic2.powernet.com.ru:8081/user90880/tracks-v1/2023/11/12/14/05/59-12308.ts
     }
     status = False
     print('[download] trying links...')
-    if place_id == 2:
+    if place_id in [1, 2]:
         try:
             capture = cv2.VideoCapture(links[place_id])
             ret, frame = capture.read()
@@ -49,10 +48,10 @@ def download(place_id):
                 os.remove('img.jpg')
             cv2.imwrite("img.jpg", frame)
         except Exception as e:
-            print(e)
             print('[download] link failed')
             status = False
     else:
+        print('[!!!] PLACE_ID=0 IS OUTDATED, USE PLACE_ID=1/2')
         for second in range(0, 60):
             if len(str(second)) == 1:
                 second = '0' + str(second)
@@ -89,15 +88,6 @@ def get_image(place_id: int):
     
     print('[get_image] requesting download')
     if download(place_id):
-        print('[get_image] download success')
-        if place_id == 0: # rotate image
-            os.system('ffmpeg -sseof -3 -i camera_feed.mp4 -update 1 -q:v 1 img.jpg -loglevel panic -hide_banner')
-            image = Image.open('img.jpg')
-            image.rotate(40).save('img.jpg')
-        elif place_id == 1:
-            frame()
-            image = Image.open('img.jpg')
-            image.rotate(-7).save('img.jpg')
         print('[get_image] image saved')
         return 'exported'
     else:
