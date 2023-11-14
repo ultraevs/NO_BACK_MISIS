@@ -3,7 +3,7 @@ import datetime
 import os
 from PIL import Image
 import cv2
-from parking_cfg import links
+from parking.parking_cfg import links
 import requests
 
 

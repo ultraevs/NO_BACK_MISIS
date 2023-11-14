@@ -1,10 +1,11 @@
-from get_image import get_image
-from parking_cfg import parking_slots
+from parking.get_image import get_image
+from parking.parking_cfg import parking_slots
 import os
 
 
 def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
+
 
 def parking_info(model, place_id: int) -> dict:
     """
