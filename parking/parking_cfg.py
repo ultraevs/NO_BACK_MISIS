@@ -35,6 +35,6 @@ parking_slots = {
 }
 
 links = {
-    1: 'http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=3c2e8105f2f24521a60d8525ceb5f6c8',
-    2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=5e1243a2b54c4aaebbd25d7b0ff11039'
+    1: 'http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=387e5608656c4b2baf6ece2a3a3f34b4',
+    2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=5e139563d5f34682b080fd26c4f4ad0d'
 }
