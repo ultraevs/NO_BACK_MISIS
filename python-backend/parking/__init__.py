@@ -1,5 +1,4 @@
 from ultralytics import YOLO
-import parking.detection
 
 
 def current_model(file):
