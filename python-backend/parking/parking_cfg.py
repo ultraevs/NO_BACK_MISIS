@@ -34,7 +34,12 @@ parking_slots = {
         ((0.97, 0.66), (0.95, 0.50))]
 }
 
+links_video = {
+    1: 'http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=',
+    2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token='
+}
+
 links = {
-    1: 'http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=09109337c13e4f56890ffbdba1e28de7',
-    2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=48bbaF2a1a354D85aff9F831428e0d64'
+    1: 'http://maps.ufanet.ru/yanaul#1537240875',
+    2: 'http://maps.ufanet.ru/yanaul#1549021886'
 }

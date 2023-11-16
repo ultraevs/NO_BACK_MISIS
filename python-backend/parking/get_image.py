@@ -1,8 +1,11 @@
 import datetime
 import os
 import cv2
-from parking.parking_cfg import links
+from parking.parking_cfg import links_video
+from parking.token_update import get_tokens
 import requests
+import configparser
+
 
 
 
@@ -32,17 +35,30 @@ def download(place_id):
     print('[download] trying links...')
     if place_id in [1, 2]:
         try:
-            print(f'loading from: {links[place_id]}')
-            r = requests.get(links[place_id])
+            config = configparser.ConfigParser()
+            config.read('config.ini')
+            token_value = config.get('tokens', f'token_{place_id}')
+            lnk = links_video[place_id] + token_value
+            print('trying link: ' + lnk)
+            try:
+                r = requests.get(lnk)
+            except: None
+            if r.status_code == 403 or r == None:
+                print('token outdated, updating')
+                get_tokens()
+                config.read('config.ini')
+                token_value = config.get('tokens', f'token_{place_id}')
+                lnk = links_video[place_id] + token_value
+                r = requests.get(lnk)
+
             if r.status_code == 200:
-                capture = cv2.VideoCapture(links[place_id])
+                capture = cv2.VideoCapture(lnk)
                 ret, frame = capture.read()
                 cv2.imwrite(f"img_{place_id}.jpg", frame)
                 print('[download] link success, downloaded video')
                 status = True
             elif r.status_code == 403:
-                print('[download] token expired for: camera ' + str(place_id))
-                status = False
+                print('[!][download] token updated, but anyway failed')
             else:
                 print(f'[download] unknown error (status code: {r.status_code})')
                 status = False
