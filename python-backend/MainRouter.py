@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi.responses import JSONResponse
 import sys
 sys.path.append('..')
+from fastapi.responses import FileResponse
 from parking import current_model, detection, token_update
 router = APIRouter(tags=["MAIN"])
 
@@ -9,8 +10,8 @@ model = current_model("segmentation.pt")
 
 
 @router.get('/')
-asyncd def main():
-
+async def main():
+    return FileResponse('/static/main.html')
 
 
 @router.post('/test')
