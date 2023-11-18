@@ -11,7 +11,7 @@ model = current_model("segmentation.pt")
 
 @router.get('/')
 async def main():
-    return FileResponse('/static/main.html')
+    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/main.html')
 
 
 @router.post('/test')
