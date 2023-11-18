@@ -3,15 +3,15 @@ import json
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-from MainRouter import router as main_router
 
 
 app = FastAPI(title="URBATON")
 origins = ["*"]
+app.mount("/static", StaticFiles(directory="static/"), name="static")
 
 
 @app.exception_handler(404)
-async def custom_404():
+async def custom_404(_,__):
     return FileResponse('/static/404.html')
 
 
@@ -22,6 +22,5 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-app.include_router(main_router)
-app.mount("/static", StaticFiles(directory="static/"), name="static")
+
 # app.mount("/static/assets", StaticFiles(directory="static/assets"), name="/static/assets")
