@@ -5,7 +5,7 @@ from fastapi.staticfiles import StaticFiles
 from MainRouter import router as main_router
 
 
-app = FastAPI(title="UTRBATON")
+app = FastAPI(title="URBATON")
 origins = ["*"]
 
 app.add_middleware(

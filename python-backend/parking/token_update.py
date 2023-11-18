@@ -1,3 +1,4 @@
+import parking
 from parking.parking_cfg import links
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -9,13 +10,17 @@ import configparser
 
 def get_tokens():
     config = configparser.ConfigParser()
-    config.read('tokens.ini')
+    config.read('/home/NO_BACK_MISIS/python-backend/parking/tokens.ini')
+    print(config)
     if 'tokens' not in config:
         config.add_section('tokens')
-
+    WINDOW_SIZE = "1920,1080"
     chrome_options = Options()
     chrome_options.add_argument('--headless')
-    service = Service(executable_path=r'C:\Users\Admin\Documents\parking\parking\chromedriver.exe')
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+    chrome_options.add_argument('--no-sandbox')
+    service = Service(executable_path=r'/home/NO_BACK_MISIS/python-backend/parking/chromedriver')
 
     for i in [1,2]:
         link = links[i]
