@@ -3,11 +3,14 @@ import json
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
-
+from MainRouter import router as main_router
+from HistoryRouter import router as history_router
 
 app = FastAPI(title="URBATON")
 origins = ["*"]
 app.mount("/static", StaticFiles(directory="static/"), name="static")
+app.include_router(main_router)
+app.include_router(history_router)
 
 
 @app.exception_handler(404)
@@ -22,5 +25,3 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-# app.mount("/static/assets", StaticFiles(directory="static/assets"), name="/static/assets")
