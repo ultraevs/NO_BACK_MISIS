@@ -22,7 +22,7 @@ def get_tokens():
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    service = Service(executable_path=r'/Users/ivanloboda/Documents/projects/NO_BACK_MISIS/python-backend/chromedriver')
+    service = Service(executable_path=r'/home/NO_BACK_MISIS/python-backend/parking/chromedriver')
 
     updated_tokens = {}
     for i in [1,2]:
@@ -121,7 +121,7 @@ def get_image():
             lnk = links[i] + token
             capture = cv2.VideoCapture(lnk)
             ret, frame = capture.read()
-            cv2.imwrite(f"img_{i}.jpg", frame)
+            cv2.imwrite(f"img{i}.jpg", frame)
         except Exception as e:
             print('failed to download image')
             print(e)
@@ -195,7 +195,7 @@ def detect(model, id_):
         print('successfully updated camera frames')
         status = 'ok'
     else:
-        if os.path.exists(f'img_{id}.jpg'):
+        if os.path.exists(f'img{id}.jpg'):
             print('using previous images')
             status = 'outdated'
         else:
@@ -205,7 +205,7 @@ def detect(model, id_):
     
     if status != 'failed':
         print('detecting')
-        results = model(f'img_{id_}.jpg', save=False, verbose=False, conf=0.7)
+        results = model(f'img{id_}.jpg', save=False, verbose=False, conf=0.7)
         if results:
             print('predicted, generating response')
             data = check_boxes(results, id_)

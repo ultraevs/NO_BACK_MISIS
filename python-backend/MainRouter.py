@@ -3,7 +3,8 @@ from fastapi.responses import JSONResponse
 import sys
 sys.path.append('..')
 from fastapi.responses import FileResponse
-from parking import current_model, detection, token_update
+from parking import current_model
+from pizda import detect
 router = APIRouter(tags=["MAIN"])
 
 model = current_model("segmentation.pt")
@@ -16,5 +17,5 @@ async def main():
 
 @router.post('/test')
 async def test(cam_id: int):
-    answer = detection.parking_info(model, cam_id)
+    answer = detect(model, cam_id)
     return JSONResponse(content=answer)
