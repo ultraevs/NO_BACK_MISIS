@@ -10,7 +10,7 @@ import configparser
 
 def get_tokens():
     config = configparser.ConfigParser()
-    config.read('/home/NO_BACK_MISIS/python-backend/parking/tokens.ini')
+    config.read(r'/home/NO_BACK_MISIS/python-backend/parking/tokens.ini')
     print(config)
     if 'tokens' not in config:
         config.add_section('tokens')
@@ -20,6 +20,7 @@ def get_tokens():
     chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument('--no-sandbox')
+    chrome_options.add_argument('--disable-dev-shm-usage')
     service = Service(executable_path=r'/home/NO_BACK_MISIS/python-backend/parking/chromedriver')
 
     for i in [1,2]:
@@ -41,7 +42,7 @@ def get_tokens():
             print(token)
             config.set('tokens', f'token_{i}', token)
 
-    with open('config.ini', 'w') as f:
+    with open(r'/home/NO_BACK_MISIS/python-backend/parking/config.ini', 'w') as f:
         config.write(f)
     
             

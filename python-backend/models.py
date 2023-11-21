@@ -13,5 +13,4 @@ class Operations(Base):
     number = Column(String(50))
     datee = Column(String(200))
 
-
 Base.metadata.create_all(bind=engine)
