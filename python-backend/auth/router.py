@@ -1,7 +1,8 @@
 import sys
 sys.path.append("..")
-from fastapi import Depends, APIRouter, HTTPException
+from fastapi import Depends, APIRouter, HTTPException, Form
 from fastapi.security import OAuth2PasswordBearer
+from fastapi.responses import RedirectResponse
 from passlib.context import CryptContext
 from auth.manager import *
 from sqlalchemy.orm import Session
@@ -10,7 +11,7 @@ from models import User
 from sqlalchemy import select, insert
 
 router = APIRouter()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/login")
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
@@ -33,10 +34,10 @@ def register_user(username: str = Form(...), password: str = Form(...), session:
     session.commit()
 
     jwt_token = create_jwt_token({"sub": username})
-    return {"access_token": jwt_token, "token_type": "bearer"}
+    return RedirectResponse(url='/profile')
 
 
-@router.post("/token")
+@router.post("/login")
 def authenticate_user(username: str, password: str, session: Session = Depends(get_db)):
     query = select(User).where(User.username == username)
     user = session.execute(query).scalar()
@@ -44,14 +45,7 @@ def authenticate_user(username: str, password: str, session: Session = Depends(g
         raise HTTPException(status_code=400, detail="Incorrect username or password")
 
     jwt_token = create_jwt_token({"sub": user.username})
-    return {"access_token": jwt_token, "token_type": "bearer"}
-
-
-@router.get('/me')
-async def me(current_user: User = Depends(get_current_user)):
-    return {"username": current_user.username, "email": current_user.email}
-
-
-@router.get('/my_profile')
-async def my_profile(current_user: User = Depends(get_current_user)):
-    return {"username": current_user.username, "email": current_user.email}
+    if get_current_user(jwt_token):
+        return RedirectResponse(url='/profile')
+    else:
+        return {"status": 'huy'}
