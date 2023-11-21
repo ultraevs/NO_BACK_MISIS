@@ -21,6 +21,7 @@ class User(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     username = Column(String(100))
     password = Column(String(100))
+    hashed_password = Column(String(1000))
 
 
 Base.metadata.create_all(bind=engine)
