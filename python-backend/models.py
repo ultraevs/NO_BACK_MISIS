@@ -1,6 +1,7 @@
 from sqlalchemy import Column, Integer, String, Float
 from sqlalchemy.orm import declarative_base
 from database import engine
+
 Base = declarative_base()
 
 
@@ -12,5 +13,6 @@ class Operations(Base):
     name = Column(String(200))
     number = Column(String(50))
     datee = Column(String(200))
+
 
 Base.metadata.create_all(bind=engine)

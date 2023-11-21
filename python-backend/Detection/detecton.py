@@ -25,15 +25,15 @@ def get_tokens():
     service = Service(executable_path=r'/home/NO_BACK_MISIS/python-backend/parking/chromedriver')
 
     updated_tokens = {}
-    for i in [1,2]:
+    for i in [1, 2]:
         link = links[i]
         driver = webdriver.Chrome(service=service, options=chrome_options)
         driver.get(link)
 
-
         try:
             element = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located((By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/div/div[1]/div/div[1]/iframe'))
+                EC.presence_of_element_located(
+                    (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/div/div[1]/div/div[1]/iframe'))
             )
         except Exception as e:
             return False
@@ -54,13 +54,14 @@ def get_tokens():
 
 def update_cfg():
     new_tokens = get_tokens()
-    if new_tokens != False:
-        with open('tokens.txt', 'w') as f:
+    if new_tokens:
+        with open('../tokens.txt', 'w') as f:
             f.write(new_tokens[1] + '\n')
             f.write(new_tokens[2])
         return True
     else:
         return False
+
 
 def get_image():
     links = {
@@ -68,13 +69,13 @@ def get_image():
         2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token='
     }
     try:
-        with open('tokens.txt', 'r') as f:
+        with open('../tokens.txt', 'r') as f:
             lines = f.readlines()
             token_1 = lines[0].strip()
             token_2 = lines[1].strip()
     except:
         print('no tokens file found')
-        with open('tokens.txt', 'w') as file:
+        with open('../tokens.txt', 'w') as file:
             pass
         token_1 = ''
         token_2 = ''
@@ -95,7 +96,7 @@ def get_image():
         except:
             update_needed = True
             break
-    
+
     if update_needed:
         print('tokens outdated, updating')
         if update_cfg():
@@ -103,8 +104,8 @@ def get_image():
         else:
             print('tokens update failed')
             return False
-        
-    with open('tokens.txt', 'r') as f:
+
+    with open('../tokens.txt', 'r') as f:
         lines = f.readlines()
         token_1 = lines[0].strip()
         token_2 = lines[1].strip()
@@ -127,10 +128,12 @@ def get_image():
             print(e)
             success = False
             break
-    
+
     if not success:
         return False
-    else: return True
+    else:
+        return True
+
 
 def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
@@ -138,24 +141,24 @@ def is_in_rect(x1, y1, x2, y2, x, y):
 
 def check_boxes(results, id_):
     parking_slots = {
-    1: [((0.02, 0.20), (0.02, 0.20)),
-        ((0.12, 0.14), (0.15, 0.08)),
-        ((0.18, 0.13), (0.23, 0.07)),
-        ((0.26, 0.15), (0.30, 0.07)),
-        ((0.36, 0.15), (0.40, 0.07)),
-        ((0.48, 0.17), (0.50, 0.06)),
-        ((0.60, 0.20), (0.60, 0.10)),
-        ((0.72, 0.20), (0.70, 0.09)),
-        ((0.84, 0.26), (0.82, 0.17)),
-        ((0.93, 0.29), (0.90, 0.21)),],
+        1: [((0.02, 0.20), (0.02, 0.20)),
+            ((0.12, 0.14), (0.15, 0.08)),
+            ((0.18, 0.13), (0.23, 0.07)),
+            ((0.26, 0.15), (0.30, 0.07)),
+            ((0.36, 0.15), (0.40, 0.07)),
+            ((0.48, 0.17), (0.50, 0.06)),
+            ((0.60, 0.20), (0.60, 0.10)),
+            ((0.72, 0.20), (0.70, 0.09)),
+            ((0.84, 0.26), (0.82, 0.17)),
+            ((0.93, 0.29), (0.90, 0.21)), ],
 
-    2: [((0.30, 0.19), (0.24, 0.25)), 
-        ((0.37, 0.22), (0.34, 0.29)), 
-        ((0.46, 0.25), (0.43, 0.35)), 
-        ((0.55, 0.41), (0.56, 0.28)), 
-        ((0.70, 0.50), (0.70, 0.34)), 
-        ((0.86, 0.59), (0.83, 0.40)), 
-        ((0.97, 0.66), (0.95, 0.50))]
+        2: [((0.30, 0.19), (0.24, 0.25)),
+            ((0.37, 0.22), (0.34, 0.29)),
+            ((0.46, 0.25), (0.43, 0.35)),
+            ((0.55, 0.41), (0.56, 0.28)),
+            ((0.70, 0.50), (0.70, 0.34)),
+            ((0.86, 0.59), (0.83, 0.40)),
+            ((0.97, 0.66), (0.95, 0.50))]
     }
 
     coords = parking_slots[id_]
@@ -167,14 +170,16 @@ def check_boxes(results, id_):
         for coord in coords:
             t = False
             coord1, coord2 = coord
-            x1, y1 = coord1 # 1 dot coords
-            x2, y2 = coord2 # 2 dot coords
+            x1, y1 = coord1  # 1 dot coords
+            x2, y2 = coord2  # 2 dot coords
 
             # check if 2 dots inside of any box
             for box in boxes:
                 box_x1, box_y1, box_x2, box_y2 = box
-                if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2), x1, y1):
-                    if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2), x2, y2):
+                if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2), x1,
+                              y1):
+                    if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2),
+                                  x2, y2):
                         t = True
                         data[park_slot_id] = 'occupied'
                         break
@@ -183,11 +188,10 @@ def check_boxes(results, id_):
 
             park_slot_id += 1
 
-        
     if data:
         return data
-    else: return None
-
+    else:
+        return None
 
 
 def detect(model, id_):
@@ -202,7 +206,6 @@ def detect(model, id_):
             print('previous images not found')
             status = 'failed'
 
-    
     if status != 'failed':
         print('detecting')
         results = model(f'img{id_}.jpg', save=False, verbose=False, conf=0.7)
@@ -213,5 +216,5 @@ def detect(model, id_):
             data = None
     else:
         data = None
-    
+
     return {'status': status, 'data': data}
