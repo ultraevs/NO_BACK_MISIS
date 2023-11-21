@@ -37,3 +37,19 @@ def authenticate_user(username: str, password: str, session: Session = Depends(g
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     jwt_token = create_jwt_token({"sub": user.username})
     return {"access_token": jwt_token, "token_type": "bearer"}
+
+
+def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_db)):
+    decoded_data = verify_jwt_token(token)
+    if not decoded_data:
+        raise HTTPException(status_code=400, detail="Invalid token")
+    query = select(User).where(User.username == decoded_data["sub"])
+    user = session.execute(query).scalar()
+    if not user:
+        raise HTTPException(status_code=400, detail="User not found")
+    return user
+
+
+@router.get('/me')
+async def me(current_user: User = Depends(get_current_user)):
+    return current_user
