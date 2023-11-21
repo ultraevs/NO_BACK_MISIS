@@ -1,8 +1,10 @@
+import sys
+sys.path.append("..")
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from .database import get_db, engine
+from database import get_db, engine
 from sqlalchemy import select, insert
-from .models import Operations
+from models import Operations
 from pydantic import BaseModel
 router = APIRouter(tags=["HISTORY"])
 

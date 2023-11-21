@@ -1,7 +1,9 @@
+import sys
+sys.path.append('..')
 from fastapi import APIRouter
 from fastapi.responses import JSONResponse
-from detecton import detect
-from .parking import current_model
+from Detection.detecton import detect
+from parking import current_model
 router = APIRouter(tags=["Detection"])
 model = current_model("Detection/segmentation.pt")
 
