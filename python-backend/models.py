@@ -15,4 +15,12 @@ class Operations(Base):
     datee = Column(String(200))
 
 
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(100))
+    password = Column(String(100))
+
+
 Base.metadata.create_all(bind=engine)
