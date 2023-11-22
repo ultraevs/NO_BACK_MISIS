@@ -8,7 +8,8 @@ from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup
 import cv2
 import os
-from ultralytics import YOLO
+from PIL import Image, ImageDraw
+import shutil
 
 
 def get_tokens():
@@ -18,18 +19,18 @@ def get_tokens():
     }
     WINDOW_SIZE = "1920,1080"
     chrome_options = Options()
-    chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
     chrome_options.add_argument('--no-sandbox')
     chrome_options.add_argument('--disable-dev-shm-usage')
-    service = Service(executable_path=r'/home/NO_BACK_MISIS/python-backend/parking/chromedriver')
-
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--log-path=/home/NO_BACK_MISIS/python-backend/Detection/driver.log")
+    service = Service(executable_path='/home/NO_BACK_MISIS/python-backend/Detection/drv')
     updated_tokens = {}
-    for i in [1, 2]:
-        link = links[i]
-        driver = webdriver.Chrome(service=service, options=chrome_options)
-        driver.get(link)
 
+    for i in [1, 2]:
+        driver = webdriver.Chrome(service=service, options=chrome_options)
+        link = links[i]
+        driver.get(link)
         try:
             element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located(
@@ -48,16 +49,17 @@ def get_tokens():
         token = link.split('=')[1].split('&')[0]
 
         updated_tokens[i] = token
-
+        print(updated_tokens)
     return updated_tokens
 
 
 def update_cfg():
     new_tokens = get_tokens()
     if new_tokens:
-        with open('../tokens.txt', 'w') as f:
+        with open('Detection/tokens.txt', 'w') as f:
             f.write(new_tokens[1] + '\n')
             f.write(new_tokens[2])
+            print(new_tokens)
         return True
     else:
         return False
@@ -69,13 +71,13 @@ def get_image():
         2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token='
     }
     try:
-        with open('../tokens.txt', 'r') as f:
+        with open('Detection/tokens.txt', 'r') as f:
             lines = f.readlines()
             token_1 = lines[0].strip()
             token_2 = lines[1].strip()
     except:
         print('no tokens file found')
-        with open('../tokens.txt', 'w') as file:
+        with open('Detection/tokens.txt', 'w') as file:
             pass
         token_1 = ''
         token_2 = ''
@@ -105,7 +107,7 @@ def get_image():
             print('tokens update failed')
             return False
 
-    with open('../tokens.txt', 'r') as f:
+    with open('Detection/tokens.txt', 'r') as f:
         lines = f.readlines()
         token_1 = lines[0].strip()
         token_2 = lines[1].strip()
@@ -164,14 +166,24 @@ def check_boxes(results, id_):
     coords = parking_slots[id_]
     data = {}
 
+    shutil.copy(f'img{id_}.jpg', 'result.jpg')
+    img = Image.open('result.jpg')
+    draw = ImageDraw.Draw(img)
+    width, height = img.size
+
     for result in results:
         boxes = result.boxes.xyxyn.tolist()
+
         park_slot_id = 0
         for coord in coords:
             t = False
             coord1, coord2 = coord
             x1, y1 = coord1  # 1 dot coords
             x2, y2 = coord2  # 2 dot coords
+
+            point_size = 10
+            draw.ellipse([x1*width - point_size // 2, y1*height - point_size // 2, x1*width + point_size // 2, y1*height + point_size // 2], fill='green')
+            draw.ellipse([x2*width - point_size // 2, y2*height - point_size // 2, x2*width + point_size // 2, y2*height + point_size // 2], fill='green')
 
             # check if 2 dots inside of any box
             for box in boxes:
@@ -182,11 +194,16 @@ def check_boxes(results, id_):
                                   x2, y2):
                         t = True
                         data[park_slot_id] = 'occupied'
+                        draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='green', width=1)
                         break
             if not t:
                 data[park_slot_id] = 'free'
-
+                draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='red', width=1)
+                
             park_slot_id += 1
+
+    img.save('result.jpg')
+    img.close()
 
     if data:
         return data
@@ -195,11 +212,12 @@ def check_boxes(results, id_):
 
 
 def detect(model, id_):
+    if id_ not in [1,2]: return {'status': 'id failed', 'data': None}
     if get_image():
         print('successfully updated camera frames')
         status = 'ok'
     else:
-        if os.path.exists(f'img{id}.jpg'):
+        if os.path.exists(f'img{id_}.jpg'):
             print('using previous images')
             status = 'outdated'
         else:
@@ -208,7 +226,7 @@ def detect(model, id_):
 
     if status != 'failed':
         print('detecting')
-        results = model(f'img{id_}.jpg', save=False, verbose=False, conf=0.7)
+        results = model(f'img{id_}.jpg', save=False, verbose=False, conf=0.1)
         if results:
             print('predicted, generating response')
             data = check_boxes(results, id_)

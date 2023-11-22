@@ -1,10 +1,10 @@
 import sys
 sys.path.append("..")
-from fastapi import Depends, APIRouter, HTTPException
+from fastapi import Depends, APIRouter, HTTPException, Form
 from fastapi.responses import RedirectResponse
 from fastapi.security import OAuth2PasswordBearer
 from passlib.context import CryptContext
-from manager import *
+from auth.manager import *
 from sqlalchemy.orm import Session
 from database import get_db, engine
 from models import User
@@ -16,14 +16,14 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 @router.post("/register")
-def register_user(username: str, password: str, session: Session = Depends(get_db)):
+def register_user(username: str = Form(...), password: str = Form(...), session: Session = Depends(get_db)):
     hashed_password = pwd_context.hash(password)
     # Сохраните пользователя в базе данных
     query = insert(User).values(username=username,password=password, hashed_password=hashed_password)
     session.execute(query)
     session.commit()
     jwt_token = create_jwt_token({"sub": username})
-    return RedirectResponse(url=f'/me?current_user={jwt_token}')
+    return RedirectResponse(url=f'/me?current_user={jwt_token}', status_code=303, headers={"Location": f'/me?current_user={jwt_token}'})
 
 
 @router.post("/token")
@@ -42,6 +42,7 @@ def authenticate_user(username: str, password: str, session: Session = Depends(g
 
 
 def get_current_user(token: str = Depends(oauth2_scheme), session: Session = Depends(get_db)):
+    print(token)
     decoded_data = verify_jwt_token(token)
     if not decoded_data:
         raise HTTPException(status_code=400, detail="Invalid token")
