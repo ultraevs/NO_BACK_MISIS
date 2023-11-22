@@ -9,14 +9,19 @@ from database import get_db, engine
 from models import User
 from sqlalchemy import select, insert
 
-router = APIRouter()
+router = APIRouter(tags=["AUTH"])
 
 
 @router.post("/register")
-async def register_user(username: str = Form(...), password: str = Form(...), session: Session = Depends(get_db)):
-    query = insert(User).values(username=username, password=password)
+async def register_user(username: str = Form(...), password: str = Form(...), name: str = Form(...), phone: str = Form(...), session: Session = Depends(get_db)):
+    query = insert(User).values(username=username, password=password, name=name, phone=phone)
     session.execute(query)
     session.commit()
+    query = select(User).where(User.username == username)
+    user = session.execute(query).scalar()
+    response = RedirectResponse(url='/profile', status_code=303)
+    response.set_cookie(key="user_id", value=user.id)
+    return response
 
 
 @router.post("/login")
@@ -28,4 +33,6 @@ async def login_user(username: str = Form(...), password: str = Form(...), sessi
     if password != user.password:
         return {"status": 401, "data": "Неверный пароль"}
     if password == user.password:
-        return {"status": 200, "data": "Успешно"}
+        response = RedirectResponse(url='/profile', status_code=303)
+        response.set_cookie(key="user_id", value=user.id)
+        return response
