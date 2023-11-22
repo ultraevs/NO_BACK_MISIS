@@ -32,7 +32,7 @@ def register_user(
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data=token_data, expires_delta=access_token_expires)
     response = RedirectResponse(url='/profile', status_code=303)
-    response.set_cookie(key="access_token", value=access_token)
+    response.set_cookie(key="access_token", value=access_token.decode("utf-8"))
     return response
 
 
@@ -64,4 +64,5 @@ async def profile(
         data = verify_token(access_token)
         return FileResponse('static/profile.html')
     except HTTPException:
-        return RedirectResponse('/login', status_code=303)
+         return 1
+#        return RedirectResponse('/login', status_code=303)
