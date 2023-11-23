@@ -62,7 +62,7 @@ async def login_user(email: str = Form(...), password: str = Form(...), session:
 async def profile(access_token: str = Cookie(None)):
     try:
         data = verify_token(access_token)
-        return FileResponse('static/profile.html')
+        return FileResponse('/home/NO_BACK_MISIS/python-backend/static/profile.html')
     except HTTPException:
         return RedirectResponse('/login', status_code=303)
 

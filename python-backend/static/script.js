@@ -23,7 +23,7 @@ async function getData() {
         const json = await response.json();
         console.log("Успех:", JSON.stringify(json));
         if (json.data == "ACCEPT"){
-            window.location = "redirect.html";
+            window.location = "http://urbaton.ultraevs.ru/profile/";
         }
         else if (json.data == "Нет такого юзера"){
             alert("Нет такого юзера")
@@ -67,7 +67,7 @@ async function postData() {
         const json = await response.json();
         console.log("Успех:", JSON.stringify(json));
         if (json.data == "ACCEPT"){
-            window.location = "redirect.html";
+            window.location = "http://urbaton.ultraevs.ru/profile";
         }
         else if (json.data == "Нет такого юзера"){
             alert("Нет такого юзера")
