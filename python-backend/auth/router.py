@@ -102,9 +102,9 @@ async def profile(access_token: str = Cookie(None)):
         return RedirectResponse('/login', status_code=303)
 
 
-@router.get("/forgot")
+@router.post("/forgot")
 async def forgot(background_tasks: BackgroundTasks, email: str = Form(...), session: Session = Depends(get_db)):
     query = select(User).where(User.email == email)
     user = session.execute(query).scalar()
-    background_tasks.add_task(send_email_forgot, email, user.password, user.name)
+    background_tasks.add_task(send_email_forgot, email, "PASSWORD", user.name)
     return JSONResponse(status_code=200, content="Письмо Отправлено")
