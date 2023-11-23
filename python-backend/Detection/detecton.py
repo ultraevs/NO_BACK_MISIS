@@ -10,9 +10,11 @@ import cv2
 import os
 from PIL import Image, ImageDraw
 import shutil
+import logging
 
 
 def get_tokens():
+    logging.info('get_tokens() started')
     links = {
         1: 'http://maps.ufanet.ru/yanaul#1537240875',
         2: 'http://maps.ufanet.ru/yanaul#1549021886'
@@ -29,43 +31,53 @@ def get_tokens():
 
     for i in [1, 2]:
         driver = webdriver.Chrome(service=service, options=chrome_options)
+        logging.info('driver created')
         link = links[i]
         driver.get(link)
+        logging.info('waiting for element')
         try:
             element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located(
                     (By.XPATH, '/html/body/div[2]/div/div[3]/div[2]/div/div[1]/div/div[1]/iframe'))
             )
         except Exception as e:
+            logging.info('no element found')
             return False
+            
 
         html = driver.page_source
         driver.close()
+        logging.info('driver closed')
 
         html_formatted = BeautifulSoup(html, 'html.parser')
         player = html_formatted.find(class_='ModalBodyPlayer')
         iframe = player.find('iframe')
         link = iframe.get('src')
         token = link.split('=')[1].split('&')[0]
+        logging.info('got token')
 
         updated_tokens[i] = token
-        print(updated_tokens)
+    
+    logging.info(f'got tokens: {updated_tokens}')
     return updated_tokens
 
 
 def update_cfg():
+    logging.info('writing tokens to file')
     new_tokens = get_tokens()
     if new_tokens:
         with open('Detection/tokens.txt', 'w') as f:
             f.write(new_tokens[1] + '\n')
             f.write(new_tokens[2])
-            print(new_tokens)
+        logging.info('update_cfg() -> True')
         return True
     else:
+        logging.info('update_cfg() -> False')
         return False
 
 
 def get_image():
+    logging.info('starting get_image()')
     links = {
         1: 'http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=',
         2: 'http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token='
@@ -75,8 +87,8 @@ def get_image():
             lines = f.readlines()
             token_1 = lines[0].strip()
             token_2 = lines[1].strip()
+        logging.info('loaded tokens from file')
     except:
-        print('no tokens file found')
         with open('Detection/tokens.txt', 'w') as file:
             pass
         token_1 = ''
@@ -92,27 +104,26 @@ def get_image():
             link = links[i] + token
             r = requests.get(link)
             if r.status_code != 200:
-                print(f'tokens outdated ({r.status_code})')
+                logging.info('unsuccessful request, attempting to update tokens')
                 update_needed = True
                 break
         except:
+            logging.info('got error during request, attempting to update tokens')
             update_needed = True
             break
 
     if update_needed:
-        print('tokens outdated, updating')
         if update_cfg():
-            print('tokens updated')
+            logging.info('successfully updated tokens')
         else:
-            print('tokens update failed')
+            logging.info('tokens update failed, get_image() -> False')
             return False
 
     with open('Detection/tokens.txt', 'r') as f:
         lines = f.readlines()
         token_1 = lines[0].strip()
         token_2 = lines[1].strip()
-
-    print('loading images')
+    logging.info('loaded tokens from file')
 
     for i in range(1, 3):
         success = True
@@ -123,17 +134,19 @@ def get_image():
         try:
             lnk = links[i] + token
             capture = cv2.VideoCapture(lnk)
+            logging.info(f'getting image from: {lnk}')
             ret, frame = capture.read()
             cv2.imwrite(f"img{i}.jpg", frame)
         except Exception as e:
-            print('failed to download image')
-            print(e)
             success = False
+            logging.info('failed to get image')
             break
 
     if not success:
+        logging.info('get_image() -> False')
         return False
     else:
+        logging.info('get_image() -> True')
         return True
 
 
@@ -142,6 +155,7 @@ def is_in_rect(x1, y1, x2, y2, x, y):
 
 
 def check_boxes(results, id_):
+    logging.info('check_boxes() started')
     parking_slots = {
         1: [((0.02, 0.20), (0.02, 0.20)),
             ((0.12, 0.14), (0.15, 0.08)),
@@ -164,13 +178,16 @@ def check_boxes(results, id_):
     }
 
     coords = parking_slots[id_]
+    logging.info('got parking coords')
     data = {}
 
     shutil.copy(f'img{id_}.jpg', 'result.jpg')
+    logging.info('created result.jpg file')
     img = Image.open('result.jpg')
     draw = ImageDraw.Draw(img)
     width, height = img.size
 
+    logging.info('checking parking slots and cars')
     for result in results:
         boxes = result.boxes.xyxyn.tolist()
 
@@ -201,38 +218,43 @@ def check_boxes(results, id_):
                 draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='red', width=1)
                 
             park_slot_id += 1
-
+    logging.info('done checking')
     img.save('result.jpg')
+    logging.info('saved drawings to result.jpg')
     img.close()
 
     if data:
+        logging.info('check_boxes() -> data')
         return data
     else:
+        logging.info('check_boxes() -> None')
         return None
 
 
 def detect(model, id_):
     if id_ not in [1,2]: return {'status': 'id failed', 'data': None}
+    logging.info('starting detection')
     if get_image():
-        print('successfully updated camera frames')
+        logging.info('status = ok')
         status = 'ok'
     else:
         if os.path.exists(f'img{id_}.jpg'):
-            print('using previous images')
+            logging.info('status = outdated')
             status = 'outdated'
         else:
-            print('previous images not found')
+            logging.info('status = failed')
             status = 'failed'
 
     if status != 'failed':
-        print('detecting')
+        logging.info('starting detection via YOLO')
         results = model(f'img{id_}.jpg', save=False, verbose=False, conf=0.1)
         if results:
-            print('predicted, generating response')
             data = check_boxes(results, id_)
         else:
+            logging.info('no results provided, data is empty')
             data = None
     else:
         data = None
 
+    logging.info('detection end, returned status, data')
     return {'status': status, 'data': data}

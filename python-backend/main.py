@@ -5,6 +5,7 @@ from fastapi.responses import FileResponse
 from HistoryOperations.router import router as history_router
 from auth.router import router as auth_router
 from Detection.router import router as detection_router
+import logging
 
 app = FastAPI(title="URBATON")
 origins = ["*"]
@@ -12,7 +13,7 @@ app.mount("/static", StaticFiles(directory="static/"), name="static")
 app.include_router(history_router)
 app.include_router(auth_router)
 app.include_router(detection_router)
-
+logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 @app.get('/')
 async def home():

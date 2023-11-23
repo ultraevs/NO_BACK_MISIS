@@ -19,9 +19,10 @@ class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    email = Column(String(100))
+    username = Column(String(100))
     password_hash = Column(String(100))
     name = Column(String(100))
+    phone = Column(String(100))
 
 
 Base.metadata.create_all(bind=engine)
