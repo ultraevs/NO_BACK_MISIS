@@ -7,7 +7,6 @@ from parking import current_model
 import logging
 router = APIRouter(tags=["Detection"])
 model = current_model("Detection/segmentation.pt")
-logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 
 @router.post('/test')
