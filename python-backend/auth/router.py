@@ -14,6 +14,7 @@ from auth.manager import ACCESS_TOKEN_EXPIRE_MINUTES, create_access_token, verif
 router = APIRouter(tags=["AUTH"])
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 router.mount("/static", StaticFiles(directory=Path(__file__).parent.parent.absolute() / "static"), name="static")
+router.mount("/static/assets", StaticFiles(directory=Path(__file__).parent.parent.absolute() / "static/assets"), name="static/assets")
 
 
 @router.get('/register')

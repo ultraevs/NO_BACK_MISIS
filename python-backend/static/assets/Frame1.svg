@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Frame">
+<path id="Vector" d="M12 8.8V11.2C12 11.6418 11.6418 12 11.2 12H8.8C8.35817 12 8 11.6418 8 11.2V8.8C8 8.35817 8.35817 8 8.8 8H11.2C11.6418 8 12 8.35817 12 8.8Z" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M8 16H12" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M20 16V20" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M16 24H20" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_5" d="M16 16.0139L16.0125 16" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_6" d="M24 16.0139L24.0125 16" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_7" d="M16 20.0139L16.0125 20" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_8" d="M24 20.0139L24.0125 20" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_9" d="M24 24.0139L24.0125 24" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_10" d="M16 12.0139L16.0125 12" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_11" d="M16 8.01389L16.0125 8" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_12" d="M12 20.8V23.2C12 23.6419 11.6418 24 11.2 24H8.8C8.35817 24 8 23.6419 8 23.2V20.8C8 20.3581 8.35817 20 8.8 20H11.2C11.6418 20 12 20.3581 12 20.8Z" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_13" d="M24 8.8V11.2C24 11.6418 23.6419 12 23.2 12H20.8C20.3581 12 20 11.6418 20 11.2V8.8C20 8.35817 20.3581 8 20.8 8H23.2C23.6419 8 24 8.35817 24 8.8Z" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_14" d="M24 4H28V8" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_15" d="M24 28H28V24" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_16" d="M8 4H4V8" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_17" d="M8 28H4V24" stroke="#0D0D0D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

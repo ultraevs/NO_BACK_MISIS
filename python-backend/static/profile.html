@@ -1,40 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Profile</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        .profile-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        h2 {
-            color: #333;
-        }
-        p {
-            color: #666;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="static/history2.css">
+    <script src="static/history2.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Your Profile</title>
 </head>
+
 <body>
-    <div class="profile-container">
-        <h2>User Profile</h2>
-        <p>User ID: ID</p>
-        <p>Username: NAME</p>
+    <div class="container">
+        <header>
+            <div class="header__left">
+                <img src="static/assets/cat.jpg" alt="">
+            </div>
+            <div class="header__right">
+                <h1>Константин Цой</h1>
+                <div class="right__add">
+                    <a href="#!" class="add__item">
+                        <img src="static/assets/Frame1.svg" alt="">
+                    </a>
+                    <a href="#!" class="add__item">
+                        <img src="static/assets/Frame2.svg" alt="">
+                    </a>
+                    <a href="#!" class="add__item">
+                        <img src="static/assets/Frame3.svg" alt="">
+                    </a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="cards">
+                <!-- <div class="cards__container">
+                    <div class="card">
+                        <img src="./../../assets/card1.png" alt="">
+                    </div>
+                    <div class="card">
+                        <img src="./../../assets/card2.png" alt="">
+                    </div>
+                    <div class="card">
+                        <img src="./../../assets/card3.png" alt="">
+                    </div>
+                </div> -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="static/assets/card1.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="static/assets/card2.png" />
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="static/assets/card4.png" />
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+            <div class="history">
+                <h2 class="title">История</h2>
+                <div class="layer__container">
+                    <div class="layer">
+                        <div id="list">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="back__btn">
+                    <a href="#!">Вернуться</a>
+                </div>
+            </div>
+        </main>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
+
 </html>
