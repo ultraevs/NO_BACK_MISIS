@@ -26,6 +26,6 @@ def verify_token(token):
         payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
     except jwt.PyJWTError:
         raise credentials_exception
-    if payload["username"]is None:
+    if payload["name"]is None:
         raise credentials_exception
     return payload
