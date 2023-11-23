@@ -22,13 +22,25 @@ async function getData() {
         });
         const json = await response.json();
         console.log("Успех:", JSON.stringify(json));
+        if (json.data == "ACCEPT"){
+            window.location = "redirect.html";
+        }
+        else if (json.data == "Нет такого юзера"){
+            alert("Нет такого юзера")
+        }
+        else if (json.data == "Неверный пароль"){
+            alert("Неверный пароль")
+        }
+        
     }
     catch (error) {
         console.error("Ошибка:", error);
     }
+    
 }
 
 button.addEventListener('click', getData)
+
 
 const url_r = 'http://urbaton.ultraevs.ru/register/';
 
@@ -54,6 +66,7 @@ async function postData() {
         });
         const json = await response.json();
         console.log("Успех:", JSON.stringify(json));
+        // window.location = "http://www.google.com";
     }
     catch (error) {
         console.error("Ошибка:", error);
