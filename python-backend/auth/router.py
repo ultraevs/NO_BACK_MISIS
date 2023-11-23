@@ -17,7 +17,7 @@ router.mount("/static", StaticFiles(directory="static"), name="static")
 
 @router.get('/register')
 async def get_register():
-    return FileResponse('static/login.html')
+    return FileResponse('static/sign.html')
 
 
 @router.post("/register")
@@ -37,7 +37,7 @@ def register_user(email: str = Form(...), password: str = Form(...), name: str =
 
 @router.get('/login')
 async def get_login():
-    return FileResponse('static/login.html')
+    return FileResponse('static/index.html')
 
 
 @router.post("/login")
@@ -63,3 +63,8 @@ async def profile(access_token: str = Cookie(None)):
         return FileResponse('static/profile.html')
     except HTTPException:
         return RedirectResponse('/login', status_code=303)
+
+
+@router.get("/forgot")
+async def forgot(email: str = Form(...)):
+    new_password = "new_password123"
