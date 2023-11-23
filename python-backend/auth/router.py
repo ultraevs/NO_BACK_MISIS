@@ -16,7 +16,7 @@ router.mount("/static", StaticFiles(directory="static"), name="static")
 
 
 @router.get('/register')
-async def get_login():
+async def get_register():
     return FileResponse('static/login.html')
 
 
@@ -64,5 +64,4 @@ async def profile(
         data = verify_token(access_token)
         return FileResponse('static/profile.html')
     except HTTPException:
-         return 1
-#        return RedirectResponse('/login', status_code=303)
+        return RedirectResponse('/login', status_code=303)
