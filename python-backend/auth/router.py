@@ -60,16 +60,21 @@ async def get_register():
 @router.post("/register")
 def register_user(email: str = Form(...), password: str = Form(...), name: str = Form(...),
                   session: Session = Depends(get_db)):
-    user = User(email=email, password_hash=pwd_context.hash(password), name=name)
-    session.add(user)
-    session.commit()
-    session.refresh(user)
-    token_data = {"sub": user.id, "name": user.name, "email": user.email}
-    access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
-    access_token = create_access_token(data=token_data, expires_delta=access_token_expires)
-    response = JSONResponse(status_code=200, content={"status": 200, "data": "ACCEPT"})
-    response.set_cookie(key="access_token", value=access_token.decode("utf-8"))
-    return response
+    query = select(User).where(User.email == email)
+    test_user = session.execute(query).scalar()
+    if not test_user:
+        user = User(email=email, password_hash=pwd_context.hash(password), name=name)
+        session.add(user)
+        session.commit()
+        session.refresh(user)
+        token_data = {"sub": user.id, "name": user.name, "email": user.email}
+        access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
+        access_token = create_access_token(data=token_data, expires_delta=access_token_expires)
+        response = JSONResponse(status_code=200, content={"status": 200, "data": "ACCEPT"})
+        response.set_cookie(key="access_token", value=access_token.decode("utf-8"))
+        return response
+    else:
+        return JSONResponse(status_code=422, content={"data": "Уже существует аккаунт"})
 
 
 @router.get('/login')
