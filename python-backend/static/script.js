@@ -4,7 +4,7 @@ const url = 'http://urbaton.ultraevs.ru/login/';
 const button = document.querySelector(".button1");
 
 async function getData() {
- 
+
     let input_email = document.querySelector(".input-field-email").value;
     let input_password = document.querySelector(".input-field-password").value;
 
@@ -12,31 +12,27 @@ async function getData() {
     data.append("email", input_email);
     data.append("password", input_password);
 
-    try {
-        const response = await fetch(url, {
-            method: "POST",
-            body: data,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-        });
-        const json = await response.json();
-        console.log("Успех:", JSON.stringify(json));
-        if (json.data == "ACCEPT"){
-            window.location = "http://urbaton.ultraevs.ru/profile/";
-        }
-        else if (json.data == "Нет такого юзера"){
-            alert("Нет такого юзера")
-        }
-        else if (json.data == "Неверный пароль"){
-            alert("Неверный пароль")
-        }
-        
+    const response = await fetch(url, {
+        method: "POST",
+        body: data,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    });
+
+    const json = await response.json();
+    console.log("Успех:", JSON.stringify(json));
+    if (json.data == "ACCEPT") {
+        window.location = "http://urbaton.ultraevs.ru/profile/";
     }
-    catch (error) {
-        console.error("Ошибка:", error);
+    else if (json.data == "Нет такого юзера") {
+        alert("Нет такого юзера")
     }
-    
+    else if (json.data == "Неверный пароль") {
+        alert("Неверный пароль")
+    }
+
+
 }
 
 button.addEventListener('click', getData)
@@ -56,29 +52,58 @@ async function postData() {
     data.append("email", input_email);
     data.append("password", input_password)
     data.append("name", input_name)
-    try {
-        const response = await fetch(url_r, {
-            method: "POST",
-            body: data,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-            },
-        });
-        const json = await response.json();
-        console.log("Успех:", JSON.stringify(json));
-        if (json.data == "ACCEPT"){
-            window.location = "http://urbaton.ultraevs.ru/profile";
-        }
-        else if (json.data == "Нет такого юзера"){
-            alert("Нет такого юзера")
-        }
-        else if (json.data == "Неверный пароль"){
-            alert("Неверный пароль")
-        }
+
+    const response = await fetch(url_r, {
+        method: "POST",
+        body: data,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    });
+
+    const json = await response.json();
+    console.log("Успех:", JSON.stringify(json));
+    if (json.data == "ACCEPT") {
+        window.location = "http://urbaton.ultraevs.ru/profile";
     }
-    catch (error) {
-        console.error("Ошибка:", error);
+    else if (json.data == "Нет такого юзера") {
+        alert("Нет такого юзера")
     }
+    else if (json.data == "Неверный пароль") {
+        alert("Неверный пароль")
+    }
+
 }
 
 button_r.addEventListener('click', postData)
+
+const url_f = 'http://urbaton.ultraevs.ru/forgot/';
+
+const button_f = document.querySelector(".button4");
+
+async function forgot() {
+
+    let input_email = document.querySelector(".input-field-email").value;
+
+    const data = new URLSearchParams();
+    data.append("email", input_email);
+
+    const response = await fetch(url_f, {
+        method: "POST",
+        body: data,
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    });
+    
+    const json = await response.json();
+    console.log("Успех:", JSON.stringify(json));
+    if (json.data == "Письмо Отправлено") {
+        alert("Письмо отправлено")
+        window.location = "http://urbaton.ultraevs.ru/profile";
+    }
+
+
+}
+
+button_f.addEventListener('click', forgot)

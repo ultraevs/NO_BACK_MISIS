@@ -127,6 +127,22 @@ a{
 
 .button3 {
   margin-bottom: 3em;
+  padding: 0.5rem 0;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  transition: .4s ease-in-out;
+  background-color: #252525;
+  color: white;
+
+  width: 100%;
+
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.button4 {
+  margin-bottom: 3em;
   padding: 0.5rem;
   border-radius: 5px;
   border: none;
@@ -137,6 +153,11 @@ a{
 
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+}
+
+.button4:hover {
+  background-color: green;
+  color: white;
 }
 
 .button3:hover {
