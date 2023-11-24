@@ -4,7 +4,7 @@ import jwt
 from datetime import datetime, timedelta
 SECRET_KEY = "SECRET"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 30
+ACCESS_TOKEN_EXPIRE_MINUTES = 1440
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 

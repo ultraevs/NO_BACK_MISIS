@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, JSON, ARRAY
 from sqlalchemy.orm import declarative_base
 from database import engine
 
@@ -22,6 +22,19 @@ class User(Base):
     email = Column(String(100))
     password_hash = Column(String(100))
     name = Column(String(100))
+
+
+class Test(Base):
+    __tablename__ = 'tests'
+    day = Column(String(10))
+    data = Column(JSON)
+    tokens = Column(ARRAY(String))
+
+
+class Rating(Base):
+    __tablename__ = "ratings"
+    email = Column(String(100))
+    count = Column(Integer)
 
 
 Base.metadata.create_all(bind=engine)

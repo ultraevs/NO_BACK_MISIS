@@ -64,7 +64,7 @@ def register_user(email: str = Form(...), password: str = Form(...), name: str =
     session.add(user)
     session.commit()
     session.refresh(user)
-    token_data = {"sub": user.id, "name": user.name}
+    token_data = {"sub": user.id, "name": user.name, "email": user.email}
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data=token_data, expires_delta=access_token_expires)
     response = JSONResponse(status_code=200, content={"status": 200, "data": "ACCEPT"})
@@ -85,7 +85,7 @@ async def login_user(email: str = Form(...), password: str = Form(...), session:
         return JSONResponse(status_code=401, content={"status": 401, "data": "Нет такого юзера"})
     if not pwd_context.verify(password, user.password_hash):
         return JSONResponse(status_code=401, content={"status": 401, "data": "Неверный пароль"})
-    token_data = {"sub": user.id, "name": user.name}
+    token_data = {"sub": user.id, "name": user.name, "email": user.email}
     access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     access_token = create_access_token(data=token_data, expires_delta=access_token_expires)
     response = JSONResponse(status_code=200, content={"data": "ACCEPT"})
