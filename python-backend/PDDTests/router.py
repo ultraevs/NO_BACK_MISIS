@@ -26,9 +26,11 @@ async def pdd_test(access_token: str = Cookie(None), session: Session = Depends(
     test = session.execute(query).scalar()
     test = dict(test)
     if access_token not in test["tokens"]:
+        test["tokens"][max([i for i in test["tokens"].values]) + 1] = access_token
+        session.commit()
         return JSONResponse(status_code=200,
                             content={"test_name": test["data"]["name"], "test_questions": test["data"]["questions"], "correct_answer": test["data"]["correct"]})
-    elif access_token in test["tokens"]["data"]:
+    elif access_token in test["tokens"].values:
         return JSONResponse(status_code=204, content={"response": "Сегодня тест уже пройден"})
 
 

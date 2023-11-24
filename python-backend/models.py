@@ -24,20 +24,12 @@ class User(Base):
     name = Column(String(100))
 
 
-#class Test(Base):
-#    __tablename__ = 'tests'
-#    id = Column(Integer, primary_key=True)
-#    day = Column(String(10))
-#    data = Column(JSON)
-    
-
-#class Token(Base):
-#    __tablename__ = 'tokens'
-#    id = Column(Integer, primary_key=True)
-#    value = Column(String(100))
-  # Adjust the length as needed
-#    test_id = Column(Integer, ForeignKey('tests.id'))
-#    test = relationship('Test', back_populates='tokens')
+class Test(Base):
+    __tablename__ = 'tests'
+    id = Column(Integer, primary_key=True)
+    day = Column(String(10))
+    data = Column(JSON)
+    tokens = Column(JSON)
 
 
 class Rating(Base):
