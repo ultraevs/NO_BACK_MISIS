@@ -106,5 +106,8 @@ async def profile(access_token: str = Cookie(None)):
 async def forgot(background_tasks: BackgroundTasks, email: str = Form(...), session: Session = Depends(get_db)):
     query = select(User).where(User.email == email)
     user = session.execute(query).scalar()
-    background_tasks.add_task(send_email_forgot, email, "PASSWORD", user.name)
-    return JSONResponse(status_code=200, content="Письмо Отправлено")
+    if user:
+        background_tasks.add_task(send_email_forgot, email, "PASSWORD", user.name)
+        return JSONResponse(status_code=200, content="Письмо Отправлено")
+    else:
+        return JSONResponse(status_code=401, content="No EMAIL")

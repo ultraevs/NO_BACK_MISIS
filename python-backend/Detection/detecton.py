@@ -247,7 +247,7 @@ def detect(model, id_):
 
     if status != 'failed':
         logging.info('starting detection via YOLO')
-        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.1)
+        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.6)
         if results:
             data = check_boxes(results, id_)
         else:

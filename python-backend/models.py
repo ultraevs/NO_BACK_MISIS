@@ -1,5 +1,5 @@
-from sqlalchemy import Column, Integer, String, Float, JSON, ARRAY
-from sqlalchemy.orm import declarative_base
+from sqlalchemy import Column, Integer, String, Float, JSON, ARRAY, ForeignKey
+from sqlalchemy.orm import declarative_base, relationship
 from database import engine
 
 Base = declarative_base()
@@ -24,16 +24,25 @@ class User(Base):
     name = Column(String(100))
 
 
-class Test(Base):
-    __tablename__ = 'tests'
-    day = Column(String(10))
-    data = Column(JSON)
-    tokens = Column(ARRAY(String))
+#class Test(Base):
+#    __tablename__ = 'tests'
+#    id = Column(Integer, primary_key=True)
+#    day = Column(String(10))
+#    data = Column(JSON)
+    
+
+#class Token(Base):
+#    __tablename__ = 'tokens'
+#    id = Column(Integer, primary_key=True)
+#    value = Column(String(100))
+  # Adjust the length as needed
+#    test_id = Column(Integer, ForeignKey('tests.id'))
+#    test = relationship('Test', back_populates='tokens')
 
 
 class Rating(Base):
     __tablename__ = "ratings"
-    email = Column(String(100))
+    email = Column(String(100), primary_key=True)
     count = Column(Integer)
 
 
