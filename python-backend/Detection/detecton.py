@@ -12,6 +12,7 @@ from PIL import Image, ImageDraw
 import shutil
 import logging
 import numpy as np
+import time
 
 def crop_image(image_path, x1, y1, x2, y2, save_path):
     try:
@@ -164,7 +165,7 @@ def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
 
 
-def check_boxes(results, id_, plates_model):
+def check_boxes(results, id_):
     print(os.path.getsize('img3.jpg'))
     logging.info('check_boxes() started')
     parking_slots = {
@@ -197,7 +198,6 @@ def check_boxes(results, id_, plates_model):
     shutil.copy(f'img{id_}.jpg', 'result.jpg')
     logging.info('created result.jpg file')
     img = Image.open('result.jpg')
-    draw = ImageDraw.Draw(img)
     width, height = img.size
     width1, height1 = Image.open(f'img{id_}.jpg').size
     #width1, height1 = width1, height1*2
@@ -214,8 +214,6 @@ def check_boxes(results, id_, plates_model):
             x2, y2 = coord2  # 2 dot coords
 
             point_size = 10
-            draw.ellipse([x1*width - point_size // 2, y1*height - point_size // 2, x1*width + point_size // 2, y1*height + point_size // 2], fill='green')
-            draw.ellipse([x2*width - point_size // 2, y2*height - point_size // 2, x2*width + point_size // 2, y2*height + point_size // 2], fill='green')
 
             # check if 2 dots inside of any box
             for box in boxes:
@@ -227,16 +225,9 @@ def check_boxes(results, id_, plates_model):
                                   x2, y2):
                         t = True
                         data[park_slot_id] = ['occupied', None]
-                        draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='green', width=1)
-                        logging.info('cropping')
-                        crop_image(f'img{id_}.jpg', x1_n, y1_n, x2_n, y2_n, fr'cropped_{id_}_{park_slot_id}.jpg')
-                        plates_results = plates_model(fr'cropped_{id_}_{park_slot_id}.jpg', save=True, verbose=False, conf=0.05)
-                        for plate_result in plates_results:
-                            print(plate_result)
                         break
             if not t:
                 data[park_slot_id] = ['free', False]
-                draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='red', width=1)
                 
             park_slot_id += 1
     logging.info('done checking')
@@ -252,7 +243,91 @@ def check_boxes(results, id_, plates_model):
         return None
 
 
-def detect(model, plates_model, id_):
+def detect(model, id_, is_debug):
+    if is_debug:
+        time.sleep(1)
+        status = 'ok'
+        if id_ == 1:
+            data = {
+                "status": "ok",
+                "data": {
+                    "0": [
+                    "free",
+                    None
+                    ],
+                    "1": [
+                    "free",
+                    None
+                    ],
+                    "2": [
+                    "occupied",
+                    None
+                    ],
+                    "3": [
+                    "free",
+                    None
+                    ],
+                    "4": [
+                    "occupied",
+                    None
+                    ],
+                    "5": [
+                    "occupied",
+                    None
+                    ],
+                    "6": [
+                    "occupied",
+                    None
+                    ],
+                    "7": [
+                    "free",
+                    None
+                    ],
+                    "8": [
+                    "free",
+                    None
+                    ],
+                    "9": [
+                    "free",
+                    None
+                    ]
+                    }
+                }
+        if id_ == 2:
+            data = {
+                "status": "ok",
+                "data": {
+                    "0": [
+                    "occupied",
+                    None
+                    ],
+                    "1": [
+                    "occupied",
+                    None
+                    ],
+                    "2": [
+                    "occupied",
+                    None
+                    ],
+                    "3": [
+                    "occupied",
+                    None
+                    ],
+                    "4": [
+                    "occupied",
+                    None
+                    ],
+                    "5": [
+                    "occupied",
+                    None
+                    ],
+                    "6": [
+                    "occupied",
+                    None
+                    ]
+                }
+                }
+        return {'status': status, 'data': data}
     for i in [1, 2, 3]:
         for ii in range(0, 10):
             try:
@@ -273,9 +348,9 @@ def detect(model, plates_model, id_):
 
     if status != 'failed':
         logging.info('starting detection via YOLO')
-        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.1)
+        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.5)
         if results:
-            data = check_boxes(results, id_, plates_model)
+            data = check_boxes(results, id_)
         else:
             logging.info('no results provided, data is empty')
             data = None

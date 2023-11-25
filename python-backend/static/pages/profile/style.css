@@ -9,6 +9,7 @@ body {
 }
 
 .container {
+    position: relative;
     width: 430px;
     background-color: #E8E8E8;
 }
@@ -63,9 +64,14 @@ main {
 }
 
 .panel {
+    position: absolute;
+    top: 100;
+    left: 0;
+    bottom: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
-    padding: 0.5rem 8rem;
+    padding: 14px 8rem;
 
     border-radius: 0.625rem 0.625rem 0rem 0rem;
     background: #FFF;
