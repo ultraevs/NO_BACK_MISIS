@@ -19,14 +19,13 @@ async function getData() {
             "Content-Type": "application/x-www-form-urlencoded",
         },
     });
-
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "https://urbaton.ultraevs.ru/profile/";
+        window.location = "redirect.html";
     }
     else if (json.data == "Нет такого юзера") {
-        alert("Нет такого юзера")
+        alert("Нет такого пользователя")
     }
     else if (json.data == "Неверный пароль") {
         alert("Неверный пароль")
@@ -60,18 +59,15 @@ async function postData() {
             "Content-Type": "application/x-www-form-urlencoded",
         },
     });
-
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "https://urbaton.ultraevs.ru/profile";
+        window.location = "redirect.html";
     }
-    else if (json.data == "Нет такого юзера") {
-        alert("Нет такого юзера")
+    else if (json.data == "Уже существует аккаунт") {
+        alert("Такой пользователь уже существует")
     }
-    else if (json.data == "Неверный пароль") {
-        alert("Неверный пароль")
-    }
+
 
 }
 
@@ -95,13 +91,13 @@ async function forgot() {
             "Content-Type": "application/x-www-form-urlencoded",
         },
     });
-    
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "Письмо Отправлено") {
         alert("Письмо отправлено")
-        window.location = "https://urbaton.ultraevs.ru/profile";
+        window.location = "redirect.html";
     }
+
 
 
 }

@@ -2,7 +2,7 @@
 
 body{
   min-height: 100vh;
-  background: #212121;
+  background: #858585;
 
   display: flex;
   justify-content: center;
@@ -18,20 +18,21 @@ body{
   padding-left: 2em;
   padding-right: 2em;
   padding-bottom: 0.4em;
-  background-color: #171717;
+  background-color: #FFFFFF;
   border-radius: 25px;
   transition: .4s ease-in-out;
 }
 
+/* 
 .form:hover {
   transform: scale(1.05);
-  border: 1px solid black;
-}
+  border: 1px solid white
+} */
 
 #heading {
   text-align: center;
   margin: 2em;
-  color: rgb(255, 255, 255);
+  color: black;
   font-size: 20px;
 
   font-family: 'Roboto', sans-serif;
@@ -47,16 +48,16 @@ body{
   padding: 0.6em;
   border: none;
   outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
+  color: black;
+  background-color: #EBEBEB;
+  box-shadow: inset 2px 5px 10px rgb(200, 200, 200);
 
 }
 
 .input-icon {
   height: 1.3em;
   width: 1.3em;
-  fill: white;
+  fill: black;
 }
 
 .input-field-email, .input-field-password, .input-field-name {
@@ -64,7 +65,7 @@ body{
   border: none;
   outline: none;
   width: 100%;
-  color: #d3d3d3;
+  color: black;
 
   font-family: 'Roboto', sans-serif;
 }
@@ -94,16 +95,16 @@ a{
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  background-color: #EBEBEB;
+  color: black;
 
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
 .button1:hover {
-  background-color: black;
-  color: white;
+  background-color: rgb(200, 200, 200);
+  color: black;
 }
 
 .button2 {
@@ -113,16 +114,16 @@ a{
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  background-color: #EBEBEB;
+  color: black;
 
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
 .button2:hover {
-  background-color: black;
-  color: white;
+  background-color: rgb(200, 200, 200);
+  color: black;
 }
 
 .button3 {
@@ -132,8 +133,8 @@ a{
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  background-color: #EBEBEB;
+  color: black;
 
   width: 100%;
 
@@ -148,19 +149,19 @@ a{
   border: none;
   outline: none;
   transition: .4s ease-in-out;
-  background-color: #252525;
-  color: white;
+  background-color: #EBEBEB;
+  color: black;
 
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
 
 .button4:hover {
-  background-color: green;
+  background-color: #0057FF;
   color: white;
 }
 
 .button3:hover {
-  background-color: red;
+  background-color: #0057FF;
   color: white;
 }
