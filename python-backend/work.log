@@ -1861,3 +1861,99 @@ mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected 
 2023-11-25 16:47:03,181 - INFO - saved drawings to result.jpg
 2023-11-25 16:47:03,181 - INFO - check_boxes() -> data
 2023-11-25 16:47:03,181 - INFO - detection end, returned status, data
+2023-11-25 16:50:40,104 - INFO - starting detection
+2023-11-25 16:50:40,105 - INFO - starting get_image()
+2023-11-25 16:50:40,105 - INFO - loaded tokens from file
+2023-11-25 16:50:40,268 - INFO - loaded tokens from file
+2023-11-25 16:50:40,871 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=8b6a9c9719ed41df825a6de21fbad1ec
+2023-11-25 16:50:41,682 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=a79271c06f6443ed977dc75627673e77
+2023-11-25 16:50:41,876 - INFO - get_image() -> True
+2023-11-25 16:50:41,877 - INFO - status = ok
+2023-11-25 16:50:41,877 - INFO - starting detection via YOLO
+2023-11-25 16:50:43,186 - INFO - check_boxes() started
+2023-11-25 16:50:43,186 - INFO - got parking coords
+2023-11-25 16:50:43,187 - INFO - created result.jpg file
+2023-11-25 16:50:43,228 - INFO - checking parking slots and cars
+2023-11-25 16:50:43,233 - INFO - cropping
+2023-11-25 16:50:47,210 - INFO - cropping
+2023-11-25 16:50:51,652 - INFO - cropping
+2023-11-25 16:50:56,246 - INFO - cropping
+2023-11-25 16:50:58,741 - INFO - cropping
+2023-11-25 16:51:03,039 - INFO - cropping
+2023-11-25 16:51:05,507 - INFO - cropping
+2023-11-25 16:51:09,079 - INFO - done checking
+2023-11-25 16:51:09,106 - INFO - saved drawings to result.jpg
+2023-11-25 16:51:09,106 - INFO - check_boxes() -> data
+2023-11-25 16:51:09,107 - INFO - detection end, returned status, data
+2023-11-25 17:04:48,449 - INFO - starting detection
+2023-11-25 17:04:48,450 - INFO - starting get_image()
+2023-11-25 17:04:48,450 - INFO - loaded tokens from file
+2023-11-25 17:04:48,604 - INFO - loaded tokens from file
+2023-11-25 17:04:49,216 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=50bd098dedeb4912ab218fe61483572d
+2023-11-25 17:04:50,009 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9ca86b641d38414f889898950317ac27
+2023-11-25 17:04:50,168 - INFO - get_image() -> True
+2023-11-25 17:04:50,174 - INFO - status = ok
+2023-11-25 17:04:50,174 - INFO - starting detection via YOLO
+2023-11-25 17:04:54,036 - INFO - check_boxes() started
+2023-11-25 17:04:54,036 - INFO - got parking coords
+2023-11-25 17:04:54,037 - INFO - created result.jpg file
+2023-11-25 17:04:54,086 - INFO - checking parking slots and cars
+2023-11-25 17:04:54,087 - INFO - cropping
+2023-11-25 17:04:56,639 - INFO - cropping
+2023-11-25 17:04:57,669 - INFO - cropping
+2023-11-25 17:04:58,635 - INFO - cropping
+2023-11-25 17:04:59,472 - INFO - cropping
+2023-11-25 17:05:00,477 - INFO - cropping
+2023-11-25 17:05:01,337 - INFO - cropping
+2023-11-25 17:05:02,390 - INFO - done checking
+2023-11-25 17:05:02,421 - INFO - saved drawings to result.jpg
+2023-11-25 17:05:02,421 - INFO - check_boxes() -> data
+2023-11-25 17:05:02,422 - INFO - detection end, returned status, data
+2023-11-25 17:05:09,300 - INFO - starting detection
+2023-11-25 17:05:09,300 - INFO - starting get_image()
+2023-11-25 17:05:09,301 - INFO - loaded tokens from file
+2023-11-25 17:05:09,442 - INFO - loaded tokens from file
+2023-11-25 17:05:09,981 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=50bd098dedeb4912ab218fe61483572d
+2023-11-25 17:05:10,767 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9ca86b641d38414f889898950317ac27
+2023-11-25 17:05:10,933 - INFO - get_image() -> True
+2023-11-25 17:05:10,934 - INFO - status = ok
+2023-11-25 17:05:10,935 - INFO - starting detection via YOLO
+2023-11-25 17:05:12,168 - INFO - check_boxes() started
+2023-11-25 17:05:12,169 - INFO - got parking coords
+2023-11-25 17:05:12,174 - INFO - created result.jpg file
+2023-11-25 17:05:12,221 - INFO - checking parking slots and cars
+2023-11-25 17:05:12,222 - INFO - cropping
+2023-11-25 17:05:13,181 - INFO - cropping
+2023-11-25 17:05:14,269 - INFO - cropping
+2023-11-25 17:05:15,839 - INFO - cropping
+2023-11-25 17:05:16,976 - INFO - cropping
+2023-11-25 17:05:18,061 - INFO - cropping
+2023-11-25 17:05:18,987 - INFO - cropping
+2023-11-25 17:05:19,813 - INFO - done checking
+2023-11-25 17:05:19,840 - INFO - saved drawings to result.jpg
+2023-11-25 17:05:19,840 - INFO - check_boxes() -> data
+2023-11-25 17:05:19,840 - INFO - detection end, returned status, data
+2023-11-25 17:08:05,743 - INFO - starting detection
+2023-11-25 17:08:05,743 - INFO - starting get_image()
+2023-11-25 17:08:05,743 - INFO - loaded tokens from file
+2023-11-25 17:08:05,880 - INFO - loaded tokens from file
+2023-11-25 17:08:06,490 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=50bd098dedeb4912ab218fe61483572d
+2023-11-25 17:08:07,309 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9ca86b641d38414f889898950317ac27
+2023-11-25 17:08:07,471 - INFO - get_image() -> True
+2023-11-25 17:08:07,475 - INFO - status = ok
+2023-11-25 17:08:07,475 - INFO - starting detection via YOLO
+2023-11-25 17:08:11,295 - INFO - check_boxes() started
+2023-11-25 17:08:11,296 - INFO - got parking coords
+2023-11-25 17:08:11,303 - INFO - created result.jpg file
+2023-11-25 17:08:11,348 - INFO - checking parking slots and cars
+2023-11-25 17:08:11,354 - INFO - cropping
+2023-11-25 17:08:14,148 - INFO - cropping
+2023-11-25 17:08:15,240 - INFO - cropping
+2023-11-25 17:08:16,309 - INFO - cropping
+2023-11-25 17:08:17,237 - INFO - cropping
+2023-11-25 17:08:18,319 - INFO - cropping
+2023-11-25 17:08:19,196 - INFO - cropping
+2023-11-25 17:08:20,061 - INFO - done checking
+2023-11-25 17:08:20,090 - INFO - saved drawings to result.jpg
+2023-11-25 17:08:20,091 - INFO - check_boxes() -> data
+2023-11-25 17:08:20,091 - INFO - detection end, returned status, data

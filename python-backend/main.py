@@ -23,19 +23,19 @@ logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s
 
 @app.get('/')
 async def home(access_token: str = Cookie(None)):
-    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/main/index.html')
+    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/pages/main/index.html')
 
 
 @app.get('/map')
 async def map():
-    FileResponse("/home/NO_BACK_MISIS/python-backend/static/map/map.html")
+    FileResponse("/home/NO_BACK_MISIS/python-backend/static/pages/map/map.html")
 
 
 @app.get('/profile')
 async def profile(access_token: str = Cookie(None)):
     try:
         data = verify_token(access_token)
-        FileResponse('/home/NO_BACK_MISIS/python-backend/static/profile/index.html')
+        FileResponse('/home/NO_BACK_MISIS/python-backend/static/pages/profile/index.html')
     except HTTPException:
         return RedirectResponse('/login', status_code=303)
 
