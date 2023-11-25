@@ -1,27 +1,33 @@
-from fastapi import FastAPI,  Form, Depends, Cookie
+from fastapi import FastAPI,  Form, Depends, Cookie, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 from HistoryOperations.router import router as history_router
 from auth.router import router as auth_router
 from Detection.router import router as detection_router
 from PDDTests.router import router as pdd_router
 import logging
+from auth.manager import verify_token
+
 
 app = FastAPI(title="URBATON")
 origins = ["*"]
 app.mount("/static", StaticFiles(directory="static/"), name="static")
 app.mount("/static/assets", StaticFiles(directory="static/assets"), name="static/assets")
-#app.mount("/runs/segment/predict2", StaticFiles(directory="/runs/segment/predict2"), name="/runs/segment/predict2")
 app.include_router(history_router)
 app.include_router(auth_router)
 app.include_router(detection_router)
 app.include_router(pdd_router)
 logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
+
 @app.get('/')
-async def home():
-    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/profile.html')
+async def home(access_token: str = Cookie(None)):
+    try:
+        data = verify_token(access_token)
+        return FileResponse('/home/NO_BACK_MISIS/python-backend/static/profile.html')
+    except HTTPException:
+        return RedirectResponse('/login', status_code=303)
 
 
 @app.get('/vanya')
