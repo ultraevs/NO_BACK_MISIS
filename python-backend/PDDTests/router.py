@@ -15,23 +15,29 @@ router.mount("/static", StaticFiles(directory="static"), name="static")
 router.mount("/static/tests", StaticFiles(directory="static/tests"), name="static/tests")
 
 
-@router.get('/test')
-async def pdd_test(access_token: str = Cookie(None), session: Session = Depends(get_db)):
-    try:
-        data = verify_token(access_token)
-    except HTTPException:
-        return RedirectResponse('/login', status_code=303)
-    today = datetime.datetime.now().day
-    query = select(Test).where(Test.day == today)
-    test = session.execute(query).scalar()
-    test = dict(test)
-    if access_token not in test["tokens"]:
-        test["tokens"][max([i for i in test["tokens"].values]) + 1] = access_token
-        session.commit()
-        return JSONResponse(status_code=200,
-                            content={"test_name": test["data"]["name"], "test_questions": test["data"]["questions"], "correct_answer": test["data"]["correct"]})
-    elif access_token in test["tokens"].values:
-        return JSONResponse(status_code=204, content={"response": "Сегодня тест уже пройден"})
+# @router.get('/test')
+# async def pdd_test(access_token: str = Cookie(None), session: Session = Depends(get_db)):
+#     try:
+#         data = verify_token(access_token)
+#     except HTTPException:
+#         return RedirectResponse('/login', status_code=303)
+#     today = datetime.datetime.now().day
+#     query = select(Test).where(Test.day == today)
+#     test = session.execute(query).scalar()
+#     test = dict(test)
+#     if access_token not in test["tokens"]:
+#         test["tokens"][max([i for i in test["tokens"].values]) + 1] = access_token
+#         session.commit()
+#         return JSONResponse(status_code=200,
+#                             content={"test_name": test["data"]["name"], "test_questions": test["data"]["questions"], "correct_answer": test["data"]["correct"]})
+#     elif access_token in test["tokens"].values:
+#         return JSONResponse(status_code=204, content={"response": "Сегодня тест уже пройден"})
+@router.get('/tests')
+async def get_tests(access_token: str = Cookie(None), session: Session = Depends(get_db)):
+    data = verify_token(access_token)
+    query = select(Rating).where(Rating.email == data["email"])
+    user_rating = session.execute(query).scalar()
+    return JSONResponse(status_code=200, content={"count": user_rating.count})
 
 
 @router.post('/commit-test')

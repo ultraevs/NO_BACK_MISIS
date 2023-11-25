@@ -24,14 +24,6 @@ class User(Base):
     name = Column(String(100))
 
 
-class Test(Base):
-    __tablename__ = 'tests'
-    id = Column(Integer, primary_key=True)
-    day = Column(String(10))
-    data = Column(JSON)
-    tokens = Column(JSON)
-
-
 class Rating(Base):
     __tablename__ = "ratings"
     email = Column(String(100), primary_key=True)

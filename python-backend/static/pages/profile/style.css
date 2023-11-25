@@ -62,6 +62,50 @@ main {
     align-items: center;
     gap: 1rem;
 }
+.score {
+    position: relative;
+    color: #686868;
+}
+
+.money {
+    position: absolute;
+    bottom: 16px;
+    left: 1.6rem;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: 'Montaga';
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.score_name{
+    position: absolute;
+    bottom: 20px;
+    left: 100px;
+
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.status{
+    border-radius: 0.3125rem;
+    background: #686868;
+    color: #D9D9D9;
+    padding: 0.2rem 1rem;
+
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    position: absolute;
+    top: 14px;
+    right: 90px;
+}
 
 .layer__container {
     margin-top: 20px;

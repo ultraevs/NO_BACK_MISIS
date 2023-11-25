@@ -1,11 +1,3 @@
-// button = document.querySelector(".button1")
-
-// async function back(){
-//     window.location = "redirect.html";
-// }
-
-// button.addEventListener('click', back)
-
 async function getData1(url, data = {}) {
     const response = await fetch(url, {
         method: "GET",
@@ -62,3 +54,23 @@ getData1("https://urbaton.ultraevs.ru/history/", { answer: 42 }).then((data) => 
         ul.appendChild(block);
     }
 });
+
+async function getData2(url, data = {}) {
+    const response = await fetch(url, {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+    });
+    return await response.json();
+}
+
+getData2("https://urbaton.ultraevs.ru/test/", { answer: 42 }).then((data) => {
+    document.querySelector('.money').innerHTML = data.count;
+
+})
