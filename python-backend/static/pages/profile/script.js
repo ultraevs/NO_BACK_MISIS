@@ -70,7 +70,22 @@ async function getData2(url, data = {}) {
     return await response.json();
 }
 
-getData2("https://urbaton.ultraevs.ru/test/", { answer: 42 }).then((data) => {
+getData2("https://urbaton.ultraevs.ru/tests/", { answer: 42 }).then((data) => {
     document.querySelector('.money').innerHTML = data.count;
 
 })
+
+const answer = document.getElementById("value-2")
+const url = 'https://urbaton.ultraevs.ru/commit-test/'
+
+async function postData() {
+    await fetch(url, {
+        method: "POST",
+        body: {},
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    });
+}
+
+answer.addEventListener('click', postData)
