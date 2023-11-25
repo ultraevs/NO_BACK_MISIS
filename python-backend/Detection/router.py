@@ -6,10 +6,11 @@ from Detection.detecton import detect
 from parking import current_model
 import logging
 router = APIRouter(tags=["Detection"])
-model = current_model("Detection/segmentation.pt")
+model = current_model("Detection/cars.pt")
+plates_model = current_model('Detection/plates.pt')
 
 
 @router.post('/test')
 async def test(cam_id: int):
-    answer = detect(model, cam_id)
+    answer = detect(model, plates_model, cam_id)
     return JSONResponse(content=answer)

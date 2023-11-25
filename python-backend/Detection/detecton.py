@@ -11,6 +11,15 @@ import os
 from PIL import Image, ImageDraw
 import shutil
 import logging
+import numpy as np
+
+def crop_image(image_path, x1, y1, x2, y2, save_path):
+    try:
+        image = cv2.imread(image_path)
+        cropped_image = image[y1:y2, x1:x2]
+        cv2.imwrite(save_path, cropped_image)
+    except Exception as e:
+        print(e)
 
 
 def get_tokens():
@@ -125,7 +134,7 @@ def get_image():
         token_2 = lines[1].strip()
     logging.info('loaded tokens from file')
 
-    for i in range(1, 3):
+    for i in [1,2]:
         success = True
         if i == 1:
             token = token_1
@@ -141,6 +150,7 @@ def get_image():
             success = False
             logging.info('failed to get image')
             break
+    
 
     if not success:
         logging.info('get_image() -> False')
@@ -154,7 +164,8 @@ def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
 
 
-def check_boxes(results, id_):
+def check_boxes(results, id_, plates_model):
+    print(os.path.getsize('img3.jpg'))
     logging.info('check_boxes() started')
     parking_slots = {
         1: [((0.02, 0.20), (0.02, 0.20)),
@@ -174,7 +185,9 @@ def check_boxes(results, id_):
             ((0.55, 0.41), (0.56, 0.28)),
             ((0.70, 0.50), (0.70, 0.34)),
             ((0.86, 0.59), (0.83, 0.40)),
-            ((0.97, 0.66), (0.95, 0.50))]
+            ((0.97, 0.66), (0.95, 0.50)) ],
+        
+        3: [((0.50, 0.50), (0.50, 0.50)) ]
     }
 
     coords = parking_slots[id_]
@@ -186,6 +199,8 @@ def check_boxes(results, id_):
     img = Image.open('result.jpg')
     draw = ImageDraw.Draw(img)
     width, height = img.size
+    width1, height1 = Image.open(f'img{id_}.jpg').size
+    #width1, height1 = width1, height1*2
 
     logging.info('checking parking slots and cars')
     for result in results:
@@ -205,16 +220,22 @@ def check_boxes(results, id_):
             # check if 2 dots inside of any box
             for box in boxes:
                 box_x1, box_y1, box_x2, box_y2 = box
-                if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2), x1,
-                              y1):
+                x1_n, y1_n, x2_n, y2_n = int(round(box_x1*width1)), int(round(box_y1*height1)), int(round(box_x2*width1)), int(round(box_y2*height1))
+                if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2), 
+                            x1, y1):
                     if is_in_rect(min(box_x1, box_x2), min(box_y1, box_y2), max(box_x1, box_x2), max(box_y1, box_y2),
                                   x2, y2):
                         t = True
-                        data[park_slot_id] = 'occupied'
+                        data[park_slot_id] = ['occupied', None]
                         draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='green', width=1)
+                        logging.info('cropping')
+                        crop_image(f'img{id_}.jpg', x1_n, y1_n, x2_n, y2_n, fr'cropped_{id_}_{park_slot_id}.jpg')
+                        plates_results = plates_model(fr'cropped_{id_}_{park_slot_id}.jpg', save=True, verbose=False, conf=0.05)
+                        for plate_result in plates_results:
+                            print(plate_result)
                         break
             if not t:
-                data[park_slot_id] = 'free'
+                data[park_slot_id] = ['free', False]
                 draw.rectangle([box_x1*width, box_y1*height, box_x2*width, box_y2*height], outline='red', width=1)
                 
             park_slot_id += 1
@@ -231,8 +252,13 @@ def check_boxes(results, id_):
         return None
 
 
-def detect(model, id_):
-    if id_ not in [1,2]: return {'status': 'id failed', 'data': None}
+def detect(model, plates_model, id_):
+    for i in [1, 2, 3]:
+        for ii in range(0, 10):
+            try:
+                os.remove(f'plate_{i}_{ii}.jpg')
+            except: None
+    if id_ not in [1,2,3]: return {'status': 'id failed', 'data': None}
     logging.info('starting detection')
     if get_image():
         logging.info('status = ok')
@@ -247,9 +273,9 @@ def detect(model, id_):
 
     if status != 'failed':
         logging.info('starting detection via YOLO')
-        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.6)
+        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.1)
         if results:
-            data = check_boxes(results, id_)
+            data = check_boxes(results, id_, plates_model)
         else:
             logging.info('no results provided, data is empty')
             data = None
