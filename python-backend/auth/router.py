@@ -107,6 +107,11 @@ async def profile(access_token: str = Cookie(None)):
         return RedirectResponse('/login', status_code=303)
 
 
+@router.get('/forgot')
+async def get_forgot():
+    return FileResponse("/home/NO_BACK_MISIS/python-backend/static/forgot.html")
+
+
 @router.post("/forgot")
 async def forgot(background_tasks: BackgroundTasks, email: str = Form(...), session: Session = Depends(get_db)):
     query = select(User).where(User.email == email)

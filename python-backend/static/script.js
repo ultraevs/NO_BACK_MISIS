@@ -1,4 +1,4 @@
-const url = 'http://urbaton.ultraevs.ru/login/';
+const url = 'https://urbaton.ultraevs.ru/login/';
 
 
 const button = document.querySelector(".button1");
@@ -23,7 +23,7 @@ async function getData() {
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "http://urbaton.ultraevs.ru/profile/";
+        window.location = "https://urbaton.ultraevs.ru/profile/";
     }
     else if (json.data == "Нет такого юзера") {
         alert("Нет такого юзера")
@@ -38,7 +38,7 @@ async function getData() {
 button.addEventListener('click', getData)
 
 
-const url_r = 'http://urbaton.ultraevs.ru/register/';
+const url_r = 'https://urbaton.ultraevs.ru/register/';
 
 const button_r = document.querySelector(".button2");
 
@@ -64,7 +64,7 @@ async function postData() {
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "http://urbaton.ultraevs.ru/profile";
+        window.location = "https://urbaton.ultraevs.ru/profile";
     }
     else if (json.data == "Нет такого юзера") {
         alert("Нет такого юзера")
@@ -77,7 +77,7 @@ async function postData() {
 
 button_r.addEventListener('click', postData)
 
-const url_f = 'http://urbaton.ultraevs.ru/forgot/';
+const url_f = 'https://urbaton.ultraevs.ru/forgot/';
 
 const button_f = document.querySelector(".button4");
 
@@ -100,7 +100,7 @@ async function forgot() {
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "Письмо Отправлено") {
         alert("Письмо отправлено")
-        window.location = "http://urbaton.ultraevs.ru/profile";
+        window.location = "https://urbaton.ultraevs.ru/profile";
     }
 
 

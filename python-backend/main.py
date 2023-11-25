@@ -12,7 +12,7 @@ app = FastAPI(title="URBATON")
 origins = ["*"]
 app.mount("/static", StaticFiles(directory="static/"), name="static")
 app.mount("/static/assets", StaticFiles(directory="static/assets"), name="static/assets")
-app.mount("/runs/segment/predict2", StaticFiles(directory="/runs/segment/predict2"), name="/runs/segment/predict2")
+#app.mount("/runs/segment/predict2", StaticFiles(directory="/runs/segment/predict2"), name="/runs/segment/predict2")
 app.include_router(history_router)
 app.include_router(auth_router)
 app.include_router(detection_router)
@@ -21,7 +21,7 @@ logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s
 
 @app.get('/')
 async def home():
-    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/main.html')
+    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/profile.html')
 
 
 @app.get('/vanya')
