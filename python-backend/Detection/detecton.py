@@ -256,7 +256,7 @@ def detect(model, plates_model, id_):
     for i in [1, 2, 3]:
         for ii in range(0, 10):
             try:
-                os.remove(f'plate_{i}_{ii}.jpg')
+                os.remove(fr'/home/NO_BACK_MISIS/python-backend/cropped_{i}_{ii}.jpg')
             except: None
     if id_ not in [1,2,3]: return {'status': 'id failed', 'data': None}
     logging.info('starting detection')
