@@ -22,8 +22,9 @@ class OperationModel(BaseModel):
 
 
 @router.get('/history')
-async def get_history(user_id: int, session: Session = Depends(get_db)):
-    query = select(Operations).where(Operations.user_id == user_id)
+async def get_history(access_token: str = Cookie(None), session: Session = Depends(get_db)):
+    data = verify_token(access_token)
+    query = select(Operations).where(Operations.user_id == data["sub"])
     excursion = session.execute(query).scalars()
     return [i for i in excursion]
 
