@@ -76,16 +76,3 @@ getData2("https://urbaton.ultraevs.ru/tests/", { answer: 42 }).then((data) => {
 })
 
 const answer = document.getElementById("value-2")
-const url = 'https://urbaton.ultraevs.ru/commit-test/'
-
-async function postData() {
-    await fetch(url, {
-        method: "POST",
-        body: {},
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-        },
-    });
-}
-
-answer.addEventListener('click', postData)

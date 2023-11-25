@@ -5,3 +5,18 @@ async function back(){
 }
 
 button.addEventListener('click', back)
+
+
+const url = 'https://urbaton.ultraevs.ru/commit-test/'
+
+async function postData() {
+    await fetch(url, {
+        method: "POST",
+        body: {},
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+        },
+    });
+}
+
+answer.addEventListener('click', postData)
