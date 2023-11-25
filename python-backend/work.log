@@ -2360,3 +2360,735 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
     raise errors.get_exception(packet)
 mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 20:54:18,411 - INFO - starting detection
+2023-11-25 20:54:18,411 - INFO - starting get_image()
+2023-11-25 20:54:18,411 - INFO - loaded tokens from file
+2023-11-25 20:54:19,103 - INFO - unsuccessful request, attempting to update tokens
+2023-11-25 20:54:19,103 - INFO - writing tokens to file
+2023-11-25 20:54:19,103 - INFO - get_tokens() started
+2023-11-25 20:54:20,396 - INFO - driver created
+2023-11-25 20:54:21,742 - INFO - waiting for element
+2023-11-25 20:54:23,328 - INFO - driver closed
+2023-11-25 20:54:23,355 - INFO - got token
+2023-11-25 20:54:23,657 - INFO - driver created
+2023-11-25 20:54:24,634 - INFO - waiting for element
+2023-11-25 20:54:26,193 - INFO - driver closed
+2023-11-25 20:54:26,217 - INFO - got token
+2023-11-25 20:54:26,218 - INFO - got tokens: {1: '30609838daf948f6a73a0db92b1f9f72', 2: '946b98999c134bfe86074e4f971f9758'}
+2023-11-25 20:54:26,222 - INFO - update_cfg() -> True
+2023-11-25 20:54:26,222 - INFO - successfully updated tokens
+2023-11-25 20:54:26,223 - INFO - loaded tokens from file
+2023-11-25 20:54:26,721 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 20:54:27,297 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 20:54:27,378 - INFO - get_image() -> True
+2023-11-25 20:54:27,380 - INFO - status = ok
+2023-11-25 20:54:27,380 - INFO - starting detection via YOLO
+2023-11-25 20:54:29,696 - INFO - check_boxes() started
+2023-11-25 20:54:29,696 - INFO - got parking coords
+2023-11-25 20:54:29,698 - INFO - created result.jpg file
+2023-11-25 20:54:29,702 - INFO - checking parking slots and cars
+2023-11-25 20:54:29,704 - INFO - done checking
+2023-11-25 20:54:29,750 - INFO - saved drawings to result.jpg
+2023-11-25 20:54:29,750 - INFO - check_boxes() -> data
+2023-11-25 20:54:29,750 - INFO - detection end, returned status, data
+2023-11-25 20:56:09,125 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 21:24:57,195 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 21:30:30,329 - INFO - starting detection
+2023-11-25 21:30:30,330 - INFO - starting get_image()
+2023-11-25 21:30:30,330 - INFO - loaded tokens from file
+2023-11-25 21:30:30,490 - INFO - loaded tokens from file
+2023-11-25 21:30:30,993 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 21:30:31,578 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 21:30:31,671 - INFO - get_image() -> True
+2023-11-25 21:30:31,673 - INFO - status = ok
+2023-11-25 21:30:31,673 - INFO - starting detection via YOLO
+2023-11-25 21:30:32,884 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 21:30:33,741 - INFO - check_boxes() started
+2023-11-25 21:30:33,742 - INFO - got parking coords
+2023-11-25 21:30:33,742 - INFO - created result.jpg file
+2023-11-25 21:30:33,746 - INFO - checking parking slots and cars
+2023-11-25 21:30:33,746 - INFO - done checking
+2023-11-25 21:30:33,770 - INFO - saved drawings to result.jpg
+2023-11-25 21:30:33,770 - INFO - check_boxes() -> data
+2023-11-25 21:30:33,770 - INFO - detection end, returned status, data
+2023-11-25 21:39:22,811 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 21:39:22,811 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 21:43:57,704 - INFO - starting detection
+2023-11-25 21:43:57,704 - INFO - starting get_image()
+2023-11-25 21:43:57,704 - INFO - loaded tokens from file
+2023-11-25 21:43:57,859 - INFO - loaded tokens from file
+2023-11-25 21:43:58,345 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 21:43:58,937 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 21:43:59,016 - INFO - get_image() -> True
+2023-11-25 21:43:59,018 - INFO - status = ok
+2023-11-25 21:43:59,018 - INFO - starting detection via YOLO
+2023-11-25 21:44:01,061 - INFO - check_boxes() started
+2023-11-25 21:44:01,061 - INFO - got parking coords
+2023-11-25 21:44:01,063 - INFO - created result.jpg file
+2023-11-25 21:44:01,089 - INFO - checking parking slots and cars
+2023-11-25 21:44:01,091 - INFO - cropping
+2023-11-25 21:44:02,882 - INFO - cropping
+2023-11-25 21:44:03,310 - INFO - cropping
+2023-11-25 21:44:03,814 - INFO - cropping
+2023-11-25 21:44:04,290 - INFO - cropping
+2023-11-25 21:44:04,784 - INFO - cropping
+2023-11-25 21:44:05,170 - INFO - cropping
+2023-11-25 21:44:05,569 - INFO - done checking
+2023-11-25 21:44:05,584 - INFO - saved drawings to result.jpg
+2023-11-25 21:44:05,584 - INFO - check_boxes() -> data
+2023-11-25 21:44:05,585 - INFO - detection end, returned status, data
+2023-11-25 21:44:59,583 - INFO - starting detection
+2023-11-25 21:44:59,583 - INFO - starting get_image()
+2023-11-25 21:44:59,583 - INFO - loaded tokens from file
+2023-11-25 21:44:59,753 - INFO - loaded tokens from file
+2023-11-25 21:45:00,242 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 21:45:00,832 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 21:45:00,915 - INFO - get_image() -> True
+2023-11-25 21:45:00,917 - INFO - status = ok
+2023-11-25 21:45:00,917 - INFO - starting detection via YOLO
+2023-11-25 21:45:01,484 - INFO - check_boxes() started
+2023-11-25 21:45:01,485 - INFO - got parking coords
+2023-11-25 21:45:01,485 - INFO - created result.jpg file
+2023-11-25 21:45:01,505 - INFO - checking parking slots and cars
+2023-11-25 21:45:01,506 - INFO - done checking
+2023-11-25 21:45:01,516 - INFO - saved drawings to result.jpg
+2023-11-25 21:45:01,516 - INFO - check_boxes() -> data
+2023-11-25 21:45:01,516 - INFO - detection end, returned status, data
+2023-11-25 21:53:22,882 - INFO - starting detection
+2023-11-25 21:53:22,883 - INFO - starting get_image()
+2023-11-25 21:53:22,883 - INFO - loaded tokens from file
+2023-11-25 21:53:23,039 - INFO - loaded tokens from file
+2023-11-25 21:53:23,516 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 21:53:24,083 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 21:53:24,161 - INFO - get_image() -> True
+2023-11-25 21:53:24,163 - INFO - status = ok
+2023-11-25 21:53:24,163 - INFO - starting detection via YOLO
+2023-11-25 21:53:24,653 - INFO - check_boxes() started
+2023-11-25 21:53:24,653 - INFO - got parking coords
+2023-11-25 21:53:24,655 - INFO - created result.jpg file
+2023-11-25 21:53:24,692 - INFO - checking parking slots and cars
+2023-11-25 21:53:24,693 - INFO - cropping
+2023-11-25 21:53:25,167 - INFO - cropping
+2023-11-25 21:53:25,686 - INFO - cropping
+2023-11-25 21:53:26,135 - INFO - cropping
+2023-11-25 21:53:26,597 - INFO - cropping
+2023-11-25 21:53:27,117 - INFO - cropping
+2023-11-25 21:53:27,588 - INFO - cropping
+2023-11-25 21:53:28,030 - INFO - cropping
+2023-11-25 21:53:28,583 - INFO - cropping
+2023-11-25 21:53:29,154 - INFO - done checking
+2023-11-25 21:53:29,186 - INFO - saved drawings to result.jpg
+2023-11-25 21:53:29,186 - INFO - check_boxes() -> data
+2023-11-25 21:53:29,186 - INFO - detection end, returned status, data
+2023-11-25 21:53:40,610 - INFO - starting detection
+2023-11-25 21:53:40,610 - INFO - starting get_image()
+2023-11-25 21:53:40,610 - INFO - loaded tokens from file
+2023-11-25 21:53:40,743 - INFO - loaded tokens from file
+2023-11-25 21:53:41,227 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=30609838daf948f6a73a0db92b1f9f72
+2023-11-25 21:53:41,789 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=946b98999c134bfe86074e4f971f9758
+2023-11-25 21:53:41,868 - INFO - get_image() -> True
+2023-11-25 21:53:41,869 - INFO - status = ok
+2023-11-25 21:53:41,869 - INFO - starting detection via YOLO
+2023-11-25 21:53:42,267 - INFO - check_boxes() started
+2023-11-25 21:53:42,267 - INFO - got parking coords
+2023-11-25 21:53:42,268 - INFO - created result.jpg file
+2023-11-25 21:53:42,292 - INFO - checking parking slots and cars
+2023-11-25 21:53:42,293 - INFO - cropping
+2023-11-25 21:53:42,750 - INFO - cropping
+2023-11-25 21:53:43,160 - INFO - cropping
+2023-11-25 21:53:43,696 - INFO - cropping
+2023-11-25 21:53:44,198 - INFO - cropping
+2023-11-25 21:53:44,659 - INFO - cropping
+2023-11-25 21:53:45,066 - INFO - cropping
+2023-11-25 21:53:45,465 - INFO - done checking
+2023-11-25 21:53:45,479 - INFO - saved drawings to result.jpg
+2023-11-25 21:53:45,479 - INFO - check_boxes() -> data
+2023-11-25 21:53:45,479 - INFO - detection end, returned status, data
+2023-11-25 22:37:56,545 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 22:38:05,526 - INFO - starting detection
+2023-11-25 22:38:05,526 - INFO - starting get_image()
+2023-11-25 22:38:05,526 - INFO - loaded tokens from file
+2023-11-25 22:38:05,607 - INFO - unsuccessful request, attempting to update tokens
+2023-11-25 22:38:05,607 - INFO - writing tokens to file
+2023-11-25 22:38:05,607 - INFO - get_tokens() started
+2023-11-25 22:38:06,481 - INFO - driver created
+2023-11-25 22:38:08,201 - INFO - waiting for element
+2023-11-25 22:38:09,692 - INFO - driver closed
+2023-11-25 22:38:09,725 - INFO - got token
+2023-11-25 22:38:10,083 - INFO - driver created
+2023-11-25 22:38:11,195 - INFO - waiting for element
+2023-11-25 22:38:12,720 - INFO - driver closed
+2023-11-25 22:38:12,741 - INFO - got token
+2023-11-25 22:38:12,742 - INFO - got tokens: {1: '7b96b39848a940d89ec9e8fd114e7760', 2: 'd4c16357424743a6b7152f1c5a105d70'}
+2023-11-25 22:38:12,748 - INFO - update_cfg() -> True
+2023-11-25 22:38:12,748 - INFO - successfully updated tokens
+2023-11-25 22:38:12,748 - INFO - loaded tokens from file
+2023-11-25 22:38:13,235 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:38:13,793 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:38:13,873 - INFO - get_image() -> True
+2023-11-25 22:38:13,874 - INFO - status = ok
+2023-11-25 22:38:13,874 - INFO - starting detection via YOLO
+2023-11-25 22:38:14,285 - INFO - check_boxes() started
+2023-11-25 22:38:14,285 - INFO - got parking coords
+2023-11-25 22:38:14,286 - INFO - created result.jpg file
+2023-11-25 22:38:14,307 - INFO - checking parking slots and cars
+2023-11-25 22:38:14,307 - INFO - cropping
+2023-11-25 22:38:14,773 - INFO - cropping
+2023-11-25 22:38:15,185 - INFO - cropping
+2023-11-25 22:38:15,663 - INFO - cropping
+2023-11-25 22:38:16,116 - INFO - cropping
+2023-11-25 22:38:16,589 - INFO - cropping
+2023-11-25 22:38:16,953 - INFO - cropping
+2023-11-25 22:38:17,336 - INFO - done checking
+2023-11-25 22:38:17,350 - INFO - saved drawings to result.jpg
+2023-11-25 22:38:17,350 - INFO - check_boxes() -> data
+2023-11-25 22:38:17,351 - INFO - detection end, returned status, data
+2023-11-25 22:38:21,577 - INFO - starting detection
+2023-11-25 22:38:21,577 - INFO - starting get_image()
+2023-11-25 22:38:21,577 - INFO - loaded tokens from file
+2023-11-25 22:38:21,710 - INFO - loaded tokens from file
+2023-11-25 22:38:22,175 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:38:22,724 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:38:22,801 - INFO - get_image() -> True
+2023-11-25 22:38:22,803 - INFO - status = ok
+2023-11-25 22:38:22,803 - INFO - starting detection via YOLO
+2023-11-25 22:38:23,185 - INFO - check_boxes() started
+2023-11-25 22:38:23,185 - INFO - got parking coords
+2023-11-25 22:38:23,186 - INFO - created result.jpg file
+2023-11-25 22:38:23,205 - INFO - checking parking slots and cars
+2023-11-25 22:38:23,206 - INFO - cropping
+2023-11-25 22:38:23,634 - INFO - cropping
+2023-11-25 22:38:24,034 - INFO - cropping
+2023-11-25 22:38:24,522 - INFO - cropping
+2023-11-25 22:38:24,990 - INFO - cropping
+2023-11-25 22:38:25,474 - INFO - cropping
+2023-11-25 22:38:25,835 - INFO - cropping
+2023-11-25 22:38:26,219 - INFO - done checking
+2023-11-25 22:38:26,233 - INFO - saved drawings to result.jpg
+2023-11-25 22:38:26,233 - INFO - check_boxes() -> data
+2023-11-25 22:38:26,233 - INFO - detection end, returned status, data
+2023-11-25 22:38:29,985 - INFO - starting detection
+2023-11-25 22:38:29,986 - INFO - starting get_image()
+2023-11-25 22:38:29,986 - INFO - loaded tokens from file
+2023-11-25 22:38:30,119 - INFO - loaded tokens from file
+2023-11-25 22:38:30,585 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:38:31,139 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:38:31,218 - INFO - get_image() -> True
+2023-11-25 22:38:31,220 - INFO - status = ok
+2023-11-25 22:38:31,220 - INFO - starting detection via YOLO
+2023-11-25 22:38:31,704 - INFO - check_boxes() started
+2023-11-25 22:38:31,704 - INFO - got parking coords
+2023-11-25 22:38:31,706 - INFO - created result.jpg file
+2023-11-25 22:38:31,750 - INFO - checking parking slots and cars
+2023-11-25 22:38:31,751 - INFO - cropping
+2023-11-25 22:38:32,228 - INFO - cropping
+2023-11-25 22:38:32,745 - INFO - cropping
+2023-11-25 22:38:33,185 - INFO - cropping
+2023-11-25 22:38:33,687 - INFO - cropping
+2023-11-25 22:38:34,208 - INFO - cropping
+2023-11-25 22:38:34,689 - INFO - cropping
+2023-11-25 22:38:35,114 - INFO - cropping
+2023-11-25 22:38:35,665 - INFO - cropping
+2023-11-25 22:38:36,191 - INFO - done checking
+2023-11-25 22:38:36,216 - INFO - saved drawings to result.jpg
+2023-11-25 22:38:36,217 - INFO - check_boxes() -> data
+2023-11-25 22:38:36,217 - INFO - detection end, returned status, data
+2023-11-25 22:41:48,896 - INFO - starting detection
+2023-11-25 22:41:48,896 - INFO - starting get_image()
+2023-11-25 22:41:48,896 - INFO - loaded tokens from file
+2023-11-25 22:41:49,048 - INFO - loaded tokens from file
+2023-11-25 22:41:49,530 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:41:50,085 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:41:50,169 - INFO - get_image() -> True
+2023-11-25 22:41:50,170 - INFO - status = ok
+2023-11-25 22:41:50,170 - INFO - starting detection via YOLO
+2023-11-25 22:41:52,297 - INFO - check_boxes() started
+2023-11-25 22:41:52,297 - INFO - got parking coords
+2023-11-25 22:41:52,299 - INFO - created result.jpg file
+2023-11-25 22:41:52,346 - INFO - checking parking slots and cars
+2023-11-25 22:41:52,348 - INFO - cropping
+2023-11-25 22:41:54,163 - INFO - cropping
+2023-11-25 22:41:54,715 - INFO - cropping
+2023-11-25 22:41:55,220 - INFO - cropping
+2023-11-25 22:41:55,754 - INFO - cropping
+2023-11-25 22:41:56,320 - INFO - cropping
+2023-11-25 22:41:56,797 - INFO - cropping
+2023-11-25 22:41:57,274 - INFO - cropping
+2023-11-25 22:41:57,836 - INFO - cropping
+2023-11-25 22:41:58,412 - INFO - done checking
+2023-11-25 22:41:58,443 - INFO - saved drawings to result.jpg
+2023-11-25 22:41:58,443 - INFO - check_boxes() -> data
+2023-11-25 22:41:58,443 - INFO - detection end, returned status, data
+2023-11-25 22:50:56,267 - INFO - starting detection
+2023-11-25 22:50:56,268 - INFO - starting get_image()
+2023-11-25 22:50:56,268 - INFO - loaded tokens from file
+2023-11-25 22:50:56,422 - INFO - loaded tokens from file
+2023-11-25 22:50:56,914 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:50:57,475 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:50:57,563 - INFO - get_image() -> True
+2023-11-25 22:50:57,564 - INFO - status = ok
+2023-11-25 22:50:57,564 - INFO - starting detection via YOLO
+2023-11-25 22:50:58,104 - INFO - check_boxes() started
+2023-11-25 22:50:58,104 - INFO - got parking coords
+2023-11-25 22:50:58,105 - INFO - created result.jpg file
+2023-11-25 22:50:58,119 - INFO - checking parking slots and cars
+2023-11-25 22:50:58,120 - INFO - done checking
+2023-11-25 22:50:58,126 - INFO - saved drawings to result.jpg
+2023-11-25 22:50:58,126 - INFO - check_boxes() -> data
+2023-11-25 22:50:58,126 - INFO - detection end, returned status, data
+2023-11-25 22:53:34,201 - INFO - starting detection
+2023-11-25 22:53:34,201 - INFO - starting get_image()
+2023-11-25 22:53:34,201 - INFO - loaded tokens from file
+2023-11-25 22:53:34,363 - INFO - loaded tokens from file
+2023-11-25 22:53:34,833 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:53:35,371 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:53:35,448 - INFO - get_image() -> True
+2023-11-25 22:53:35,449 - INFO - status = ok
+2023-11-25 22:53:35,449 - INFO - starting detection via YOLO
+2023-11-25 22:53:35,911 - INFO - check_boxes() started
+2023-11-25 22:53:35,911 - INFO - got parking coords
+2023-11-25 22:53:35,911 - INFO - created result.jpg file
+2023-11-25 22:53:35,926 - INFO - checking parking slots and cars
+2023-11-25 22:53:35,927 - INFO - done checking
+2023-11-25 22:53:35,933 - INFO - saved drawings to result.jpg
+2023-11-25 22:53:35,933 - INFO - check_boxes() -> data
+2023-11-25 22:53:35,933 - INFO - detection end, returned status, data
+2023-11-25 22:56:28,568 - INFO - starting detection
+2023-11-25 22:56:28,569 - INFO - starting get_image()
+2023-11-25 22:56:28,569 - INFO - loaded tokens from file
+2023-11-25 22:56:28,720 - INFO - loaded tokens from file
+2023-11-25 22:56:29,192 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 22:56:29,753 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 22:56:29,832 - INFO - get_image() -> True
+2023-11-25 22:56:29,833 - INFO - status = ok
+2023-11-25 22:56:29,833 - INFO - starting detection via YOLO
+2023-11-25 22:56:30,249 - INFO - check_boxes() started
+2023-11-25 22:56:30,250 - INFO - got parking coords
+2023-11-25 22:56:30,251 - INFO - created result.jpg file
+2023-11-25 22:56:30,274 - INFO - checking parking slots and cars
+2023-11-25 22:56:30,274 - INFO - cropping
+2023-11-25 22:56:30,765 - INFO - cropping
+2023-11-25 22:56:31,246 - INFO - cropping
+2023-11-25 22:56:31,743 - INFO - cropping
+2023-11-25 22:56:32,228 - INFO - cropping
+2023-11-25 22:56:32,745 - INFO - cropping
+2023-11-25 22:56:33,142 - INFO - cropping
+2023-11-25 22:56:33,551 - INFO - done checking
+2023-11-25 22:56:33,568 - INFO - saved drawings to result.jpg
+2023-11-25 22:56:33,568 - INFO - check_boxes() -> data
+2023-11-25 22:56:33,568 - INFO - detection end, returned status, data
+2023-11-25 23:00:59,069 - INFO - starting detection
+2023-11-25 23:00:59,070 - INFO - starting get_image()
+2023-11-25 23:00:59,070 - INFO - loaded tokens from file
+2023-11-25 23:00:59,239 - INFO - loaded tokens from file
+2023-11-25 23:00:59,714 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:01:00,258 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:01:00,334 - INFO - get_image() -> True
+2023-11-25 23:01:00,335 - INFO - status = ok
+2023-11-25 23:01:00,335 - INFO - starting detection via YOLO
+2023-11-25 23:01:00,741 - INFO - check_boxes() started
+2023-11-25 23:01:00,741 - INFO - got parking coords
+2023-11-25 23:01:00,742 - INFO - created result.jpg file
+2023-11-25 23:01:00,762 - INFO - checking parking slots and cars
+2023-11-25 23:01:00,763 - INFO - cropping
+2023-11-25 23:01:01,228 - INFO - cropping
+2023-11-25 23:01:01,708 - INFO - cropping
+2023-11-25 23:01:02,242 - INFO - cropping
+2023-11-25 23:01:02,714 - INFO - cropping
+2023-11-25 23:01:03,192 - INFO - cropping
+2023-11-25 23:01:03,569 - INFO - cropping
+2023-11-25 23:01:03,968 - INFO - done checking
+2023-11-25 23:01:03,984 - INFO - saved drawings to result.jpg
+2023-11-25 23:01:03,984 - INFO - check_boxes() -> data
+2023-11-25 23:01:03,984 - INFO - detection end, returned status, data
+2023-11-25 23:09:29,904 - INFO - starting detection
+2023-11-25 23:09:29,905 - INFO - starting get_image()
+2023-11-25 23:09:29,905 - INFO - loaded tokens from file
+2023-11-25 23:09:30,067 - INFO - loaded tokens from file
+2023-11-25 23:09:30,555 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:09:31,141 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:09:31,224 - INFO - get_image() -> True
+2023-11-25 23:09:31,225 - INFO - status = ok
+2023-11-25 23:09:31,225 - INFO - starting detection via YOLO
+2023-11-25 23:09:33,266 - INFO - check_boxes() started
+2023-11-25 23:09:33,266 - INFO - got parking coords
+2023-11-25 23:09:33,269 - INFO - created result.jpg file
+2023-11-25 23:09:33,321 - INFO - checking parking slots and cars
+2023-11-25 23:09:33,323 - INFO - cropping
+2023-11-25 23:09:35,118 - INFO - cropping
+2023-11-25 23:09:35,624 - INFO - cropping
+2023-11-25 23:09:36,057 - INFO - cropping
+2023-11-25 23:09:36,559 - INFO - cropping
+2023-11-25 23:09:37,070 - INFO - cropping
+2023-11-25 23:09:37,556 - INFO - cropping
+2023-11-25 23:09:37,994 - INFO - cropping
+2023-11-25 23:09:38,526 - INFO - cropping
+2023-11-25 23:09:39,077 - INFO - done checking
+2023-11-25 23:09:39,102 - INFO - saved drawings to result.jpg
+2023-11-25 23:09:39,102 - INFO - check_boxes() -> data
+2023-11-25 23:09:39,103 - INFO - detection end, returned status, data
+2023-11-25 23:11:59,143 - INFO - starting detection
+2023-11-25 23:11:59,143 - INFO - starting get_image()
+2023-11-25 23:11:59,143 - INFO - loaded tokens from file
+2023-11-25 23:11:59,295 - INFO - loaded tokens from file
+2023-11-25 23:11:59,761 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:12:00,324 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:12:00,404 - INFO - get_image() -> True
+2023-11-25 23:12:00,405 - INFO - status = ok
+2023-11-25 23:12:00,405 - INFO - starting detection via YOLO
+2023-11-25 23:12:00,805 - INFO - check_boxes() started
+2023-11-25 23:12:00,805 - INFO - got parking coords
+2023-11-25 23:12:00,806 - INFO - created result.jpg file
+2023-11-25 23:12:00,825 - INFO - checking parking slots and cars
+2023-11-25 23:12:00,825 - INFO - cropping
+2023-11-25 23:12:01,267 - INFO - cropping
+2023-11-25 23:12:01,681 - INFO - cropping
+2023-11-25 23:12:02,200 - INFO - cropping
+2023-11-25 23:12:02,675 - INFO - cropping
+2023-11-25 23:12:03,153 - INFO - cropping
+2023-11-25 23:12:03,537 - INFO - cropping
+2023-11-25 23:12:03,929 - INFO - done checking
+2023-11-25 23:12:03,942 - INFO - saved drawings to result.jpg
+2023-11-25 23:12:03,943 - INFO - check_boxes() -> data
+2023-11-25 23:12:03,943 - INFO - detection end, returned status, data
+2023-11-25 23:18:53,418 - INFO - starting detection
+2023-11-25 23:18:53,418 - INFO - starting get_image()
+2023-11-25 23:18:53,418 - INFO - loaded tokens from file
+2023-11-25 23:18:53,571 - INFO - loaded tokens from file
+2023-11-25 23:18:54,059 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:18:54,637 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:18:54,717 - INFO - get_image() -> True
+2023-11-25 23:18:54,718 - INFO - status = ok
+2023-11-25 23:18:54,718 - INFO - starting detection via YOLO
+2023-11-25 23:18:55,218 - INFO - check_boxes() started
+2023-11-25 23:18:55,218 - INFO - got parking coords
+2023-11-25 23:18:55,219 - INFO - created result.jpg file
+2023-11-25 23:18:55,233 - INFO - checking parking slots and cars
+2023-11-25 23:18:55,234 - INFO - done checking
+2023-11-25 23:18:55,241 - INFO - saved drawings to result.jpg
+2023-11-25 23:18:55,241 - INFO - check_boxes() -> data
+2023-11-25 23:18:55,241 - INFO - detection end, returned status, data
+2023-11-25 23:37:31,584 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 23:37:31,585 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-25 23:39:18,355 - INFO - starting detection
+2023-11-25 23:39:18,355 - INFO - starting get_image()
+2023-11-25 23:39:18,356 - INFO - loaded tokens from file
+2023-11-25 23:39:18,520 - INFO - loaded tokens from file
+2023-11-25 23:39:19,013 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:39:19,586 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:39:19,664 - INFO - get_image() -> True
+2023-11-25 23:39:19,666 - INFO - status = ok
+2023-11-25 23:39:19,666 - INFO - starting detection via YOLO
+2023-11-25 23:39:21,715 - INFO - check_boxes() started
+2023-11-25 23:39:21,715 - INFO - got parking coords
+2023-11-25 23:39:21,718 - INFO - created result.jpg file
+2023-11-25 23:39:21,721 - INFO - checking parking slots and cars
+2023-11-25 23:39:21,721 - INFO - cropping
+2023-11-25 23:39:21,792 - INFO - cropping
+2023-11-25 23:39:21,857 - INFO - cropping
+2023-11-25 23:39:21,922 - INFO - cropping
+2023-11-25 23:39:21,988 - INFO - cropping
+2023-11-25 23:39:22,052 - INFO - cropping
+2023-11-25 23:39:22,117 - INFO - cropping
+2023-11-25 23:39:22,184 - INFO - cropping
+2023-11-25 23:39:22,248 - INFO - done checking
+2023-11-25 23:39:22,335 - INFO - saved drawings to result.jpg
+2023-11-25 23:39:22,336 - INFO - check_boxes() -> data
+2023-11-25 23:39:22,336 - INFO - detection end, returned status, data
+2023-11-25 23:39:24,429 - INFO - starting detection
+2023-11-25 23:39:24,429 - INFO - starting get_image()
+2023-11-25 23:39:24,429 - INFO - loaded tokens from file
+2023-11-25 23:39:24,563 - INFO - loaded tokens from file
+2023-11-25 23:39:25,045 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:39:25,587 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:39:25,662 - INFO - get_image() -> True
+2023-11-25 23:39:25,663 - INFO - status = ok
+2023-11-25 23:39:25,663 - INFO - starting detection via YOLO
+2023-11-25 23:39:26,142 - INFO - check_boxes() started
+2023-11-25 23:39:26,142 - INFO - got parking coords
+2023-11-25 23:39:26,144 - INFO - created result.jpg file
+2023-11-25 23:39:26,144 - INFO - checking parking slots and cars
+2023-11-25 23:39:26,145 - INFO - cropping
+2023-11-25 23:39:26,205 - INFO - cropping
+2023-11-25 23:39:26,273 - INFO - cropping
+2023-11-25 23:39:26,337 - INFO - cropping
+2023-11-25 23:39:26,409 - INFO - cropping
+2023-11-25 23:39:26,472 - INFO - cropping
+2023-11-25 23:39:26,534 - INFO - cropping
+2023-11-25 23:39:26,596 - INFO - cropping
+2023-11-25 23:39:26,661 - INFO - cropping
+2023-11-25 23:39:26,725 - INFO - done checking
+2023-11-25 23:39:26,800 - INFO - saved drawings to result.jpg
+2023-11-25 23:39:26,801 - INFO - check_boxes() -> data
+2023-11-25 23:39:26,801 - INFO - detection end, returned status, data
+2023-11-25 23:39:31,172 - INFO - starting detection
+2023-11-25 23:39:31,172 - INFO - starting get_image()
+2023-11-25 23:39:31,172 - INFO - loaded tokens from file
+2023-11-25 23:39:31,306 - INFO - loaded tokens from file
+2023-11-25 23:39:31,774 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:39:32,329 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:39:32,404 - INFO - get_image() -> True
+2023-11-25 23:39:32,405 - INFO - status = ok
+2023-11-25 23:39:32,405 - INFO - starting detection via YOLO
+2023-11-25 23:39:32,885 - INFO - check_boxes() started
+2023-11-25 23:39:32,885 - INFO - got parking coords
+2023-11-25 23:39:32,887 - INFO - created result.jpg file
+2023-11-25 23:39:32,887 - INFO - checking parking slots and cars
+2023-11-25 23:39:32,888 - INFO - cropping
+2023-11-25 23:39:32,954 - INFO - cropping
+2023-11-25 23:39:33,016 - INFO - cropping
+2023-11-25 23:39:33,078 - INFO - cropping
+2023-11-25 23:39:33,142 - INFO - cropping
+2023-11-25 23:39:33,203 - INFO - cropping
+2023-11-25 23:39:33,267 - INFO - cropping
+2023-11-25 23:39:33,329 - INFO - cropping
+2023-11-25 23:39:33,390 - INFO - done checking
+2023-11-25 23:39:33,468 - INFO - saved drawings to result.jpg
+2023-11-25 23:39:33,469 - INFO - check_boxes() -> data
+2023-11-25 23:39:33,469 - INFO - detection end, returned status, data
+2023-11-25 23:39:35,433 - INFO - starting detection
+2023-11-25 23:39:35,434 - INFO - starting get_image()
+2023-11-25 23:39:35,434 - INFO - loaded tokens from file
+2023-11-25 23:39:35,567 - INFO - loaded tokens from file
+2023-11-25 23:39:36,047 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:39:36,606 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:39:36,683 - INFO - get_image() -> True
+2023-11-25 23:39:36,684 - INFO - status = ok
+2023-11-25 23:39:36,684 - INFO - starting detection via YOLO
+2023-11-25 23:39:37,057 - INFO - check_boxes() started
+2023-11-25 23:39:37,057 - INFO - got parking coords
+2023-11-25 23:39:37,058 - INFO - created result.jpg file
+2023-11-25 23:39:37,059 - INFO - checking parking slots and cars
+2023-11-25 23:39:37,059 - INFO - cropping
+2023-11-25 23:39:37,095 - INFO - cropping
+2023-11-25 23:39:37,127 - INFO - cropping
+2023-11-25 23:39:37,160 - INFO - cropping
+2023-11-25 23:39:37,193 - INFO - cropping
+2023-11-25 23:39:37,226 - INFO - cropping
+2023-11-25 23:39:37,260 - INFO - cropping
+2023-11-25 23:39:37,293 - INFO - done checking
+2023-11-25 23:39:37,332 - INFO - saved drawings to result.jpg
+2023-11-25 23:39:37,332 - INFO - check_boxes() -> data
+2023-11-25 23:39:37,332 - INFO - detection end, returned status, data
+2023-11-25 23:39:41,030 - INFO - starting detection
+2023-11-25 23:39:41,030 - INFO - starting get_image()
+2023-11-25 23:39:41,030 - INFO - loaded tokens from file
+2023-11-25 23:39:41,164 - INFO - loaded tokens from file
+2023-11-25 23:39:41,634 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:39:42,183 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:39:42,262 - INFO - get_image() -> True
+2023-11-25 23:39:42,263 - INFO - status = ok
+2023-11-25 23:39:42,263 - INFO - starting detection via YOLO
+2023-11-25 23:39:42,733 - INFO - check_boxes() started
+2023-11-25 23:39:42,733 - INFO - got parking coords
+2023-11-25 23:39:42,733 - INFO - created result.jpg file
+2023-11-25 23:47:20,054 - INFO - starting detection
+2023-11-25 23:47:20,054 - INFO - starting get_image()
+2023-11-25 23:47:20,054 - INFO - loaded tokens from file
+2023-11-25 23:47:20,211 - INFO - loaded tokens from file
+2023-11-25 23:47:20,694 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=7b96b39848a940d89ec9e8fd114e7760
+2023-11-25 23:47:21,282 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=d4c16357424743a6b7152f1c5a105d70
+2023-11-25 23:47:21,359 - INFO - get_image() -> True
+2023-11-25 23:47:21,360 - INFO - status = ok
+2023-11-25 23:47:21,361 - INFO - starting detection via YOLO
+2023-11-25 23:47:23,368 - INFO - check_boxes() started
+2023-11-25 23:47:23,368 - INFO - got parking coords
+2023-11-25 23:47:23,369 - INFO - created result.jpg file
+2023-11-25 23:47:27,424 - INFO - checking parking slots and cars
+2023-11-25 23:47:27,424 - INFO - done checking
+2023-11-25 23:47:27,445 - INFO - saved drawings to result.jpg
+2023-11-25 23:47:27,445 - INFO - check_boxes() -> data
+2023-11-25 23:47:27,446 - INFO - detection end, returned status, data
+2023-11-26 00:27:21,812 - INFO - starting detection
+2023-11-26 00:27:21,812 - INFO - starting get_image()
+2023-11-26 00:27:21,812 - INFO - loaded tokens from file
+2023-11-26 00:27:21,891 - INFO - unsuccessful request, attempting to update tokens
+2023-11-26 00:27:21,891 - INFO - writing tokens to file
+2023-11-26 00:27:21,891 - INFO - get_tokens() started
+2023-11-26 00:27:22,757 - INFO - driver created
+2023-11-26 00:27:24,165 - INFO - waiting for element
+2023-11-26 00:27:25,392 - INFO - driver closed
+2023-11-26 00:27:25,416 - INFO - got token
+2023-11-26 00:27:25,740 - INFO - driver created
+2023-11-26 00:27:26,852 - INFO - waiting for element
+2023-11-26 00:27:28,400 - INFO - driver closed
+2023-11-26 00:27:28,423 - INFO - got token
+2023-11-26 00:27:28,423 - INFO - got tokens: {1: '0de358725e16464c83ae3f3b4ae6e0b5', 2: 'b6835811064e4106a8539bbe647b3443'}
+2023-11-26 00:27:28,428 - INFO - update_cfg() -> True
+2023-11-26 00:27:28,429 - INFO - successfully updated tokens
+2023-11-26 00:27:28,429 - INFO - loaded tokens from file
+2023-11-26 00:27:28,925 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=0de358725e16464c83ae3f3b4ae6e0b5
+2023-11-26 00:27:29,482 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=b6835811064e4106a8539bbe647b3443
+2023-11-26 00:27:29,565 - INFO - get_image() -> True
+2023-11-26 00:27:29,567 - INFO - status = ok
+2023-11-26 00:27:29,567 - INFO - starting detection via YOLO
+2023-11-26 00:27:31,620 - INFO - check_boxes() started
+2023-11-26 00:27:31,620 - INFO - got parking coords
+2023-11-26 00:27:31,621 - INFO - created result.jpg file
+2023-11-26 00:27:35,796 - INFO - checking parking slots and cars
+2023-11-26 00:27:35,796 - INFO - done checking
+2023-11-26 00:27:35,816 - INFO - saved drawings to result.jpg
+2023-11-26 00:27:35,817 - INFO - check_boxes() -> data
+2023-11-26 00:27:35,817 - INFO - detection end, returned status, data
+2023-11-26 00:54:21,709 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 00:54:21,710 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.

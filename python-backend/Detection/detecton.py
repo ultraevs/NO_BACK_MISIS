@@ -12,7 +12,6 @@ from PIL import Image, ImageDraw
 import shutil
 import logging
 import numpy as np
-import time
 
 def crop_image(image_path, x1, y1, x2, y2, save_path):
     try:
@@ -165,7 +164,7 @@ def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
 
 
-def check_boxes(results, id_):
+def check_boxes(results, id_, plates_model):
     print(os.path.getsize('img3.jpg'))
     logging.info('check_boxes() started')
     parking_slots = {
@@ -188,7 +187,9 @@ def check_boxes(results, id_):
             ((0.86, 0.59), (0.83, 0.40)),
             ((0.97, 0.66), (0.95, 0.50)) ],
         
-        3: [((0.50, 0.50), (0.50, 0.50)) ]
+        3: [((0.50, 0.50), (0.50, 0.50)),
+            
+            ]
     }
 
     coords = parking_slots[id_]
@@ -198,9 +199,24 @@ def check_boxes(results, id_):
     shutil.copy(f'img{id_}.jpg', 'result.jpg')
     logging.info('created result.jpg file')
     img = Image.open('result.jpg')
-    width, height = img.size
     width1, height1 = Image.open(f'img{id_}.jpg').size
     #width1, height1 = width1, height1*2
+
+    # detect numbers only for camera 3
+    if id_ == 3:
+        for i in range(7):
+            data[i] = ['occupied', None]
+            # detect number on each img in folder
+            results = plates_model(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/cropped_3_{i}.jpg', save=True, verbose=False, conf=0.4)
+            for result in results:
+                plate_boxes = result.boxes.xyxyn.tolist()
+
+                cropped_3_w, cropped_3_h = Image.open(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/cropped_3_{i}.jpg').size
+                for plate_box in plate_boxes:
+                    plate_x1, plate_y1, plate_x2, plate_y2 = plate_box
+                    plate_x1_n, plate_y1_n, plate_x2_n, plate_y2_n = int(round(plate_x1*cropped_3_w)), int(round(plate_y1*cropped_3_h)), int(round(plate_x2*cropped_3_w)), int(round(plate_y2*cropped_3_h))
+                    crop_image(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/cropped_3_{i}.jpg', plate_x1_n, plate_y1_n, plate_x2_n, plate_y2_n, f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
+
 
     logging.info('checking parking slots and cars')
     for result in results:
@@ -225,6 +241,16 @@ def check_boxes(results, id_):
                                   x2, y2):
                         t = True
                         data[park_slot_id] = ['occupied', None]
+                        logging.info('cropping')
+                        crop_image(f'img{id_}.jpg', x1_n, y1_n, x2_n, y2_n, fr'cropped_{id_}_{park_slot_id}.jpg')
+                        # plates_results = plates_model(fr'cropped_{id_}_{park_slot_id}.jpg', save=True, verbose=False, conf=0.05)
+                        # for plate_result in plates_results:
+                        #     plate_boxes = plate_result.boxes.xyxyn.tolist()
+                        #     for plate_box in plate_boxes:
+                        #         pbox_x1, pbox_y1, pbox_x2, pbox_y2 = plate_box
+                        #         pwidth1, pheight1 = Image.open(f'cropped_{id_}_{park_slot_id}.jpg').size
+                        #         px1_n, py1_n, px2_n, py2_n = int(round(pbox_x1*pwidth1)), int(round(pbox_y1*pheight1)), int(round(pbox_x2*pwidth1)), int(round(pbox_y2*pheight1))
+                        #         crop_image(f'cropped_{id_}_{park_slot_id}.jpg', px1_n, py1_n, px2_n, py2_n, fr'plate_cropped_{id_}_{park_slot_id}.jpg')
                         break
             if not t:
                 data[park_slot_id] = ['free', False]
@@ -243,95 +269,13 @@ def check_boxes(results, id_):
         return None
 
 
-def detect(model, id_, is_debug):
-    if is_debug:
-        time.sleep(1)
-        status = 'ok'
-        if id_ == 1:
-            data = {
-                "status": "ok",
-                "data": {
-                    "0": [
-                    "free",
-                    None
-                    ],
-                    "1": [
-                    "free",
-                    None
-                    ],
-                    "2": [
-                    "occupied",
-                    None
-                    ],
-                    "3": [
-                    "free",
-                    None
-                    ],
-                    "4": [
-                    "occupied",
-                    None
-                    ],
-                    "5": [
-                    "occupied",
-                    None
-                    ],
-                    "6": [
-                    "occupied",
-                    None
-                    ],
-                    "7": [
-                    "free",
-                    None
-                    ],
-                    "8": [
-                    "free",
-                    None
-                    ],
-                    "9": [
-                    "free",
-                    None
-                    ]
-                    }
-                }
-        if id_ == 2:
-            data = {
-                "status": "ok",
-                "data": {
-                    "0": [
-                    "occupied",
-                    None
-                    ],
-                    "1": [
-                    "occupied",
-                    None
-                    ],
-                    "2": [
-                    "occupied",
-                    None
-                    ],
-                    "3": [
-                    "occupied",
-                    None
-                    ],
-                    "4": [
-                    "occupied",
-                    None
-                    ],
-                    "5": [
-                    "occupied",
-                    None
-                    ],
-                    "6": [
-                    "occupied",
-                    None
-                    ]
-                }
-                }
-        return {'status': status, 'data': data}
+def detect(model, plates_model, id_):
     for i in [1, 2, 3]:
         for ii in range(0, 10):
             try:
                 os.remove(fr'/home/NO_BACK_MISIS/python-backend/cropped_{i}_{ii}.jpg')
+                os.remove(fr'/home/NO_BACK_MISIS/python-backend/plate_cropped_{i}_{ii}.jpg')
+                os.remove(fr'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
             except: None
     if id_ not in [1,2,3]: return {'status': 'id failed', 'data': None}
     logging.info('starting detection')
@@ -348,9 +292,9 @@ def detect(model, id_, is_debug):
 
     if status != 'failed':
         logging.info('starting detection via YOLO')
-        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.5)
+        results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.3)
         if results:
-            data = check_boxes(results, id_)
+            data = check_boxes(results, id_, plates_model)
         else:
             logging.info('no results provided, data is empty')
             data = None
