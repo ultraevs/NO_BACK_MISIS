@@ -22,7 +22,7 @@ async function getData() {
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "redirect.html";
+        window.location = "/";
     }
     else if (json.data == "Нет такого юзера") {
         alert("Нет такого пользователя")
@@ -62,7 +62,7 @@ async function postData() {
     const json = await response.json();
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "ACCEPT") {
-        window.location = "redirect.html";
+        window.location = "/";
     }
     else if (json.data == "Уже существует аккаунт") {
         alert("Такой пользователь уже существует")
@@ -95,7 +95,7 @@ async function forgot() {
     console.log("Успех:", JSON.stringify(json));
     if (json.data == "Письмо Отправлено") {
         alert("Письмо отправлено")
-        window.location = "redirect.html";
+        window.location = "/login";
     }
 
 
