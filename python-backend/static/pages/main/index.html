@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/pages/main/main.css">
+    <script src="/static/pages/main/script.js" defer></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Main</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <nav class="header__nav">
+                <a href="/static/pages/profile/index.html" class="nav__person">
+                    <img src="/static/assets/person.jpg" alt="personImg">
+                    <div class="person__name">
+                        <p>Константин</p>
+                        <img src="/static/assets/arrow.svg" alt="arrowImg">
+                    </div>
+                </a>
+                <div class="nav__money">
+                    <img src="/static/assets/money.svg" alt="personMoney">
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class="search">
+                <div class="search__box">
+                    <div class="box__row">
+                        <button><i class='bx bx-search'></i></button>
+                        <input type="text" id="input-box" placeholder="Найти парковку" autocomplete="off">
+                    </div>
+                    <div class="box__result"></div>
+                </div>
+            </div>
+            <div class="last">
+                <p class="last__title title">Последние</p>
+                <div class="last__cards">
+                    <div class="last__card">
+                        <img src="/static/assets/Kurski.jpg" alt="lastParkingImg">
+                        <p class="card__title">Курский Вокзал</p>
+                        <p class="card__adress">Улица Земляной Вал</p>
+                        <p class="card__price">150₽/час</p>
+                    </div>
+                    <div class="last__card">
+                        <img src="/static/assets/Kurski.jpg" alt="lastParkingImg">
+                        <p class="card__title">Курский Вокзал</p>
+                        <p class="card__adress">Улица Земляной Вал</p>
+                        <p class="card__price">150₽/час</p>
+                    </div>
+                    <div class="last__card">
+                        <img src="/static/assets/Kurski.jpg" alt="lastParkingImg">
+                        <p class="card__title">Курский Вокзал</p>
+                        <p class="card__adress">Улица Земляной Вал</p>
+                        <p class="card__price">150₽/час</p>
+                    </div>
+                    <div class="last__card">
+                        <img src="/static/assets/Kurski.jpg" alt="lastParkingImg">
+                        <p class="card__title">Курский Вокзал</p>
+                        <p class="card__adress">Улица Земляной Вал</p>
+                        <p class="card__price">150₽/час</p>
+                    </div>
+                </div>
+            </div>
+            <div class="favourites">
+                <p class="title">Избранные Парковки</p>
+                <div class="favourites__places">
+                    <div class="favourites__place">
+                        <div class="place__text">
+                            <p class="place__title">НИТУ МИСИС</p>
+                            <p class="place__adress">Метро Октябрьская</p>
+                            <div class="place__info">
+                                <span class="info__free">4 свободно</span>
+                                <div class="info__charge">
+                                    <img src="/static/assets/Charge.svg" alt="chargeImg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place__img">
+                            <img src="/static/assets/NUST MISIS.jpg" alt="placeimg">
+                        </div>
+                    </div>
+                    <div class="favourites__place">
+                        <div class="place__text">
+                            <p class="place__title">НИТУ МИСИС</p>
+                            <p class="place__adress">Метро Октябрьская</p>
+                            <div class="place__info">
+                                <span class="info__free">4 свободно</span>
+                                <div class="info__charge">
+                                    <img src="/static/assets/Charge.svg" alt="chargeImg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place__img">
+                            <img src="/static/assets/NUST MISIS.jpg" alt="placeimg">
+                        </div>
+                    </div>
+                    <div class="favourites__place">
+                        <div class="place__text">
+                            <p class="place__title">НИТУ МИСИС</p>
+                            <p class="place__adress">Метро Октябрьская</p>
+                            <div class="place__info">
+                                <span class="info__free">4 свободно</span>
+                                <div class="info__charge">
+                                    <img src="/static/assets/Charge.svg" alt="chargeImg">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="place__img">
+                            <img src="/static/assets/NUST MISIS.jpg" alt="placeimg">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <nav class="footer__nav">
+                <a href="#!"><i class='bx bx-home-alt-2 activeIcon'></i></a>
+                <a href="/static/pages/map/map.html"><i class='bx bx-map-alt non-activeIcon'></i></a>
+            </nav>
+        </footer>
+    </div>
+</body>
+
+</html>

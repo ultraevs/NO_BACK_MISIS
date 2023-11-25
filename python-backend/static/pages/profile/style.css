@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.container {
+    width: 430px;
+    background-color: #E8E8E8;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 48px 28px 26px 28px;
+}
+
+header a {
+    cursor: pointer;
+}
+
+.account {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.account p {
+    font-weight: 500;
+}
+
+header button {
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 0.5rem;
+    width: 6.25rem;
+    height: 1.875rem;
+
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 1.25rem 1.25rem 0rem 0rem;
+    background: #FFF;
+}
+
+.info {
+    padding: 2rem;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.panel {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 8rem;
+
+    border-radius: 0.625rem 0.625rem 0rem 0rem;
+    background: #FFF;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px -2px 2px 0px rgba(0, 0, 0, 0.04), 0px -4px 3px 0px rgba(0, 0, 0, 0.02), 0px -8px 3px 0px rgba(0, 0, 0, 0.01), 0px -12px 3px 0px rgba(0, 0, 0, 0.00);
+}
+
+.panel a i {
+    cursor: pointer;
+    font-size: 24px;
+    color: #858585;
+}
+
+.panel a {
+    text-decoration: none;
+}
