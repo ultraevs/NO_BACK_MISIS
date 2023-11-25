@@ -24,6 +24,11 @@ body {
     margin: 46px 28px 0 28px;
 }
 
+.links {
+    display: flex;
+    gap: 1rem;
+}
+
 .header__nav {
     display: flex;
     flex-direction: row;
@@ -67,7 +72,7 @@ body {
     margin-top: 3px;
 }
 
-.nav__money {
+.nav__money, .nav__coins {
     padding: 9px;
     border-radius: 10px;
     background-color: white;
@@ -76,7 +81,7 @@ body {
     align-items: center;
 }
 
-.nav__money img {
+.nav__money img, .nav__coins img {
     width: 24px;
     height: 24px;
 }
