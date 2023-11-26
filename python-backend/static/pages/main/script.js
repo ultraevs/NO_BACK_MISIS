@@ -1,5 +1,10 @@
 let availableKeywords = [
-        " ",    "",    "",    " ",    " ",    "  ",
+    "Ельцин Центр",
+    "Высоцкий",
+    "Отель",
+    "Парк Маяковского",
+    "ТРЦ Гринвич",
+    "Парк Зеленая роща",
 ];
 
 const resultBox = document.querySelector(".box__result");
