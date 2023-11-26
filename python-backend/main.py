@@ -40,9 +40,9 @@ async def profile(access_token: str = Cookie(None)):
         return RedirectResponse('/login', status_code=303)
 
 
-@app.post('/payment')
-async def payments(access_token: str = Cookie(None), cam_id : str = Form(...), time: str = Form(...)):
-    pass
+@app.get('/payment')
+async def payments():
+    return FileResponse("/home/NO_BACK_MISIS/python-backend/static/pages/success/success.html")
 
 
 @app.get('/vanya')
