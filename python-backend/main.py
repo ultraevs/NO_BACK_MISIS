@@ -61,7 +61,7 @@ async def res():
 
 @app.exception_handler(404)
 async def custom_404(_, __):
-    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/404.html')
+    return JSONResponse(status=404)
 
 
 @app.get('/name')
