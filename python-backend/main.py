@@ -23,7 +23,11 @@ logging.basicConfig(filename='work.log', level=logging.INFO, format='%(asctime)s
 
 @app.get('/')
 async def home(access_token: str = Cookie(None)):
-    return FileResponse('/home/NO_BACK_MISIS/python-backend/static/pages/main/index.html')
+    try:
+        data = verify_token(access_token)
+        FileResponse('/home/NO_BACK_MISIS/python-backend/static/pages/main/index.html')
+    except HTTPException:
+        return RedirectResponse('/login', status_code=303)
 
 
 @app.get('/map')
