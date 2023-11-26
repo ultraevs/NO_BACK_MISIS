@@ -1,10 +1,21 @@
+getData1("https://urbaton.ultraevs.ru/detect?cam_id=1", { answer: 42 }).then((data) => {
+    console.log(data.data);
+    let p = 0;
+    for (key in data.data) {
+        p++;
+        parkingDots[4].parking[p] = data.data[key][0];
+    }
+
+    console.log(parkingDots[4]);
+});
+
 // Главный объект информации
 const parkingDots = [
     {
-        lat: 55.7364,
-        lon: 37.6535,
-        name: "Парковка на районе",
-        adress: "Ул. Малые Каменщики",
+        lat: 56.8541,
+        lon: 60.5494,
+        name: "Парковка в ТРЦ Карнавал",
+        adress: "Ул. Халтурина",
         price: 200,
         parking: {
             1: "занято",
@@ -22,10 +33,10 @@ const parkingDots = [
         },
     },
     {
-        lat: 55.7419,
-        lon: 37.6098,
-        name: "Парковка у лофта",
-        adress: "Ул. Новодмитровская",
+        lat: 56.8253,
+        lon: 60.6467,
+        name: "Парковка Церковь Михаила Архангела",
+        adress: "Ул. Сибирский тракт",
         price: 300,
         parking: {
             1: "свободно",
@@ -43,10 +54,10 @@ const parkingDots = [
         },
     },
     {
-        lat: 55.7429,
-        lon: 37.6560,
-        name: "Парковка у зала",
-        adress: "Ул. Таганская",
+        lat: 56.8256,
+        lon: 60.5970,
+        name: "Парковка Стадион Юность",
+        adress: "Ул. Куйбышева",
         price: 250,
         parking: {
             1: "занято",
@@ -76,11 +87,11 @@ const parkingDots = [
         },
     },
     {
-        lat: 55.7559,
-        lon: 37.6098,
-        name: "Парковка у музея МГУ",
-        adress: "Ул. Малые Каменщики",
-        price: 400,
+        lat: 56.8529,
+        lon: 60.6232,
+        name: "Парковка около железной дороги",
+        adress: "Ул. Солнечная",
+        price: 150,
         parking: {
             1: "занято",
             2: "занято",
@@ -96,7 +107,17 @@ const parkingDots = [
             12: "занято",
         },
     },
+    {
+        lat: 56.8523,
+        lon: 60.6132,
+        name: "Парковка с базы данных",
+        adress: "Камера 1",
+        price: 1500,
+        parking: {},
+    },
 ]
+
+console.log(parkingDots[4]);
 
 // Создание массива с названиями всех парковок
 let availableKeywords = [];
@@ -135,15 +156,18 @@ const wordOfAvailable = document.querySelector(".wordOfAvailable");
 const load = document.querySelector(".load");
 
 // Переменные для окна с оплатой
+const overlay = document.querySelector(".overlay");
 const pay = document.querySelector(".pay");
 const bookingBtn = document.querySelector(".booking__btn");
 bookingBtn.addEventListener("click", function () {
     pay.classList.toggle("active");
+    overlay.classList.toggle("active");
 })
 
 const topBtn = document.querySelector(".pay__top__icon");
 topBtn.addEventListener("click", function () {
     pay.classList.toggle("active");
+    overlay.classList.toggle("active");
 })
 
 // Объявление функции, которая транслирует данные о парковках
@@ -260,13 +284,13 @@ searchBtn.addEventListener("click", function () {
 ymaps.ready(init);
 
 // Координаты центра карты
-let Moscow = [55.7522, 37.6156];
+let Ekat = [56.8391, 60.6082];
 
 // Функция для работы с картой
 function init() {
     // Объявление карты
     const map = new ymaps.Map("map", {
-        center: Moscow,
+        center: Ekat,
         zoom: 12,
     });
 
@@ -322,13 +346,12 @@ function init() {
 
                 const placeStatus = document.createElement("div");
                 placeStatus.classList.add("placeStatus");
-                if (parkingDots[i].parking[key] === "занято") {
+                if (parkingDots[i].parking[key] === "занято" || parkingDots[i].parking[key] === "occupied") {
                     bookingPlace.classList.add("ocupated");
                 } else {
                     bookingPlace.classList.add("free");
                     bookingPlace.addEventListener("click", function () {
                         bookingPlace.classList.toggle("active");
-                        console.log("HI");
                     })
                 }
                 placeStatus.appendChild(document.createTextNode(parkingDots[i].parking[key])); //статус
@@ -348,8 +371,6 @@ function init() {
 
         map.geoObjects.add(placemark);
     }
-
-    console.log(map.geoObjects);
 }
 
 function numAndWord() {
@@ -372,4 +393,19 @@ function numAndWord() {
     } else {
         load.innerHTML = "Высокая";
     }
+}
+
+async function getData1(url, data = {}) {
+    const response = await fetch(url, {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+    });
+    return await response.json();
 }
