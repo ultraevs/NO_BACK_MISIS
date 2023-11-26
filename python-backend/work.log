@@ -3527,3 +3527,36 @@ mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected 
 2023-11-26 10:50:42,466 - INFO - saved drawings to result.jpg
 2023-11-26 10:50:42,467 - INFO - check_boxes() -> data
 2023-11-26 10:50:42,468 - INFO - detection end, returned status, data
+2023-11-26 11:21:17,491 - INFO - starting detection
+2023-11-26 11:21:17,491 - INFO - starting get_image()
+2023-11-26 11:21:17,491 - INFO - loaded tokens from file
+2023-11-26 11:21:18,258 - INFO - loaded tokens from file
+2023-11-26 11:21:21,320 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=fc20aa9c3f7d465ca5e7e6c1158305a4
+2023-11-26 11:21:23,208 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=58dec7402abb411dbf3361eb4de420ad
+2023-11-26 11:21:23,266 - INFO - get_image() -> True
+2023-11-26 11:21:23,273 - INFO - status = ok
+2023-11-26 11:21:23,273 - INFO - starting detection via YOLO
+2023-11-26 11:21:25,999 - INFO - check_boxes() started
+2023-11-26 11:21:25,999 - INFO - got parking coords
+2023-11-26 11:21:26,000 - INFO - created result.jpg file
+2023-11-26 11:21:26,009 - INFO - checking parking slots and cars
+2023-11-26 11:21:26,010 - INFO - cropping
+2023-11-26 11:21:26,036 - INFO - cropping
+2023-11-26 11:21:26,062 - INFO - cropping
+2023-11-26 11:21:26,087 - INFO - cropping
+2023-11-26 11:21:26,112 - INFO - cropping
+2023-11-26 11:21:26,138 - INFO - done checking
+2023-11-26 11:21:26,160 - INFO - saved drawings to result.jpg
+2023-11-26 11:21:26,161 - INFO - check_boxes() -> data
+2023-11-26 11:21:26,161 - INFO - detection end, returned status, data
+2023-11-26 11:23:57,747 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "C:\Programming\projects\NO_BACK_MISIS\venv\lib\site-packages\sqlalchemy\pool\base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "C:\Programming\projects\NO_BACK_MISIS\venv\lib\site-packages\sqlalchemy\pool\base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "C:\Programming\projects\NO_BACK_MISIS\venv\lib\site-packages\sqlalchemy\engine\default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "C:\Programming\projects\NO_BACK_MISIS\venv\lib\site-packages\mysql\connector\connection_cext.py", line 523, in rollback
+    self._cmysql.rollback()
+_mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query

@@ -18,6 +18,7 @@ body {
     width: 430px;
     background-color: #E8E8E8;
     position: relative;
+    border: solid 1px black;
 }
 
 .search {
@@ -102,7 +103,7 @@ body {
     height: 20%;
     background-color: #E8E8E8;
     border-radius: 10px 10px 0px 0px;
-    padding: 028px;
+    padding: 15px 10px;
     transition: 0.5s all;
 }
 
@@ -110,12 +111,82 @@ body {
     height: 40%;
 }
 
+.bottom__static {
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.static__load {
+    margin-top: 3px;
+}
+
+.active__adress {
+    margin: 3px 0 5px 0;
+}
+
+.bottom__btn {
+    display: none;
+    margin-top: 10px;
+    width: 38%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: blue;
+}
+
+.bottom__btn:hover {
+    background-color: rgba(0, 0, 255, 0.85);
+}
+
+.bottom__btn a {
+    color: white;
+    text-decoration: none;
+}
+
+.bottom__btn.active {
+    display: block;
+}
+
+.bottom__active {
+    margin-top: 10px;
+    display: none;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+}
+
+.bottom__active.active {
+    display: block;
+}
+
+.numOfAvailable {
+    color: blue;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.static__load {
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.load {
+    color: blue;
+}
+
+.active__places {
+    color: green;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .footer {
     z-index: 101;
     position: sticky;
     background-color: white;
     padding: 14px 0;
-    top: 0;
+    top: 100vh;
     right: 0;
     bottom: 0;
     left: 0;
@@ -141,4 +212,294 @@ body {
 
 .non-activeIcon {
     color: #858585;
+}
+
+.booking {
+    display: none;
+    position: absolute;
+    top: 100;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background-color: white;
+    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.04), 0px -2px 2px 0px rgba(0, 0, 0, 0.04), 0px -4px 3px 0px rgba(0, 0, 0, 0.02), 0px -8px 3px 0px rgba(0, 0, 0, 0.01), 0px -12px 3px 0px rgba(0, 0, 0, 0.00);
+    padding: 17px 22px 0;
+    border-radius: 15px 15px 0 0;
+    transition: 1s all;
+}
+
+.booking.active {
+    display: block;
+    height: 90%;
+    z-index: 102;
+}
+
+.booking__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.booking__title {
+    font-size: 1.375rem;
+    font-weight: 700;
+}
+
+.booking__adress {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.top__icon {
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
+    background-color: #D9D9D9;
+    border-radius: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top__icon i {
+    color: #636363;
+    font-size: 1.2rem;
+}
+
+.booking__places {
+    margin-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    height: 66.5%;
+    overflow-y: scroll;
+}
+
+.places__left,
+.places__right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.booking__place {
+    width: 107px;
+    height: 45px;
+    border-radius: 10px;
+    background: #EBEBEB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+}
+
+.booking__place.free {
+    cursor: pointer;
+    background-color: rgb(153, 255, 0);
+}
+
+.booking__place.free.active {
+    background-color: rgb(109, 179, 5);
+}
+
+.between {
+    border-top: 1px dashed black;
+}
+
+.placeNum {
+    /* margin-top: 3px; */
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.placeStatus {
+    font-size: 0.625rem;
+    font-weight: 400;
+}
+
+.booking__btn {
+    cursor: pointer;
+    margin-top: 40px;
+    border-radius: 27px;
+    background-color: #0057FF;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.booking__btn a {
+    text-decoration: none;
+    font-size: 1.125rem;
+    color: white;
+}
+
+.pay {
+    display: none;
+    z-index: 103;
+    background-color: white;
+    position: absolute;
+    top: 100;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 17px 22px 0;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+    border-top: 1px solid black;
+}
+
+.pay.active {
+    display: block;
+}
+
+.pay__top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pay__top p {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.pay__place {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.place__place,
+.place__what {
+    width: 180px;
+    padding: 12px;
+    border-radius: 10px;
+    background-color: #FFF;
+    box-shadow: 1px 3px 6px 0px rgba(0, 0, 0, 0.10), 3px 10px 11px 0px rgba(0, 0, 0, 0.09), 8px 23px 15px 0px rgba(0, 0, 0, 0.05), 14px 41px 17px 0px rgba(0, 0, 0, 0.02), 21px 65px 19px 0px rgba(0, 0, 0, 0.00);
+}
+
+.place__num {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.pay__top__icon {
+    cursor: pointer;
+    width: 27px;
+    height: 27px;
+    background-color: #D9D9D9;
+    border-radius: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pay__top__icon i {
+    color: #636363;
+    font-size: 1.2rem;
+}
+
+.place__type {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #7C7C7C;
+}
+
+.what__max {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.what__type {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #7C7C7C;
+}
+
+.pay__method {
+    margin-top: 40px;
+}
+
+.method__card {
+    display: flex;
+    flex-direction: row;
+    gap: 11px;
+    align-items: center;
+}
+
+.card__num {
+    font-size: 0.75rem;
+}
+
+.method__info {
+    margin-top: 17px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.info__num,
+.info__time {
+    border-radius: 8px;
+    width: 180px;
+    overflow: hidden;
+    background: #FFF;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.10), 6px 7px 9px 0px rgba(0, 0, 0, 0.09), 14px 16px 12px 0px rgba(0, 0, 0, 0.05), 24px 28px 15px 0px rgba(0, 0, 0, 0.01), 38px 43px 16px 0px rgba(0, 0, 0, 0.00);
+}
+
+.info__num input,
+.info__time input {
+    padding: 10px 9px;
+    border: 0;
+    outline: 0;
+}
+
+.info__num input::placeholder,
+.info__time input::placeholder {
+    color: #7C7C7C;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.pay__pay {
+    margin: 27px 0 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pay__rules p:nth-child(1) {
+    font-size: 1.125rem;
+    font-weight: 600;
+}
+
+.pay__rules p:nth-child(2) {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.pay__btn {
+    cursor: pointer;
+    border-radius: 27px;
+    background-color: #0057FF;
+    padding: 20px 77px;
+    transition: 0.5s all;
+}
+
+.pay__btn:hover {
+    opacity: 0.9;
+}
+
+.pay__btn p {
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
 }

@@ -28,6 +28,7 @@ header a {
 .account {
     display: flex;
     gap: 0.5rem;
+    align-items: center;
 }
 
 .account p {
@@ -116,7 +117,7 @@ main {
     width: 100%;
     height: 220px;
     padding-right: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 #list {

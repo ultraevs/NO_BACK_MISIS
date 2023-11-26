@@ -40,6 +40,10 @@ async def profile(access_token: str = Cookie(None)):
         return RedirectResponse('/login', status_code=303)
 
 
+@app.post('/payment')
+async def payments(access_token: str = Cookie(None), cam_id : str = Form(...), time: str = Form(...)):
+    pass
+
 @app.get('/vanya')
 async def vanya():
     return FileResponse("/home/NO_BACK_MISIS/python-backend/static/assets/photo_2023-11-25_11-05-58.jpg")

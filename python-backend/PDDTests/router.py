@@ -12,7 +12,7 @@ from auth.manager import verify_token
 
 router = APIRouter(tags=["PDD_TESTS"])
 router.mount("/static", StaticFiles(directory="static"), name="static")
-router.mount("/static/tests", StaticFiles(directory="static/tests"), name="static/tests")
+# router.mount("/static/tests", StaticFiles(directory="static/tests"), name="static/tests")
 
 
 # @router.get('/test')

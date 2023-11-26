@@ -30,4 +30,12 @@ class Rating(Base):
     count = Column(Integer)
 
 
+class Rent(Base):
+    __tablename__ = "renting"
+    cam_id = Column(Integer, primary_key=True)
+    status = Column(String(10))
+    place = Column(String(10))
+    timee = Column(String(10))
+
+
 Base.metadata.create_all(bind=engine)

@@ -18,7 +18,7 @@
             <div class="search">
                 <div class="search__box">
                     <div class="box__row">
-                        <button><i class='bx bx-search'></i></button>
+                        <button class="search__btn"><i class='bx bx-search'></i></button>
                         <input type="text" id="input-box" placeholder="Найти парковку" autocomplete="off">
                     </div>
                     <div class="box__result"></div>
@@ -28,18 +28,91 @@
             <div class="search__bottom">
                 <div class="bottom__static">
                     <p class="static__available">
+                        Доступно
                         <span class="numOfAvailable"></span>
                         <span class="wordOfAvailable"></span>
                     </p>
+                    <p class="static__load">
+                        <span class="load"></span> загруженность
+                    </p>
+                </div>
+                <div class="bottom__active">
+                    <p class="active__title">Название парковки</p>
+                    <p class="active__adress">Ул. Земляной Вал</p>
+                    <p><span class="active__places">10</span> мест</p>
+                </div>
+                <div class="bottom__btn">
+                    <a href="#!">Забронирвоать</a>
                 </div>
             </div>
         </main>
         <footer class="footer">
             <nav class="footer__nav">
-                <a href="/static/pages/main/index.html"><i class='bx bx-home-alt-2 non-activeIcon'></i></a>
+                <a href="/staic/pages/main/index.html"><i class='bx bx-home-alt-2 non-activeIcon'></i></a>
                 <a href="#!"><i class='bx bx-map-alt activeIcon'></i></a>
             </nav>
         </footer>
+        <div class="booking">
+            <div class="booking__top">
+                <div class="top__text">
+                    <p class="booking__title">НИТУ МИСИС</p>
+                    <p class="booking__adress">Метро Октябрьская</p>
+                </div>
+                <div class="top__icon"><i class='bx bx-x'></i></div>
+            </div>
+
+            <div class="booking__places">
+                <div class="places__left">
+                </div>
+                <div class="places__right">
+                </div>
+            </div>
+            <div class="booking__sections">
+                <div class="booking__section"></div>
+            </div>
+            <div class="booking__btn">
+                <a href="#!">Продолжить</a>
+            </div>
+        </div>
+        <div class="pay">
+            <div class="pay__top">
+                <p>Подтверждение</p>
+                <div class="pay__top__icon"><i class='bx bx-x'></i></div>
+            </div>
+            <div class="pay__place">
+                <div class="place__place">
+                    <p class="place__num">120</p>
+                    <p class="place__type">Паркововчное место</p>
+                </div>
+                <div class="place__what">
+                    <p class="what__max">Максимально</p>
+                    <p class="what__type">Микроавтобус</p>
+                </div>
+            </div>
+            <div class="pay__method">
+                <div class="method__card">
+                    <img src="/static/assets/mir.svg" alt="methodImg">
+                    <p class="card__num">****8732</p>
+                </div>
+                <div class="method__info">
+                    <div class="info__num">
+                        <input type="text" placeholder="Госномер">
+                    </div>
+                    <div class="info__time">
+                        <input type="text" placeholder="Время ЧЧ:ММ">
+                    </div>
+                </div>
+            </div>
+            <div class="pay__pay">
+                <div class="pay__rules">
+                    <p>150₽</p>
+                    <p>в час</p>
+                </div>
+                <div class="pay__btn">
+                    <p>Оплатить</p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
