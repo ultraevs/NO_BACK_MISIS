@@ -63,7 +63,7 @@ async def custom_404(_, __):
 @app.get('/name')
 async def name(access_token: str = Cookie(None)):
     data = verify_token(access_token)
-    return JSONResponse(status_code=200, content={"data": data["name"]})
+    return JSONResponse(status_code=200, content=data)
 
 
 app.add_middleware(

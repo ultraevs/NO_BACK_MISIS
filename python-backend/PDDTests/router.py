@@ -37,6 +37,11 @@ async def get_tests(access_token: str = Cookie(None), session: Session = Depends
     data = verify_token(access_token)
     query = select(Rating).where(Rating.email == data["email"])
     user_rating = session.execute(query).scalar()
+    if not user_rating:
+        query = insert(Rating).values(email=data["email"], count=1)
+        session.execute(query)
+        session.commit() 
+        return JSONResponse(status_code=200, content={"count": 1})
     return JSONResponse(status_code=200, content={"count": user_rating.count})
 
 
