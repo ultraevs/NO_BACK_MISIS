@@ -3092,3 +3092,438 @@ Traceback (most recent call last):
   File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
     raise errors.get_exception(packet)
 mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 01:33:55,673 - INFO - starting detection
+2023-11-26 01:33:55,673 - INFO - starting get_image()
+2023-11-26 01:33:55,673 - INFO - loaded tokens from file
+2023-11-26 01:33:55,807 - INFO - loaded tokens from file
+2023-11-26 01:33:56,310 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=0de358725e16464c83ae3f3b4ae6e0b5
+2023-11-26 01:33:56,877 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=b6835811064e4106a8539bbe647b3443
+2023-11-26 01:33:56,955 - INFO - get_image() -> True
+2023-11-26 01:33:56,957 - INFO - status = ok
+2023-11-26 01:33:56,957 - INFO - starting detection via YOLO
+2023-11-26 01:33:59,010 - INFO - check_boxes() started
+2023-11-26 01:33:59,010 - INFO - got parking coords
+2023-11-26 01:33:59,011 - INFO - created result.jpg file
+2023-11-26 01:34:03,481 - INFO - checking parking slots and cars
+2023-11-26 01:34:03,481 - INFO - done checking
+2023-11-26 01:34:03,504 - INFO - saved drawings to result.jpg
+2023-11-26 01:34:03,505 - INFO - check_boxes() -> data
+2023-11-26 01:34:03,505 - INFO - detection end, returned status, data
+2023-11-26 01:59:45,183 - INFO - starting detection
+2023-11-26 01:59:45,184 - INFO - starting get_image()
+2023-11-26 01:59:45,184 - INFO - loaded tokens from file
+2023-11-26 01:59:45,263 - INFO - unsuccessful request, attempting to update tokens
+2023-11-26 01:59:45,263 - INFO - writing tokens to file
+2023-11-26 01:59:45,263 - INFO - get_tokens() started
+2023-11-26 01:59:46,695 - INFO - driver created
+2023-11-26 01:59:48,203 - INFO - waiting for element
+2023-11-26 01:59:49,763 - INFO - driver closed
+2023-11-26 01:59:49,788 - INFO - got token
+2023-11-26 01:59:50,096 - INFO - driver created
+2023-11-26 01:59:51,339 - INFO - waiting for element
+2023-11-26 01:59:52,887 - INFO - driver closed
+2023-11-26 01:59:52,915 - INFO - got token
+2023-11-26 01:59:52,915 - INFO - got tokens: {1: 'a2a066bc23194c1084338e10b42bd9a6', 2: '70a82be868494ef2b3cace753d9e6fc0'}
+2023-11-26 01:59:52,920 - INFO - update_cfg() -> True
+2023-11-26 01:59:52,920 - INFO - successfully updated tokens
+2023-11-26 01:59:52,920 - INFO - loaded tokens from file
+2023-11-26 01:59:53,440 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 01:59:54,021 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 01:59:54,107 - INFO - get_image() -> True
+2023-11-26 01:59:54,109 - INFO - status = ok
+2023-11-26 01:59:54,109 - INFO - starting detection via YOLO
+2023-11-26 01:59:56,474 - INFO - check_boxes() started
+2023-11-26 01:59:56,474 - INFO - got parking coords
+2023-11-26 01:59:56,475 - INFO - created result.jpg file
+2023-11-26 02:00:03,675 - INFO - checking parking slots and cars
+2023-11-26 02:00:03,675 - INFO - done checking
+2023-11-26 02:00:03,699 - INFO - saved drawings to result.jpg
+2023-11-26 02:00:03,700 - INFO - check_boxes() -> data
+2023-11-26 02:00:03,700 - INFO - detection end, returned status, data
+2023-11-26 02:06:01,638 - INFO - starting detection
+2023-11-26 02:06:01,638 - INFO - starting get_image()
+2023-11-26 02:06:01,638 - INFO - loaded tokens from file
+2023-11-26 02:06:01,803 - INFO - loaded tokens from file
+2023-11-26 02:06:02,293 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:06:02,898 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:06:02,981 - INFO - get_image() -> True
+2023-11-26 02:06:02,983 - INFO - status = ok
+2023-11-26 02:06:02,983 - INFO - starting detection via YOLO
+2023-11-26 02:06:05,001 - INFO - check_boxes() started
+2023-11-26 02:06:05,002 - INFO - got parking coords
+2023-11-26 02:06:05,002 - INFO - created result.jpg file
+2023-11-26 02:06:11,474 - INFO - checking parking slots and cars
+2023-11-26 02:06:11,475 - INFO - done checking
+2023-11-26 02:06:11,495 - INFO - saved drawings to result.jpg
+2023-11-26 02:06:11,495 - INFO - check_boxes() -> data
+2023-11-26 02:06:11,496 - INFO - detection end, returned status, data
+2023-11-26 02:08:02,484 - INFO - starting detection
+2023-11-26 02:08:02,485 - INFO - starting get_image()
+2023-11-26 02:08:02,485 - INFO - loaded tokens from file
+2023-11-26 02:08:02,640 - INFO - loaded tokens from file
+2023-11-26 02:08:03,124 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:08:03,693 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:08:03,776 - INFO - get_image() -> True
+2023-11-26 02:08:03,777 - INFO - status = ok
+2023-11-26 02:08:03,777 - INFO - starting detection via YOLO
+2023-11-26 02:08:05,765 - INFO - check_boxes() started
+2023-11-26 02:08:05,765 - INFO - got parking coords
+2023-11-26 02:08:05,766 - INFO - created result.jpg file
+2023-11-26 02:08:12,193 - INFO - checking parking slots and cars
+2023-11-26 02:08:12,193 - INFO - done checking
+2023-11-26 02:08:12,215 - INFO - saved drawings to result.jpg
+2023-11-26 02:08:12,215 - INFO - check_boxes() -> data
+2023-11-26 02:08:12,215 - INFO - detection end, returned status, data
+2023-11-26 02:23:42,215 - INFO - starting detection
+2023-11-26 02:23:42,215 - INFO - starting get_image()
+2023-11-26 02:23:42,215 - INFO - loaded tokens from file
+2023-11-26 02:23:42,388 - INFO - loaded tokens from file
+2023-11-26 02:23:42,880 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:23:43,451 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:23:43,538 - INFO - get_image() -> True
+2023-11-26 02:23:43,540 - INFO - status = ok
+2023-11-26 02:23:43,540 - INFO - starting detection via YOLO
+2023-11-26 02:23:45,512 - INFO - check_boxes() started
+2023-11-26 02:23:45,512 - INFO - got parking coords
+2023-11-26 02:23:45,513 - INFO - created result.jpg file
+2023-11-26 02:23:52,012 - INFO - checking parking slots and cars
+2023-11-26 02:23:52,012 - INFO - done checking
+2023-11-26 02:23:52,034 - INFO - saved drawings to result.jpg
+2023-11-26 02:23:52,034 - INFO - check_boxes() -> data
+2023-11-26 02:23:52,034 - INFO - detection end, returned status, data
+2023-11-26 02:30:04,066 - INFO - starting detection
+2023-11-26 02:30:04,066 - INFO - starting get_image()
+2023-11-26 02:30:04,066 - INFO - loaded tokens from file
+2023-11-26 02:30:04,229 - INFO - loaded tokens from file
+2023-11-26 02:30:04,715 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:30:05,293 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:30:05,375 - INFO - get_image() -> True
+2023-11-26 02:30:05,376 - INFO - status = ok
+2023-11-26 02:30:05,377 - INFO - starting detection via YOLO
+2023-11-26 02:30:07,469 - INFO - check_boxes() started
+2023-11-26 02:30:07,469 - INFO - got parking coords
+2023-11-26 02:30:07,470 - INFO - created result.jpg file
+2023-11-26 02:30:14,158 - INFO - checking parking slots and cars
+2023-11-26 02:30:14,158 - INFO - done checking
+2023-11-26 02:30:14,179 - INFO - saved drawings to result.jpg
+2023-11-26 02:30:14,180 - INFO - check_boxes() -> data
+2023-11-26 02:30:14,180 - INFO - detection end, returned status, data
+2023-11-26 02:55:38,700 - INFO - starting detection
+2023-11-26 02:55:38,700 - INFO - starting get_image()
+2023-11-26 02:55:38,700 - INFO - loaded tokens from file
+2023-11-26 02:55:38,870 - INFO - loaded tokens from file
+2023-11-26 02:55:39,353 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:55:39,921 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:55:39,999 - INFO - get_image() -> True
+2023-11-26 02:55:40,000 - INFO - status = ok
+2023-11-26 02:55:40,000 - INFO - starting detection via YOLO
+2023-11-26 02:55:42,019 - INFO - check_boxes() started
+2023-11-26 02:55:42,019 - INFO - got parking coords
+2023-11-26 02:55:42,020 - INFO - created result.jpg file
+2023-11-26 02:56:31,506 - INFO - starting detection
+2023-11-26 02:56:31,506 - INFO - starting get_image()
+2023-11-26 02:56:31,506 - INFO - loaded tokens from file
+2023-11-26 02:56:31,660 - INFO - loaded tokens from file
+2023-11-26 02:56:32,133 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:56:32,686 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:56:32,761 - INFO - get_image() -> True
+2023-11-26 02:56:32,763 - INFO - status = ok
+2023-11-26 02:56:32,763 - INFO - starting detection via YOLO
+2023-11-26 02:56:33,197 - INFO - check_boxes() started
+2023-11-26 02:56:33,197 - INFO - got parking coords
+2023-11-26 02:56:33,197 - INFO - created result.jpg file
+2023-11-26 02:57:20,533 - INFO - starting detection
+2023-11-26 02:57:20,533 - INFO - starting get_image()
+2023-11-26 02:57:20,533 - INFO - loaded tokens from file
+2023-11-26 02:57:20,692 - INFO - loaded tokens from file
+2023-11-26 02:57:21,173 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:57:21,731 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:57:21,809 - INFO - get_image() -> True
+2023-11-26 02:57:21,811 - INFO - status = ok
+2023-11-26 02:57:21,811 - INFO - starting detection via YOLO
+2023-11-26 02:57:23,839 - INFO - check_boxes() started
+2023-11-26 02:57:23,839 - INFO - got parking coords
+2023-11-26 02:57:23,840 - INFO - created result.jpg file
+2023-11-26 02:57:30,708 - INFO - detection end, returned status, data
+2023-11-26 02:59:17,397 - INFO - starting detection
+2023-11-26 02:59:17,397 - INFO - starting get_image()
+2023-11-26 02:59:17,397 - INFO - loaded tokens from file
+2023-11-26 02:59:17,561 - INFO - loaded tokens from file
+2023-11-26 02:59:18,042 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 02:59:18,609 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 02:59:18,689 - INFO - get_image() -> True
+2023-11-26 02:59:18,690 - INFO - status = ok
+2023-11-26 02:59:18,691 - INFO - starting detection via YOLO
+2023-11-26 02:59:20,722 - INFO - check_boxes() started
+2023-11-26 02:59:20,722 - INFO - got parking coords
+2023-11-26 02:59:20,723 - INFO - created result.jpg file
+2023-11-26 02:59:27,378 - INFO - detection end, returned status, data
+2023-11-26 03:00:01,236 - INFO - starting detection
+2023-11-26 03:00:01,236 - INFO - starting get_image()
+2023-11-26 03:00:01,236 - INFO - loaded tokens from file
+2023-11-26 03:00:01,401 - INFO - loaded tokens from file
+2023-11-26 03:00:01,892 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 03:00:02,493 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 03:00:02,573 - INFO - get_image() -> True
+2023-11-26 03:00:02,576 - INFO - status = ok
+2023-11-26 03:00:02,576 - INFO - starting detection via YOLO
+2023-11-26 03:00:03,127 - INFO - check_boxes() started
+2023-11-26 03:00:03,127 - INFO - got parking coords
+2023-11-26 03:00:03,127 - INFO - created result.jpg file
+2023-11-26 03:00:07,586 - INFO - detection end, returned status, data
+2023-11-26 03:00:36,589 - INFO - starting detection
+2023-11-26 03:00:36,589 - INFO - starting get_image()
+2023-11-26 03:00:36,589 - INFO - loaded tokens from file
+2023-11-26 03:00:36,726 - INFO - loaded tokens from file
+2023-11-26 03:00:37,202 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 03:00:37,753 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 03:00:37,831 - INFO - get_image() -> True
+2023-11-26 03:00:37,832 - INFO - status = ok
+2023-11-26 03:00:37,833 - INFO - starting detection via YOLO
+2023-11-26 03:00:39,838 - INFO - check_boxes() started
+2023-11-26 03:00:39,838 - INFO - got parking coords
+2023-11-26 03:00:39,839 - INFO - created result.jpg file
+2023-11-26 03:00:46,490 - INFO - detection end, returned status, data
+2023-11-26 03:24:31,273 - INFO - starting detection
+2023-11-26 03:24:31,273 - INFO - starting get_image()
+2023-11-26 03:24:31,274 - INFO - loaded tokens from file
+2023-11-26 03:24:31,437 - INFO - loaded tokens from file
+2023-11-26 03:24:31,911 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=a2a066bc23194c1084338e10b42bd9a6
+2023-11-26 03:24:32,457 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=70a82be868494ef2b3cace753d9e6fc0
+2023-11-26 03:24:32,544 - INFO - get_image() -> True
+2023-11-26 03:24:32,546 - INFO - status = ok
+2023-11-26 03:24:32,546 - INFO - starting detection via YOLO
+2023-11-26 03:24:33,017 - INFO - check_boxes() started
+2023-11-26 03:24:33,017 - INFO - got parking coords
+2023-11-26 03:24:33,018 - INFO - created result.jpg file
+2023-11-26 03:24:37,128 - INFO - detection end, returned status, data
+2023-11-26 03:49:19,614 - INFO - starting detection
+2023-11-26 03:49:19,614 - INFO - starting get_image()
+2023-11-26 03:49:19,615 - INFO - loaded tokens from file
+2023-11-26 03:49:19,694 - INFO - unsuccessful request, attempting to update tokens
+2023-11-26 03:49:19,694 - INFO - writing tokens to file
+2023-11-26 03:49:19,694 - INFO - get_tokens() started
+2023-11-26 03:49:20,588 - INFO - driver created
+2023-11-26 03:49:22,016 - INFO - waiting for element
+2023-11-26 03:49:23,547 - INFO - driver closed
+2023-11-26 03:49:23,574 - INFO - got token
+2023-11-26 03:49:23,890 - INFO - driver created
+2023-11-26 03:49:24,814 - INFO - waiting for element
+2023-11-26 03:49:25,883 - INFO - driver closed
+2023-11-26 03:49:25,911 - INFO - got token
+2023-11-26 03:49:25,912 - INFO - got tokens: {1: 'e074c245e03344efaa46d374c6dde2d9', 2: '0971f9d1a6134f7cb739980a9966a199'}
+2023-11-26 03:49:25,917 - INFO - update_cfg() -> True
+2023-11-26 03:49:25,917 - INFO - successfully updated tokens
+2023-11-26 03:49:25,917 - INFO - loaded tokens from file
+2023-11-26 03:49:26,389 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 03:49:26,955 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 03:49:27,040 - INFO - get_image() -> True
+2023-11-26 03:49:27,042 - INFO - status = ok
+2023-11-26 03:49:27,042 - INFO - starting detection via YOLO
+2023-11-26 03:49:29,121 - INFO - check_boxes() started
+2023-11-26 03:49:29,121 - INFO - got parking coords
+2023-11-26 03:49:29,122 - INFO - created result.jpg file
+2023-11-26 03:49:35,902 - INFO - detection end, returned status, data
+2023-11-26 03:52:34,701 - INFO - starting detection
+2023-11-26 03:52:34,702 - INFO - starting get_image()
+2023-11-26 03:52:34,702 - INFO - loaded tokens from file
+2023-11-26 03:52:35,102 - INFO - loaded tokens from file
+2023-11-26 03:52:35,579 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 03:52:36,138 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 03:52:36,221 - INFO - get_image() -> True
+2023-11-26 03:52:36,223 - INFO - status = ok
+2023-11-26 03:52:36,223 - INFO - starting detection via YOLO
+2023-11-26 03:52:38,216 - INFO - check_boxes() started
+2023-11-26 03:52:38,217 - INFO - got parking coords
+2023-11-26 03:52:38,217 - INFO - created result.jpg file
+2023-11-26 03:53:44,951 - INFO - starting detection
+2023-11-26 03:53:44,951 - INFO - starting get_image()
+2023-11-26 03:53:44,951 - INFO - loaded tokens from file
+2023-11-26 03:53:45,102 - INFO - loaded tokens from file
+2023-11-26 03:53:45,575 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 03:53:46,133 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 03:53:46,213 - INFO - get_image() -> True
+2023-11-26 03:53:46,214 - INFO - status = ok
+2023-11-26 03:53:46,215 - INFO - starting detection via YOLO
+2023-11-26 03:53:48,180 - INFO - check_boxes() started
+2023-11-26 03:53:48,180 - INFO - got parking coords
+2023-11-26 03:53:48,183 - INFO - created result.jpg file
+2023-11-26 03:53:54,886 - INFO - detection end, returned status, data
+2023-11-26 03:55:48,152 - INFO - starting detection
+2023-11-26 03:55:48,153 - INFO - starting get_image()
+2023-11-26 03:55:48,153 - INFO - loaded tokens from file
+2023-11-26 03:55:48,313 - INFO - loaded tokens from file
+2023-11-26 03:55:48,780 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 03:55:49,384 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 03:55:49,467 - INFO - get_image() -> True
+2023-11-26 03:55:49,469 - INFO - status = ok
+2023-11-26 03:55:49,469 - INFO - starting detection via YOLO
+2023-11-26 03:55:51,457 - INFO - check_boxes() started
+2023-11-26 03:55:51,457 - INFO - got parking coords
+2023-11-26 03:55:51,457 - INFO - created result.jpg file
+2023-11-26 03:55:58,394 - INFO - detection end, returned status, data
+2023-11-26 04:01:35,259 - INFO - starting detection
+2023-11-26 04:01:35,259 - INFO - starting get_image()
+2023-11-26 04:01:35,259 - INFO - loaded tokens from file
+2023-11-26 04:01:35,423 - INFO - loaded tokens from file
+2023-11-26 04:01:35,905 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:01:36,462 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:01:36,548 - INFO - get_image() -> True
+2023-11-26 04:01:36,549 - INFO - status = ok
+2023-11-26 04:01:36,550 - INFO - starting detection via YOLO
+2023-11-26 04:01:38,640 - INFO - check_boxes() started
+2023-11-26 04:01:38,641 - INFO - got parking coords
+2023-11-26 04:01:38,641 - INFO - created result.jpg file
+2023-11-26 04:05:31,225 - INFO - starting detection
+2023-11-26 04:05:31,225 - INFO - starting get_image()
+2023-11-26 04:05:31,226 - INFO - loaded tokens from file
+2023-11-26 04:05:31,387 - INFO - loaded tokens from file
+2023-11-26 04:05:31,861 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:05:32,418 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:05:32,495 - INFO - get_image() -> True
+2023-11-26 04:05:32,497 - INFO - status = ok
+2023-11-26 04:05:32,497 - INFO - starting detection via YOLO
+2023-11-26 04:05:34,497 - INFO - check_boxes() started
+2023-11-26 04:05:34,497 - INFO - got parking coords
+2023-11-26 04:05:34,498 - INFO - created result.jpg file
+2023-11-26 04:05:41,228 - INFO - detection end, returned status, data
+2023-11-26 04:08:09,144 - INFO - starting detection
+2023-11-26 04:08:09,144 - INFO - starting get_image()
+2023-11-26 04:08:09,144 - INFO - loaded tokens from file
+2023-11-26 04:08:09,302 - INFO - loaded tokens from file
+2023-11-26 04:08:09,779 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:08:10,332 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:08:10,413 - INFO - get_image() -> True
+2023-11-26 04:08:10,414 - INFO - status = ok
+2023-11-26 04:08:10,414 - INFO - starting detection via YOLO
+2023-11-26 04:08:12,418 - INFO - check_boxes() started
+2023-11-26 04:08:12,418 - INFO - got parking coords
+2023-11-26 04:08:12,419 - INFO - created result.jpg file
+2023-11-26 04:08:19,067 - INFO - detection end, returned status, data
+2023-11-26 04:11:04,771 - INFO - starting detection
+2023-11-26 04:11:04,771 - INFO - starting get_image()
+2023-11-26 04:11:04,771 - INFO - loaded tokens from file
+2023-11-26 04:11:04,921 - INFO - loaded tokens from file
+2023-11-26 04:11:05,389 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:11:05,936 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:11:06,017 - INFO - get_image() -> True
+2023-11-26 04:11:06,019 - INFO - status = ok
+2023-11-26 04:11:06,019 - INFO - starting detection via YOLO
+2023-11-26 04:11:07,994 - INFO - check_boxes() started
+2023-11-26 04:11:07,995 - INFO - got parking coords
+2023-11-26 04:11:07,995 - INFO - created result.jpg file
+2023-11-26 04:11:14,688 - INFO - detection end, returned status, data
+2023-11-26 04:12:09,308 - INFO - starting detection
+2023-11-26 04:12:09,308 - INFO - starting get_image()
+2023-11-26 04:12:09,308 - INFO - loaded tokens from file
+2023-11-26 04:12:09,464 - INFO - loaded tokens from file
+2023-11-26 04:12:09,926 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:12:10,470 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:12:10,552 - INFO - get_image() -> True
+2023-11-26 04:12:10,554 - INFO - status = ok
+2023-11-26 04:12:10,554 - INFO - starting detection via YOLO
+2023-11-26 04:12:12,573 - INFO - check_boxes() started
+2023-11-26 04:12:12,573 - INFO - got parking coords
+2023-11-26 04:12:12,574 - INFO - created result.jpg file
+2023-11-26 04:12:19,369 - INFO - detection end, returned status, data
+2023-11-26 04:14:05,376 - INFO - starting detection
+2023-11-26 04:14:05,376 - INFO - starting get_image()
+2023-11-26 04:14:05,377 - INFO - loaded tokens from file
+2023-11-26 04:14:05,535 - INFO - loaded tokens from file
+2023-11-26 04:14:06,010 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:14:06,570 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:14:06,650 - INFO - get_image() -> True
+2023-11-26 04:14:06,652 - INFO - status = ok
+2023-11-26 04:14:06,652 - INFO - starting detection via YOLO
+2023-11-26 04:14:08,678 - INFO - check_boxes() started
+2023-11-26 04:14:08,679 - INFO - got parking coords
+2023-11-26 04:14:08,679 - INFO - created result.jpg file
+2023-11-26 04:14:15,344 - INFO - detection end, returned status, data
+2023-11-26 04:16:30,969 - INFO - starting detection
+2023-11-26 04:16:30,969 - INFO - starting get_image()
+2023-11-26 04:16:30,970 - INFO - loaded tokens from file
+2023-11-26 04:16:31,125 - INFO - loaded tokens from file
+2023-11-26 04:16:31,592 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:16:32,168 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:16:32,251 - INFO - get_image() -> True
+2023-11-26 04:16:32,252 - INFO - status = ok
+2023-11-26 04:16:32,252 - INFO - starting detection via YOLO
+2023-11-26 04:16:34,224 - INFO - check_boxes() started
+2023-11-26 04:16:34,224 - INFO - got parking coords
+2023-11-26 04:16:34,224 - INFO - created result.jpg file
+2023-11-26 04:16:40,887 - INFO - detection end, returned status, data
+2023-11-26 04:17:49,305 - INFO - starting detection
+2023-11-26 04:17:49,305 - INFO - starting get_image()
+2023-11-26 04:17:49,305 - INFO - loaded tokens from file
+2023-11-26 04:17:49,461 - INFO - loaded tokens from file
+2023-11-26 04:17:49,924 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:17:50,483 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:17:50,570 - INFO - get_image() -> True
+2023-11-26 04:17:50,572 - INFO - status = ok
+2023-11-26 04:17:50,572 - INFO - starting detection via YOLO
+2023-11-26 04:17:51,017 - INFO - check_boxes() started
+2023-11-26 04:17:51,017 - INFO - got parking coords
+2023-11-26 04:17:51,018 - INFO - created result.jpg file
+2023-11-26 04:17:51,019 - INFO - checking parking slots and cars
+2023-11-26 04:17:51,019 - INFO - cropping
+2023-11-26 04:17:51,055 - INFO - cropping
+2023-11-26 04:17:51,086 - INFO - cropping
+2023-11-26 04:17:51,119 - INFO - cropping
+2023-11-26 04:17:51,152 - INFO - cropping
+2023-11-26 04:17:51,185 - INFO - cropping
+2023-11-26 04:17:51,220 - INFO - cropping
+2023-11-26 04:17:51,254 - INFO - done checking
+2023-11-26 04:17:51,294 - INFO - saved drawings to result.jpg
+2023-11-26 04:17:51,294 - INFO - check_boxes() -> data
+2023-11-26 04:17:51,294 - INFO - detection end, returned status, data
+2023-11-26 04:19:22,774 - INFO - starting detection
+2023-11-26 04:19:22,774 - INFO - starting get_image()
+2023-11-26 04:19:22,774 - INFO - loaded tokens from file
+2023-11-26 04:19:22,923 - INFO - loaded tokens from file
+2023-11-26 04:19:23,380 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=e074c245e03344efaa46d374c6dde2d9
+2023-11-26 04:19:24,021 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=0971f9d1a6134f7cb739980a9966a199
+2023-11-26 04:19:24,107 - INFO - get_image() -> True
+2023-11-26 04:19:24,109 - INFO - status = ok
+2023-11-26 04:19:24,110 - INFO - starting detection via YOLO
+2023-11-26 04:19:26,124 - INFO - check_boxes() started
+2023-11-26 04:19:26,125 - INFO - got parking coords
+2023-11-26 04:19:26,125 - INFO - created result.jpg file
+2023-11-26 04:19:32,857 - INFO - detection end, returned status, data
+2023-11-26 10:50:26,073 - INFO - starting detection
+2023-11-26 10:50:26,074 - INFO - starting get_image()
+2023-11-26 10:50:26,074 - INFO - loaded tokens from file
+2023-11-26 10:50:26,153 - INFO - unsuccessful request, attempting to update tokens
+2023-11-26 10:50:26,153 - INFO - writing tokens to file
+2023-11-26 10:50:26,153 - INFO - get_tokens() started
+2023-11-26 10:50:27,806 - INFO - driver created
+2023-11-26 10:50:30,288 - INFO - waiting for element
+2023-11-26 10:50:31,899 - INFO - driver closed
+2023-11-26 10:50:31,952 - INFO - got token
+2023-11-26 10:50:32,637 - INFO - driver created
+2023-11-26 10:50:34,768 - INFO - waiting for element
+2023-11-26 10:50:36,359 - INFO - driver closed
+2023-11-26 10:50:36,406 - INFO - got token
+2023-11-26 10:50:36,406 - INFO - got tokens: {1: 'fc20aa9c3f7d465ca5e7e6c1158305a4', 2: '58dec7402abb411dbf3361eb4de420ad'}
+2023-11-26 10:50:36,418 - INFO - update_cfg() -> True
+2023-11-26 10:50:36,418 - INFO - successfully updated tokens
+2023-11-26 10:50:36,418 - INFO - loaded tokens from file
+2023-11-26 10:50:37,044 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=fc20aa9c3f7d465ca5e7e6c1158305a4
+2023-11-26 10:50:37,901 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=58dec7402abb411dbf3361eb4de420ad
+2023-11-26 10:50:38,073 - INFO - get_image() -> True
+2023-11-26 10:50:38,080 - INFO - status = ok
+2023-11-26 10:50:38,080 - INFO - starting detection via YOLO
+2023-11-26 10:50:41,357 - INFO - check_boxes() started
+2023-11-26 10:50:41,357 - INFO - got parking coords
+2023-11-26 10:50:41,360 - INFO - created result.jpg file
+2023-11-26 10:50:41,368 - INFO - checking parking slots and cars
+2023-11-26 10:50:41,372 - INFO - cropping
+2023-11-26 10:50:41,519 - INFO - cropping
+2023-11-26 10:50:41,644 - INFO - cropping
+2023-11-26 10:50:41,773 - INFO - cropping
+2023-11-26 10:50:41,900 - INFO - cropping
+2023-11-26 10:50:42,029 - INFO - cropping
+2023-11-26 10:50:42,160 - INFO - cropping
+2023-11-26 10:50:42,289 - INFO - done checking
+2023-11-26 10:50:42,466 - INFO - saved drawings to result.jpg
+2023-11-26 10:50:42,467 - INFO - check_boxes() -> data
+2023-11-26 10:50:42,468 - INFO - detection end, returned status, data

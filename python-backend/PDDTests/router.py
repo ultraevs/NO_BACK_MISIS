@@ -7,7 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from sqlalchemy.orm import Session
 from database import get_db, engine
 from sqlalchemy import select, insert
-from models import Test, Rating, User
+from models import Rating, User
 from auth.manager import verify_token
 
 router = APIRouter(tags=["PDD_TESTS"])

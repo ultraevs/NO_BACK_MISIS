@@ -6,7 +6,7 @@ async function back(){
 
 button.addEventListener('click', back)
 
-
+const answer = document.getElementById("value-2")
 const url = 'https://urbaton.ultraevs.ru/commit-test/'
 
 async function postData() {

@@ -164,7 +164,7 @@ def is_in_rect(x1, y1, x2, y2, x, y):
     return x1 <= x <= x2 and y1 <= y <= y2
 
 
-def check_boxes(results, id_, plates_model):
+def check_boxes(results, id_, plates_model, cymbols_model):
     print(os.path.getsize('img3.jpg'))
     logging.info('check_boxes() started')
     parking_slots = {
@@ -203,7 +203,9 @@ def check_boxes(results, id_, plates_model):
     #width1, height1 = width1, height1*2
 
     # detect numbers only for camera 3
+    names = cymbols_model.names
     if id_ == 3:
+        data = {}
         for i in range(7):
             data[i] = ['occupied', None]
             # detect number on each img in folder
@@ -215,8 +217,28 @@ def check_boxes(results, id_, plates_model):
                 for plate_box in plate_boxes:
                     plate_x1, plate_y1, plate_x2, plate_y2 = plate_box
                     plate_x1_n, plate_y1_n, plate_x2_n, plate_y2_n = int(round(plate_x1*cropped_3_w)), int(round(plate_y1*cropped_3_h)), int(round(plate_x2*cropped_3_w)), int(round(plate_y2*cropped_3_h))
-                    crop_image(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/cropped_3_{i}.jpg', plate_x1_n, plate_y1_n, plate_x2_n, plate_y2_n, f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
+                    #crop_image(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/cropped_3_{i}.jpg', plate_x1_n, plate_y1_n, plate_x2_n, plate_y2_n, f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
+            results = cymbols_model(f'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.png', save=True, verbose=False, conf=0.65)
+            for r in results:
+                t = []
+                # append all coords of boxes
+                cymbols_boxes = r.boxes.xyxyn.tolist()
+                for cymbols_box in cymbols_boxes:
+                    cymbols_x1, cymbols_y1, cymbols_x2, cymbols_y2 = cymbols_box
+                    t.append([min(cymbols_x1, cymbols_x2), None])
 
+                # get all classnames and append to list
+                j = 0
+                for c in r.boxes.cls:
+                    t[j][1] = names[int(c)]
+                    j += 1
+                
+                sorted_t = sorted(t, key=lambda x: x[0])
+                letters = [item[1] for item in sorted_t]
+                result_string = ''.join(letters)
+                data[i] = ["occupied", result_string]
+                
+        return data
 
     logging.info('checking parking slots and cars')
     for result in results:
@@ -269,13 +291,13 @@ def check_boxes(results, id_, plates_model):
         return None
 
 
-def detect(model, plates_model, id_):
+def detect(model, plates_model, cymbols_model, id_):
     for i in [1, 2, 3]:
         for ii in range(0, 10):
             try:
                 os.remove(fr'/home/NO_BACK_MISIS/python-backend/cropped_{i}_{ii}.jpg')
                 os.remove(fr'/home/NO_BACK_MISIS/python-backend/plate_cropped_{i}_{ii}.jpg')
-                os.remove(fr'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
+                #os.remove(fr'/home/NO_BACK_MISIS/python-backend/Detection/cam3_data/plate_cropped_3_{i}.jpg')
             except: None
     if id_ not in [1,2,3]: return {'status': 'id failed', 'data': None}
     logging.info('starting detection')
@@ -294,7 +316,7 @@ def detect(model, plates_model, id_):
         logging.info('starting detection via YOLO')
         results = model(f'img{id_}.jpg', save=True, verbose=False, conf=0.3)
         if results:
-            data = check_boxes(results, id_, plates_model)
+            data = check_boxes(results, id_, plates_model, cymbols_model)
         else:
             logging.info('no results provided, data is empty')
             data = None
