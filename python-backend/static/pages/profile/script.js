@@ -74,5 +74,24 @@ getData2("https://urbaton.ultraevs.ru/tests/", { answer: 42 }).then((data) => {
     document.querySelector('.money').innerHTML = data.count;
 
 })
-
 const answer = document.getElementById("value-2")
+
+async function getData3(url, data = {}) {
+    const response = await fetch(url, {
+        method: "GET",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        redirect: "follow",
+        referrerPolicy: "no-referrer",
+    });
+    return await response.json();
+}
+
+getData3("https://urbaton.ultraevs.ru/name/", { answer: 42 }).then((data) => {
+    document.querySelector('.back_name').innerHTML = data.name;
+
+})

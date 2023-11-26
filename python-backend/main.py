@@ -1,7 +1,7 @@
 from fastapi import FastAPI,  Form, Depends, Cookie, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse, RedirectResponse
+from fastapi.responses import FileResponse, RedirectResponse, JSONResponse
 from HistoryOperations.router import router as history_router
 from auth.router import router as auth_router
 from Detection.router import router as detection_router
@@ -44,6 +44,7 @@ async def profile(access_token: str = Cookie(None)):
 async def payments(access_token: str = Cookie(None), cam_id : str = Form(...), time: str = Form(...)):
     pass
 
+
 @app.get('/vanya')
 async def vanya():
     return FileResponse("/home/NO_BACK_MISIS/python-backend/static/assets/photo_2023-11-25_11-05-58.jpg")
@@ -57,6 +58,12 @@ async def res():
 @app.exception_handler(404)
 async def custom_404(_, __):
     return FileResponse('/home/NO_BACK_MISIS/python-backend/static/404.html')
+
+
+@app.get('/name')
+async def name(access_token: str = Cookie(None)):
+    data = verify_token(access_token)
+    return JSONResponse(status_code=200, content={"data": data["name"]})
 
 
 app.add_middleware(

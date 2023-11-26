@@ -15,7 +15,7 @@ plates_model = current_model('Detection/plates.pt')
 cymbols_model = current_model('Detection/cymbols.pt')
 
 
-@router.post('/detect')
+@router.get('/detect')
 async def test(cam_id: int, session: Session = Depends(get_db)):
     query = select(Rent).where(Rent.cam_id == str(cam_id))
     rents = session.execute(query).scalars()
