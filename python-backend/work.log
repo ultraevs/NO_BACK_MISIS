@@ -3560,3 +3560,466 @@ Traceback (most recent call last):
   File "C:\Programming\projects\NO_BACK_MISIS\venv\lib\site-packages\mysql\connector\connection_cext.py", line 523, in rollback
     self._cmysql.rollback()
 _mysql_connector.MySQLInterfaceError: Lost connection to MySQL server during query
+2023-11-26 11:53:36,319 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 11:53:45,154 - INFO - starting detection
+2023-11-26 11:53:45,154 - INFO - starting get_image()
+2023-11-26 11:53:45,154 - INFO - loaded tokens from file
+2023-11-26 11:53:45,323 - INFO - loaded tokens from file
+2023-11-26 11:53:45,965 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=fc20aa9c3f7d465ca5e7e6c1158305a4
+2023-11-26 11:53:46,837 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=58dec7402abb411dbf3361eb4de420ad
+2023-11-26 11:53:47,034 - INFO - get_image() -> True
+2023-11-26 11:53:47,037 - INFO - status = ok
+2023-11-26 11:53:47,037 - INFO - starting detection via YOLO
+2023-11-26 11:53:48,566 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 11:53:50,397 - INFO - check_boxes() started
+2023-11-26 11:53:50,398 - INFO - got parking coords
+2023-11-26 11:53:50,398 - INFO - created result.jpg file
+2023-11-26 11:54:02,690 - INFO - detection end, returned status, data
+2023-11-26 11:56:21,921 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:01:13,537 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/anyio/_backends/_asyncio.py", line 249, in __enter__
+    task_state = _task_states[host_task]
+  File "/usr/lib/python3.8/weakref.py", line 383, in __getitem__
+    return self.data[ref(key)]
+KeyError: <weakref at 0x7efcb12cb770; to '_asyncio.Task' at 0x7efcb1217cc0>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:07:02,473 - INFO - starting detection
+2023-11-26 12:07:02,473 - INFO - starting get_image()
+2023-11-26 12:07:02,474 - INFO - loaded tokens from file
+2023-11-26 12:07:02,636 - INFO - loaded tokens from file
+2023-11-26 12:07:03,274 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=fc20aa9c3f7d465ca5e7e6c1158305a4
+2023-11-26 12:07:04,125 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=58dec7402abb411dbf3361eb4de420ad
+2023-11-26 12:07:04,293 - INFO - get_image() -> True
+2023-11-26 12:07:04,299 - INFO - status = ok
+2023-11-26 12:07:04,299 - INFO - starting detection via YOLO
+2023-11-26 12:07:04,373 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:07:04,378 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:07:07,795 - INFO - check_boxes() started
+2023-11-26 12:07:07,795 - INFO - got parking coords
+2023-11-26 12:07:07,799 - INFO - created result.jpg file
+2023-11-26 12:07:07,807 - INFO - checking parking slots and cars
+2023-11-26 12:07:07,808 - INFO - cropping
+2023-11-26 12:07:07,957 - INFO - cropping
+2023-11-26 12:07:08,098 - INFO - cropping
+2023-11-26 12:07:08,227 - INFO - cropping
+2023-11-26 12:07:08,370 - INFO - cropping
+2023-11-26 12:07:08,501 - INFO - cropping
+2023-11-26 12:07:08,634 - INFO - cropping
+2023-11-26 12:07:08,766 - INFO - cropping
+2023-11-26 12:07:08,895 - INFO - done checking
+2023-11-26 12:07:09,123 - INFO - saved drawings to result.jpg
+2023-11-26 12:07:09,124 - INFO - check_boxes() -> data
+2023-11-26 12:07:09,124 - INFO - detection end, returned status, data
+2023-11-26 12:11:38,924 - INFO - starting detection
+2023-11-26 12:11:38,924 - INFO - starting get_image()
+2023-11-26 12:11:38,924 - INFO - loaded tokens from file
+2023-11-26 12:11:39,081 - INFO - loaded tokens from file
+2023-11-26 12:11:39,681 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=fc20aa9c3f7d465ca5e7e6c1158305a4
+2023-11-26 12:11:40,502 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=58dec7402abb411dbf3361eb4de420ad
+2023-11-26 12:11:40,658 - INFO - get_image() -> True
+2023-11-26 12:11:40,659 - INFO - status = ok
+2023-11-26 12:11:40,659 - INFO - starting detection via YOLO
+2023-11-26 12:11:41,683 - INFO - check_boxes() started
+2023-11-26 12:11:41,683 - INFO - got parking coords
+2023-11-26 12:11:41,686 - INFO - created result.jpg file
+2023-11-26 12:11:41,691 - INFO - checking parking slots and cars
+2023-11-26 12:11:41,691 - INFO - cropping
+2023-11-26 12:11:41,820 - INFO - cropping
+2023-11-26 12:11:41,949 - INFO - cropping
+2023-11-26 12:11:42,080 - INFO - cropping
+2023-11-26 12:11:42,208 - INFO - cropping
+2023-11-26 12:11:42,338 - INFO - cropping
+2023-11-26 12:11:42,468 - INFO - cropping
+2023-11-26 12:11:42,601 - INFO - cropping
+2023-11-26 12:11:42,729 - INFO - done checking
+2023-11-26 12:11:42,915 - INFO - saved drawings to result.jpg
+2023-11-26 12:11:42,916 - INFO - check_boxes() -> data
+2023-11-26 12:11:42,917 - INFO - detection end, returned status, data
+2023-11-26 12:13:22,904 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:13:22,905 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:16:45,128 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:16:45,128 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:27:29,797 - INFO - starting detection
+2023-11-26 12:27:29,798 - INFO - starting get_image()
+2023-11-26 12:27:29,798 - INFO - loaded tokens from file
+2023-11-26 12:27:29,880 - INFO - unsuccessful request, attempting to update tokens
+2023-11-26 12:27:29,880 - INFO - writing tokens to file
+2023-11-26 12:27:29,880 - INFO - get_tokens() started
+2023-11-26 12:27:31,873 - INFO - driver created
+2023-11-26 12:27:34,329 - INFO - waiting for element
+2023-11-26 12:27:35,871 - INFO - driver closed
+2023-11-26 12:27:35,963 - INFO - got token
+2023-11-26 12:27:36,743 - INFO - driver created
+2023-11-26 12:27:38,942 - INFO - waiting for element
+2023-11-26 12:27:40,867 - INFO - driver closed
+2023-11-26 12:27:40,906 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:27:40,914 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:27:40,938 - INFO - got token
+2023-11-26 12:27:40,939 - INFO - got tokens: {1: '3715ffca14f34f5f873285d7bf7a471c', 2: '9de3b87eeeb04ea7ac9842cacbfe9db0'}
+2023-11-26 12:27:40,951 - INFO - update_cfg() -> True
+2023-11-26 12:27:40,951 - INFO - successfully updated tokens
+2023-11-26 12:27:40,951 - INFO - loaded tokens from file
+2023-11-26 12:27:41,569 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=3715ffca14f34f5f873285d7bf7a471c
+2023-11-26 12:27:42,367 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9de3b87eeeb04ea7ac9842cacbfe9db0
+2023-11-26 12:27:42,523 - INFO - get_image() -> True
+2023-11-26 12:27:42,524 - INFO - status = ok
+2023-11-26 12:27:42,524 - INFO - starting detection via YOLO
+2023-11-26 12:27:43,520 - INFO - check_boxes() started
+2023-11-26 12:27:43,520 - INFO - got parking coords
+2023-11-26 12:27:43,521 - INFO - created result.jpg file
+2023-11-26 12:27:55,615 - INFO - detection end, returned status, data
+2023-11-26 12:28:08,134 - INFO - starting detection
+2023-11-26 12:28:08,134 - INFO - starting get_image()
+2023-11-26 12:28:08,134 - INFO - loaded tokens from file
+2023-11-26 12:28:08,268 - INFO - loaded tokens from file
+2023-11-26 12:28:08,860 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=3715ffca14f34f5f873285d7bf7a471c
+2023-11-26 12:28:09,644 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9de3b87eeeb04ea7ac9842cacbfe9db0
+2023-11-26 12:28:09,809 - INFO - get_image() -> True
+2023-11-26 12:28:09,818 - INFO - status = ok
+2023-11-26 12:28:09,819 - INFO - starting detection via YOLO
+2023-11-26 12:28:10,808 - INFO - check_boxes() started
+2023-11-26 12:28:10,808 - INFO - got parking coords
+2023-11-26 12:28:10,815 - INFO - created result.jpg file
+2023-11-26 12:28:10,815 - INFO - checking parking slots and cars
+2023-11-26 12:28:10,816 - INFO - cropping
+2023-11-26 12:28:10,960 - INFO - cropping
+2023-11-26 12:28:11,105 - INFO - cropping
+2023-11-26 12:28:11,267 - INFO - cropping
+2023-11-26 12:28:11,398 - INFO - cropping
+2023-11-26 12:28:11,526 - INFO - cropping
+2023-11-26 12:28:11,659 - INFO - cropping
+2023-11-26 12:28:11,788 - INFO - cropping
+2023-11-26 12:28:11,917 - INFO - done checking
+2023-11-26 12:28:12,083 - INFO - saved drawings to result.jpg
+2023-11-26 12:28:12,084 - INFO - check_boxes() -> data
+2023-11-26 12:28:12,084 - INFO - detection end, returned status, data
+2023-11-26 12:34:26,912 - INFO - starting detection
+2023-11-26 12:34:26,912 - INFO - starting get_image()
+2023-11-26 12:34:26,913 - INFO - loaded tokens from file
+2023-11-26 12:34:26,924 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:34:26,925 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:34:27,081 - INFO - loaded tokens from file
+2023-11-26 12:34:27,659 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=3715ffca14f34f5f873285d7bf7a471c
+2023-11-26 12:34:28,455 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9de3b87eeeb04ea7ac9842cacbfe9db0
+2023-11-26 12:34:28,638 - INFO - get_image() -> True
+2023-11-26 12:34:28,639 - INFO - status = ok
+2023-11-26 12:34:28,640 - INFO - starting detection via YOLO
+2023-11-26 12:34:29,712 - INFO - check_boxes() started
+2023-11-26 12:34:29,712 - INFO - got parking coords
+2023-11-26 12:34:29,720 - INFO - created result.jpg file
+2023-11-26 12:34:29,721 - INFO - checking parking slots and cars
+2023-11-26 12:34:29,721 - INFO - cropping
+2023-11-26 12:34:29,860 - INFO - cropping
+2023-11-26 12:34:29,982 - INFO - cropping
+2023-11-26 12:34:30,114 - INFO - cropping
+2023-11-26 12:34:30,244 - INFO - cropping
+2023-11-26 12:34:30,371 - INFO - cropping
+2023-11-26 12:34:30,497 - INFO - cropping
+2023-11-26 12:34:30,626 - INFO - cropping
+2023-11-26 12:34:30,757 - INFO - done checking
+2023-11-26 12:34:30,963 - INFO - saved drawings to result.jpg
+2023-11-26 12:34:30,965 - INFO - check_boxes() -> data
+2023-11-26 12:34:30,965 - INFO - detection end, returned status, data
+2023-11-26 12:34:33,374 - INFO - starting detection
+2023-11-26 12:34:33,374 - INFO - starting get_image()
+2023-11-26 12:34:33,378 - INFO - loaded tokens from file
+2023-11-26 12:34:33,510 - INFO - loaded tokens from file
+2023-11-26 12:34:34,092 - INFO - getting image from: http://136.169.144.8/1537240875/tracks-v1/index.fmp4.m3u8?token=3715ffca14f34f5f873285d7bf7a471c
+2023-11-26 12:34:34,872 - INFO - getting image from: http://136.169.144.3/1549021886/tracks-v1/index.fmp4.m3u8?token=9de3b87eeeb04ea7ac9842cacbfe9db0
+2023-11-26 12:34:35,034 - INFO - get_image() -> True
+2023-11-26 12:34:35,035 - INFO - status = ok
+2023-11-26 12:34:35,036 - INFO - starting detection via YOLO
+2023-11-26 12:34:36,043 - INFO - check_boxes() started
+2023-11-26 12:34:36,043 - INFO - got parking coords
+2023-11-26 12:34:36,050 - INFO - created result.jpg file
+2023-11-26 12:34:36,051 - INFO - checking parking slots and cars
+2023-11-26 12:34:36,051 - INFO - cropping
+2023-11-26 12:34:36,213 - INFO - cropping
+2023-11-26 12:34:36,344 - INFO - cropping
+2023-11-26 12:34:36,473 - INFO - cropping
+2023-11-26 12:34:36,604 - INFO - cropping
+2023-11-26 12:34:36,735 - INFO - cropping
+2023-11-26 12:34:36,862 - INFO - cropping
+2023-11-26 12:34:36,995 - INFO - cropping
+2023-11-26 12:34:37,128 - INFO - done checking
+2023-11-26 12:34:37,271 - INFO - saved drawings to result.jpg
+2023-11-26 12:34:37,272 - INFO - check_boxes() -> data
+2023-11-26 12:34:37,272 - INFO - detection end, returned status, data
+2023-11-26 12:36:58,430 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:36:58,431 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.
+2023-11-26 12:36:58,435 - ERROR - Exception during reset or similar
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 988, in _finalize_fairy
+    fairy._reset(
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/pool/base.py", line 1438, in _reset
+    pool._dialect.do_rollback(self)
+  File "/usr/local/lib/python3.8/dist-packages/sqlalchemy/engine/default.py", line 692, in do_rollback
+    dbapi_connection.rollback()
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 859, in rollback
+    self._execute_query("ROLLBACK")
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 871, in _execute_query
+    self.cmd_query(query)
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "/usr/local/lib/python3.8/dist-packages/mysql/connector/connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.DatabaseError: 4031 (HY000): The client was disconnected by the server because of inactivity. See wait_timeout and interactive_timeout for configuring this behavior.

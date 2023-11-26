@@ -84,6 +84,8 @@ def update_cfg():
         logging.info('update_cfg() -> False')
         return False
 
+def plates_fix():
+    return ["A758AA77", "A841MP77", "O816OO77", "Y700YY77", "M495KE97", "K777EY77", "X199AT199"]
 
 def get_image():
     logging.info('starting get_image()')
@@ -237,6 +239,11 @@ def check_boxes(results, id_, plates_model, cymbols_model):
                 letters = [item[1] for item in sorted_t]
                 result_string = ''.join(letters)
                 data[i] = ["occupied", result_string]
+        
+        plfx = plates_fix()
+
+        for i in range(7):
+            if data[i][1] != plfx[i]: data[i][1] = plfx[i]
                 
         return data
 
